@@ -31,8 +31,8 @@ nnoremap <Leader>bp :bprevious<CR>
 
 " navigate threw tabs:
 nnoremap <Leader>tn :tabnew<CR>
-nnoremap <Leader>nt :tabnext<CR>
-nnoremap <Leader>tp :tabprevious<CR>
+nnoremap <Leader>> :tabnext<CR>
+nnoremap <Leader>< :tabprevious<CR>
 
 " Better tabbing:
 vnoremap < <gv
@@ -91,3 +91,8 @@ nnoremap <leader>mkv :mkview<CR>
 " terminal mode
 tnoremap <C-h> <C-\><C-n>
 nnoremap <leader>vt :vert split <bar> :terminal<CR>
+
+" fugitive
+nmap <leader>gj :diffget //3<cr>
+nmap <leader>gf :diffget //2<cr>
+nmap <leader>gs :G<cr>

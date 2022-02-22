@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim-plug/autoload/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'dhruvasagar/vim-table-mode'
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
@@ -44,6 +45,9 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
+" git
+Plug 'tpope/vim-fugitive'
+
 " completion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -59,11 +63,17 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" vim wiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 
 " load lua config
 lua require("dfconfig")
+
+" set wikifolder
+let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -86,7 +96,7 @@ fun! TrimWhitespaces()
   call winrestview(l:save)
 endfun
 
-augroup UTILS
+augroup TRIM_WHITE_SPACES
   autocmd!
   autocmd BufWritePre * :call TrimWhitespaces()
 augroup END
