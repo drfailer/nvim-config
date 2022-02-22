@@ -21,7 +21,6 @@ call plug#begin('~/.config/nvim-plug/autoload/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'dhruvasagar/vim-table-mode'
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
