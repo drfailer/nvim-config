@@ -40,12 +40,12 @@ set incsearch                 " Highlight when typing researche
 set path+=**
 set wildmode=longest,list,full
 set colorcolumn=80            " columns indicator
-set signcolumn=yes
+set signcolumn=no
 set scrolloff=0               " To keep 5 lines between the cursor and the bottom of the screen
 set sidescrolloff=999         " keep the cursor in the middle of the screen Horizontally
 set noshowmode
 set foldmethod=marker
-" set guifont=ProFont\ for\ Powerline:h12
+set guifont=Inconsolata\ for\ Powerline:h11
 
 " remove netrw banner:
 let g:netrw_banner=0
