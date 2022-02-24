@@ -24,6 +24,7 @@ Plug 'tpope/vim-commentary'
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
+Plug 'navarasu/onedark.nvim'
 
 " pretty icons
 Plug 'ryanoasis/vim-devicons'
