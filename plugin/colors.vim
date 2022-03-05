@@ -15,6 +15,7 @@ set background=dark
 " colorscheme gruvbox
 " hi Normal guibg=none
 colorscheme onedark
+" colorscheme orbital
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

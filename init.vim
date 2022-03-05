@@ -25,6 +25,7 @@ Plug 'tpope/vim-commentary'
 " Themes
 Plug 'gruvbox-community/gruvbox'
 Plug 'navarasu/onedark.nvim'
+Plug 'fcpg/vim-orbital'
 
 " pretty icons
 Plug 'ryanoasis/vim-devicons'
@@ -73,7 +74,9 @@ call plug#end()
 lua require("dfconfig")
 
 " set wikifolder
-let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
+let g:vimwiki_list = [{'path': '~/Documents/wiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_markdown_link_ext = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,7 +86,7 @@ let g:vimwiki_list = [{'path': '~/Documents/wiki/'}]
 " Fix filetype
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd BufRead,BufNewFile *.pde set filetype=java
-autocmd BufRead,BufNewFile *.todo set filetype=markdown
+autocmd BufRead,BufNewFile README.md,*.todo set filetype=markdown
 autocmd BufRead,BufNewFile xmobar* set filetype=haskell
 
 " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

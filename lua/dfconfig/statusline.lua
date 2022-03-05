@@ -4,4 +4,4 @@
 
 require('lualine').setup()
 -- options = {theme = 'gruvbox'}
-options = {theme = 'onedark'}
+-- options = {theme = 'onedark'}

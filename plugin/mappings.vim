@@ -96,3 +96,11 @@ nnoremap <leader>vt :vert split <bar> :terminal<CR>
 nmap <leader>gj :diffget //3<cr>
 nmap <leader>gf :diffget //2<cr>
 nmap <leader>gs :G<cr>
+
+" special character insertion <C-i>
+inoremap <C-i>t ``<left>
+inoremap <C-i>f {}<left>
+inoremap <C-i>o []<left>
+inoremap <C-i>p \|
+inoremap <C-i>h #
+inoremap <C-i>n \
