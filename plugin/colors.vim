@@ -13,9 +13,9 @@ set background=dark
 " let g:gruvbox_improved_warnings=1
 " let g:gruvbox_contrast_dark='hard'
 " colorscheme gruvbox
+" colorscheme onedark
 " hi Normal guibg=none
-colorscheme onedark
-" colorscheme orbital
+colorscheme spacegray
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

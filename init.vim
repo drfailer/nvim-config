@@ -26,6 +26,7 @@ Plug 'tpope/vim-commentary'
 Plug 'gruvbox-community/gruvbox'
 Plug 'navarasu/onedark.nvim'
 Plug 'fcpg/vim-orbital'
+Plug 'ackyshake/Spacegray.vim'
 
 " pretty icons
 Plug 'ryanoasis/vim-devicons'
