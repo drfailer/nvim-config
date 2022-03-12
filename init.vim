@@ -23,9 +23,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
 " Themes
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 Plug 'navarasu/onedark.nvim'
-Plug 'fcpg/vim-orbital'
 Plug 'ackyshake/Spacegray.vim'
 
 " pretty icons
@@ -74,6 +73,8 @@ call plug#end()
 " load lua config
 lua require("dfconfig")
 
+syntax on
+
 " set wikifolder
 let g:vimwiki_list = [{'path': '~/Documents/wiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -85,10 +86,12 @@ let g:vimwiki_markdown_link_ext = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Fix filetype
-autocmd BufRead,BufNewFile *.tex set filetype=tex
-autocmd BufRead,BufNewFile *.pde set filetype=java
-autocmd BufRead,BufNewFile README.md,*.todo set filetype=markdown
-autocmd BufRead,BufNewFile xmobar* set filetype=haskell
+augroup FIX_FILETYPE
+  autocmd BufRead,BufNewFile *.tex set filetype=tex
+  autocmd BufRead,BufNewFile *.pde set filetype=java
+  autocmd BufRead,BufNewFile README.md,*.todo set filetype=markdown
+  autocmd BufRead,BufNewFile xmobar* set filetype=haskell
+augroup END
 
 " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 au! BufWritePost $MYVIMRC source %

@@ -55,13 +55,13 @@ nnoremap <C-p> :previous<CR>
 nnoremap <C-n> :cnext<CR>
 
 " jump points:
-inoremap ,<tab> <Esc>/<++><Enter>"_c4l
+" inoremap ,<tab> <Esc>/<++><Enter>"_c4l
 
 " scrolloff toggle:
-nnoremap <leader>sst :set sidescrolloff=999<CR>
-nnoremap <leader>ssd :set sidescrolloff=0<CR>
-nnoremap <leader>svt :set scrolloff=999<CR>
-nnoremap <leader>svd :set scrolloff=0<CR>
+" nnoremap <leader>sst :set sidescrolloff=999<CR>
+" nnoremap <leader>ssd :set sidescrolloff=0<CR>
+" nnoremap <leader>svt :set scrolloff=999<CR>
+" nnoremap <leader>svd :set scrolloff=0<CR>
 
 " substitution:
 nnoremap <leader>S :%s//g<Left><Left>
