@@ -91,11 +91,14 @@ nnoremap <leader>mkv :mkview<CR>
 " terminal mode
 tnoremap <C-h> <C-\><C-n>
 nnoremap <leader>vt :vert split <bar> :terminal<CR>
+nnoremap <leader>vtt :split <bar> :terminal<CR>
 
 " fugitive
 nmap <leader>gj :diffget //3<cr>
 nmap <leader>gf :diffget //2<cr>
 nmap <leader>gs :G<cr>
+nmap <leader>gc :G commit<cr>
+nmap <leader>gp :G push<cr>
 
 " special character insertion <C-i>
 inoremap <C-i>t ``<left>
