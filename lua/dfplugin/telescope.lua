@@ -81,3 +81,12 @@ require('telescope').setup{
     }
   }
 }
+
+-- mappings
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
+vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, {})
+vim.keymap.set('n', '<leader>fs', require('telescope.builtin').spell_suggest, {})
+vim.keymap.set('n', '<leader>fG', require('telescope.builtin').git_branches, {})
