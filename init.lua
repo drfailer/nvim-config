@@ -27,6 +27,14 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
 
+  -- Which key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {}
+    end
+  }
+
   -- telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -56,11 +64,7 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
 
-  -- Which key
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {}
-    end
-  }
+  -- lsp installer
+  use { "williamboman/mason.nvim" }
+  require("mason").setup()
 end)

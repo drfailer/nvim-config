@@ -74,8 +74,8 @@ map('n', '<leader>mkv', '<CMD>mkview<CR>')
 
 -- terminal
 map('t', '<C-h>', '<C-\\><C-n>')
-map('n', '<leader>vt', '<CMD>vert split <bar> <CMD>terminal<CR>')
-map('n', '<leader>vtt', '<CMD>split <bar> <CMD>terminal<CR>')
+map('n', '<leader>vt', '<CMD>vert split <bar> terminal<CR>')
+map('n', '<leader>vtt', '<CMD>split <bar> terminal<CR>')
 
 -- fugitive
 map('n', '<leader>gj', '<CMD>diffget //3<cr>')
