@@ -71,9 +71,8 @@ return require('packer').startup(function()
   use 'onsails/lspkind.nvim'
 
   -- snippets
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
+  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- refactor
   use {

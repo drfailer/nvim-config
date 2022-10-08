@@ -1,0 +1,62 @@
+##### main
+snippet main
+	int main(${1:int argc, char *argv[]})
+	{
+		${0}
+	}
+##### libs
+# io
+snippet io
+	#include <stdio.h>
+# std
+snippet lib
+	#include <stdlib.h>
+# string
+snippet string
+	#include <string.h>
+# math
+snippet math
+	#include <math.h>
+# include <...>
+snippet incs
+	#include <${0}>
+# include "..."
+snippet incl
+	#include "${0}"
+##### statements
+# if
+snippet if
+	if (${1:cond}) {
+		${0}
+	}
+# while
+snippet while
+	while (${1:cond}) {
+		${0}
+	}
+# do while
+snippet while
+	do  {
+		${0}
+	} while (${1:cond});
+# for
+snippet for
+	for (${1:i = 0}; ${2: i <= n}; ${3:++i}) {
+		${0}
+	}
+##### functions
+# printf
+snippet printf
+	printf("${1:%s}\n"${0});
+# fprintf
+snippet printf
+	fprintf(${1:file}, ${0:"hello world"});
+# fgets
+snippet fgets
+	fgets(${1:buff}, ${2:500}, ${0:file});
+# scanf
+snippet printf
+	scanf("${1:%d}", ${0});
+##### Comments
+snippet /*
+	/* ${0} */

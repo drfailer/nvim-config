@@ -5,5 +5,6 @@
   require("dfplugin.telescope")
   require("dfplugin.treesitter")
   require("dfplugin.lsp")
+  require("dfplugin.luasnip")
   require("dfplugin.comp")
   require("dfplugin.refactor")
