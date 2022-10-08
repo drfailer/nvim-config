@@ -7,6 +7,7 @@ local mappings = {
     D = "typde definition",
     r = "rename",
     vr = "view references",
+    sh = "signature help",
     f = "format",
     fr = "telescope lsp references",
     fD = "telescope doc symbol",
