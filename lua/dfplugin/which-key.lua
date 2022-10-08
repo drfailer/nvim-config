@@ -22,7 +22,7 @@ local mappings = {
     h = "help tags",
     k = "keymaps",
     s = "spell",
-    G = "git branches",
+    G = "git branches"
   },
 
   -- refactor
@@ -37,11 +37,15 @@ local mappings = {
   -- fugitive
   g = {
     name = "fugitive",
-    j = "",
-    f = "",
     g = "status",
     c = "commit",
-    p = "push"
+    L = "log",
+    m = "merge",
+    d = "resolve conflict",
+    h = "get diff left",
+    l = "get diff right",
+    j = "next diff",
+    k = "previous diff"
   }
 }
 
