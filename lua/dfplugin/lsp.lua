@@ -58,3 +58,6 @@ require('lspconfig')['jdtls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+-- use mason to install servers
+vim.keymap.set('n', '<leader>lM', '<CMD>Mason<CR>', { noremap = true })
