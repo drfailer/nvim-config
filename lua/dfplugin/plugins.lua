@@ -2,8 +2,7 @@
 --                                  PLUGINS                                   --
 --------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
--- Install packer automatically
+-- Install packer automatically {{{
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -17,64 +16,76 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
--- install packer with git:
+-- }}}
+
+-- install packer with git: {{{
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim
 -- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+--}}}
 
---------------------------------------------------------------------------------
--- Plugins
+-- Plugins: {{{1
 return require('packer').startup(function()
-  -- Packer
+  -- Packer: {{{2
   use 'wbthomason/packer.nvim'
+  -- 2}}}
 
-  -- themes
+  -- themes: {{{2
   use 'Mofiqul/vscode.nvim'
+  -- 2}}}
 
-  -- lualine
+  -- lualine: {{{2
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  -- 2}}}
 
-  -- utils
+  -- utils: {{{2
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
+  -- 2}}}
 
-  -- Which key
+  -- Which key: {{{2
   use {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup {}
     end
   }
+  -- 2}}}
 
-  -- telescope
+  -- telescope: {{{2
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- 2}}}
 
-  -- Treesitter
+  -- Treesitter: {{{2
   use 'nvim-treesitter/nvim-treesitter'
+  -- 2}}}
 
-  -- LSP
+  -- LSP: {{{2
   use 'neovim/nvim-lspconfig'
+  -- 2}}}
 
-  -- completion
+  -- completion: {{{2
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind.nvim'
+  -- 2}}}
 
-  -- snippets
+  -- snippets: {{{2
   use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
   use 'saadparwaiz1/cmp_luasnip'
+  -- 2}}}
 
-  -- refactor
+  -- refactor: {{{2
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
@@ -82,8 +93,11 @@ return require('packer').startup(function()
       {"nvim-treesitter/nvim-treesitter"}
     }
   }
+  -- 2}}}
 
-  -- lsp installer
+  -- lsp installer: {{{2
   use { "williamboman/mason.nvim" }
   require("mason").setup()
+  -- 2}}}
 end)
+-- 1}}}
