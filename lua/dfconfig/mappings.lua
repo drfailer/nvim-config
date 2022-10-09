@@ -42,6 +42,7 @@ map('i', '<C-a>', '<Esc>I', { noremap = true })
 map('i', '<C-e>', '<Esc>A', { noremap = true })
 map('i', '<C-f>', '<Esc>la', { noremap = true })
 map('i', '<C-b>', '<Esc>i', { noremap = true })
+map('i', '<C-o>', '<CR><Esc>kA', { noremap = true })
 
 -- move lines
 map('n', '<up>', '<CMD>move -2<cr>', { noremap = true })
