@@ -1,0 +1,11 @@
+# if
+snippet if
+	if ${1:cond}; then
+		${0}
+	fi
+# case
+snippet case
+	case ${1:$1} in
+		${0}
+		*) echo "ERROR" ;;
+	esac
