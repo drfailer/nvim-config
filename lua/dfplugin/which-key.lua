@@ -7,12 +7,12 @@ local mappings = {
   -- lsp
   l = {
     name = "lsp",
-    a = "code action",
+    a = "code action (lspsaga)",
     D = "typde definition",
-    r = "rename",
+    r = "rename (lspsaga)",
     vr = "view references",
     sh = "signature help",
-    f = "format",
+    F = "format",
     fr = "telescope lsp references",
     fD = "telescope doc symbol",
     fe = "telescope errors"

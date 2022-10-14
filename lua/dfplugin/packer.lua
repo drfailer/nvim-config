@@ -41,6 +41,7 @@ return require('packer').startup(function()
   -- 2}}}
 
   -- utils: {{{2
+  use 'windwp/nvim-autopairs'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
@@ -69,14 +70,13 @@ return require('packer').startup(function()
 
   -- LSP: {{{2
   use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
   -- 2}}}
 
   -- completion: {{{2
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind.nvim'
   -- 2}}}
 
