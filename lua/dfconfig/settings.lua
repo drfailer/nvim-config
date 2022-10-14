@@ -68,6 +68,7 @@ o.foldmethod = 'marker'
 -- formating
 vim.o.formatoptions = vim.o.formatoptions .. 'tcrqnj'
 vim.g.toggleCRO = true
+vim.g.toggleVirtualEdit = false
 
 -- completion
 o.completeopt = {'menu', 'menuone', 'noinsert', 'noselect'}
@@ -76,7 +77,8 @@ o.wildmode = {'longest', 'list', 'full'}
 -- other options
 vim.api.nvim_command('set guicursor=')
 vim.api.nvim_command('set path+=**')
-vim.api.nvim_command('let g:netrw_banner=0')
+
+vim.g.netrw_banner = 0
 
 --------------------------------------------------------------------------------
 -- auto comands

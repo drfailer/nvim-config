@@ -81,6 +81,18 @@ vim.keymap.set('n', '<leader>t/', function()
   end
 end, { noremap = true })
 
+-- toggle virtual edit
+vim.keymap.set('n', '<leader>tv', function()
+  if vim.g.toggleVirtualEdit then
+    vim.g.toggleVirtualEdit = false
+    vim.cmd("setlocal virtualedit=")
+  else
+    vim.g.toggleVirtualEdit = true
+    vim.cmd("setlocal virtualedit=all")
+  end
+end, { noremap = true })
+
+
 -- Explorer
 map('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
 map('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
