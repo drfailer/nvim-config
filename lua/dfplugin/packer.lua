@@ -31,6 +31,8 @@ return require('packer').startup(function()
 
   -- themes: {{{2
   use 'Mofiqul/vscode.nvim'
+  use 'gruvbox-community/gruvbox'
+  use 'navarasu/onedark.nvim'
   -- 2}}}
 
   -- lualine: {{{2

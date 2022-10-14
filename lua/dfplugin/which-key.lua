@@ -8,14 +8,20 @@ local mappings = {
   l = {
     name = "lsp",
     a = "code action (lspsaga)",
-    D = "typde definition",
+    o = "outline",
     r = "rename (lspsaga)",
+    e = "error",
+    d = "diagnostic list",
+    n = "next error (saga)",
+    p = "previous error (saga)",
     vr = "view references",
     sh = "signature help",
     F = "format",
     fr = "telescope lsp references",
-    fD = "telescope doc symbol",
-    fe = "telescope errors"
+    fs = "telescope doc symbol",
+    fd = "telescope errors",
+    wa = "add workspace folder",
+    wr = "remove workspace folder"
   },
 
   -- telescope

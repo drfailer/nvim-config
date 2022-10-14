@@ -26,3 +26,15 @@ require('vscode').setup({
         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
     }
 })
+
+-- Gruvbox
+vim.g.gruvbox_contrast_dark = "hard"
+
+-- onedark
+require('onedark').setup {
+    style = 'darker'
+}
+
+
+-- require('onedark').load()
+-- vim.cmd("colorscheme gruvbox")

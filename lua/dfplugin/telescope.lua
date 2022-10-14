@@ -95,5 +95,5 @@ vim.keymap.set('n', '<leader>fG', builtin.git_branches, {})
 
 -- lsp
 vim.keymap.set('n', '<leader>lfr', require('telescope.builtin').lsp_references, {})
-vim.keymap.set('n', '<leader>lfD', require('telescope.builtin').lsp_document_symbols, {})
-vim.keymap.set('n', '<leader>lfe', require('telescope.builtin').diagnostics, {})
+vim.keymap.set('n', '<leader>lfs', require('telescope.builtin').lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>lfd', require('telescope.builtin').diagnostics, {})
