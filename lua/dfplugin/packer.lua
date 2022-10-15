@@ -84,9 +84,6 @@ return require('packer').startup(function()
     }
   }
 
-  -- dap
-  use 'mfussenegger/nvim-dap'
-
   -- lsp installer:
   use { "williamboman/mason.nvim" }
   require("mason").setup()

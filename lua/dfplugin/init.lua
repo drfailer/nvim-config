@@ -3,15 +3,6 @@
 --------------------------------------------------------------------------------
 
 require('dfplugin.packer')
-require('dfplugin.theme')
-require('dfplugin.which-key')
-require("dfplugin.statusline")
-require("dfplugin.nvimtree")
-require("dfplugin.telescope")
-require("dfplugin.treesitter")
-require("dfplugin.lsp")
-require("dfplugin.luasnip")
-require("dfplugin.comp")
-require('dfplugin.auto-pairs')
-require("dfplugin.refactor")
-require("dfplugin.dap")
+require('dfplugin.prog-utils')
+require('dfplugin.tools')
+require('dfplugin.ui')
