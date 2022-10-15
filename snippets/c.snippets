@@ -64,7 +64,21 @@ snippet fgets
 ##### Comments
 snippet /*
 	/* ${0} */
-snippet ctitle
-	/*****************************************************************************/
-	/* ${0:TITLE}                                                                */
-	/*****************************************************************************/
+snippet **
+	/**
+	 * NAME: ${1:function name}
+	 *
+	 * ${0: brief}
+	 *
+	 * PARAMS:
+	 * ${2:n - number}
+	 *
+	 * OUTPUT:
+	 * ${3:- display hello world}
+	 *
+	 * SIDE-EFFECTS:
+	 * ${4:- modify table}
+	 *
+	 * RETURN:
+	 * ${5:return what}
+	 */
