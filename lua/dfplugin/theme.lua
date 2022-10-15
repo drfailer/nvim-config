@@ -36,5 +36,5 @@ require('onedark').setup {
 }
 
 
--- require('onedark').load()
+require('onedark').load()
 -- vim.cmd("colorscheme gruvbox")
