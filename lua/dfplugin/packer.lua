@@ -65,6 +65,11 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
 
+  -- DAP:
+  use 'mfussenegger/nvim-dap'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'rcarriga/nvim-dap-ui'
+
   -- completion:
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -72,7 +77,7 @@ return require('packer').startup(function()
   use 'onsails/lspkind.nvim'
 
   -- snippets:
-  use'L3MON4D3/LuaSnip'
+  use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
   -- refactor:
@@ -86,5 +91,6 @@ return require('packer').startup(function()
 
   -- lsp installer:
   use { "williamboman/mason.nvim" }
+
   require("mason").setup()
 end)
