@@ -79,4 +79,4 @@ require("dapui").setup({
 vim.keymap.set('n', '<leader>dO', require("dapui").open, { noremap = true })
 vim.keymap.set('n', '<leader>dC', require("dapui").close, { noremap = true })
 vim.keymap.set('n', '<leader>dT', require("dapui").toggle, { noremap = true })
-vim.keymap.set('n', '<leader>dE', require("dapui").eval, { noremap = true })
+vim.keymap.set('v', '<leader>dE', require("dapui").eval, { noremap = true })
