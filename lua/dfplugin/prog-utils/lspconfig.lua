@@ -14,6 +14,13 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+-- custom symbols
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 --------------------------------------------------------------------------------
 --                                   severs                                   --
 --------------------------------------------------------------------------------
@@ -33,14 +40,14 @@ require('lspconfig')['jdtls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
--- require('lspconfig')['rust-analyzer'].setup{
---     on_attach = on_attach,
---     flags = lsp_flags,
---     cmd = '/home/drfailer/.local/share/nvim/mason/bin/rust-analyzer',
---     settings = {
---       ["rust-analyzer"] = {}
---     }
--- }
+require('lspconfig')['rust_analyzer'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    cmd = { '/home/failer/.local/share/nvim/mason/bin/rust-analyzer' },
+    settings = {
+      ["rust-analyzer"] = {}
+    }
+}
 
 --------------------------------------------------------------------------------
 --                       mason (lsp utilities install)                        --
@@ -60,36 +67,37 @@ saga.init_lsp_saga()
 
 local lsp_buflsp_opt = { noremap=true, silent=false, buffer=bufnr }
 local lsp_opt = { noremap=true, silent=false }
+local map = vim.keymap.set
 
 -- lspsaga
-vim.keymap.set('n',         'gh', '<cmd>Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
-vim.keymap.set('n',         'gD', '<cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true })
-vim.keymap.set('n',          'K', '<cmd>Lspsaga hover_doc<CR>', lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>lr', '<cmd>Lspsaga rename<CR>', lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>le', '<cmd>Lspsaga show_cursor_diagnostics<CR>', lsp_opt)
-vim.keymap.set('n', '<leader>ln', '<cmd>Lspsaga diagnostic_jump_prev<CR>', lsp_opt)
-vim.keymap.set('n', '<leader>lp', '<cmd>Lspsaga diagnostic_jump_next<CR>', lsp_opt)
-vim.keymap.set('n', '<leader>lo', '<cmd>LSoutlineToggle<CR>', lsp_opt)
-vim.keymap.set('n',  '<leader>T', '<cmd>Lspsaga open_floaterm<CR>', lsp_opt)
-vim.keymap.set('t',      '<C-d>', [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], lsp_opt)
-vim.keymap.set({'n', 'v'}, '<leader>la', '<cmd>Lspsaga code_action<CR>', lsp_buflsp_opt)
+map('n',         'gh', '<cmd>Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
+map('n',         'gD', '<cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true })
+map('n',          'K', '<cmd>Lspsaga hover_doc<CR>', lsp_buflsp_opt)
+map('n', '<leader>lr', '<cmd>Lspsaga rename<CR>', lsp_buflsp_opt)
+map('n', '<leader>le', '<cmd>Lspsaga show_cursor_diagnostics<CR>', lsp_opt)
+map('n', '<leader>ln', '<cmd>Lspsaga diagnostic_jump_prev<CR>', lsp_opt)
+map('n', '<leader>lp', '<cmd>Lspsaga diagnostic_jump_next<CR>', lsp_opt)
+map('n', '<leader>lo', '<cmd>LSoutlineToggle<CR>', lsp_opt)
+map('n',  '<leader>tt', '<cmd>Lspsaga open_floaterm<CR>', lsp_opt)
+map('t',      '<C-d>', [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], lsp_opt)
+map({'n', 'v'}, '<leader>la', '<cmd>Lspsaga code_action<CR>', lsp_buflsp_opt)
 
 -- lsp
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>lsh', vim.lsp.buf.signature_help, lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>lvr', vim.lsp.buf.references, lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>ld', vim.diagnostic.setloclist, lsp_opt)
+map('n', 'gd', vim.lsp.buf.definition, lsp_buflsp_opt)
+map('n', '<leader>lsh', vim.lsp.buf.signature_help, lsp_buflsp_opt)
+map('n', '<leader>lvr', vim.lsp.buf.references, lsp_buflsp_opt)
+map('n', '<leader>ld', vim.diagnostic.setloclist, lsp_opt)
+map('n', '<leader>lF', function() vim.lsp.buf.format { async = true } end, lsp_buflsp_opt)
 
 -- workspace
-vim.keymap.set('n', '<leader>lwa', vim.lsp.buf.add_workspace_folder, lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>lwr', vim.lsp.buf.remove_workspace_folder, lsp_buflsp_opt)
-vim.keymap.set('n', '<leader>lwl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, lsp_buflsp_opt)
+map('n', '<leader>lwa', vim.lsp.buf.add_workspace_folder, lsp_buflsp_opt)
+map('n', '<leader>lwr', vim.lsp.buf.remove_workspace_folder, lsp_buflsp_opt)
+map('n', '<leader>lwl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, lsp_buflsp_opt)
 
 -- unused
--- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, lsp_buflsp_opt)
--- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, lsp_buflsp_opt)
--- vim.keymap.set('n', '<leader>lD', vim.lsp.buf.type_definition, lsp_buflsp_opt)
--- vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, lsp_buflsp_opt)
--- vim.keymap.set('n', '<leader>lF', function() vim.lsp.buf.format { async = true } end, lsp_buflsp_opt)
--- vim.keymap.set('n', '<leader>lN', vim.diagnostic.goto_prev, lsp_opt)
--- vim.keymap.set('n', '<leader>lP', vim.diagnostic.goto_next, lsp_opt)
+-- map('n', 'gD', vim.lsp.buf.declaration, lsp_buflsp_opt)
+-- map('n', 'gi', vim.lsp.buf.implementation, lsp_buflsp_opt)
+-- map('n', '<leader>lD', vim.lsp.buf.type_definition, lsp_buflsp_opt)
+-- map('n', '<leader>lR', vim.lsp.buf.rename, lsp_buflsp_opt)
+-- map('n', '<leader>lN', vim.diagnostic.goto_prev, lsp_opt)
+-- map('n', '<leader>lP', vim.diagnostic.goto_next, lsp_opt)

@@ -1,0 +1,8 @@
+# basic make
+snippet make
+	CC = gcc
+	CFLAGS = -Wall -Wextra -Wuninitialized
+	LDFLAGS = ${1:-lm}
+
+	prog: ${0:main.c}
+		gcc $(CFLAGS) -o $@ $^ $(LDFLAGS)

@@ -4,7 +4,7 @@
 
 -- leader key
 vim.g.mapleader = ' '
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 -- sudo edit
 map('c', 'w!!', 'w !sudo tee %', {})
