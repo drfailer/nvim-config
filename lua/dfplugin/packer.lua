@@ -27,6 +27,8 @@ return require('packer').startup(function()
   use 'Mofiqul/vscode.nvim'
   use 'gruvbox-community/gruvbox'
   use 'navarasu/onedark.nvim'
+  use 'rose-pine/neovim'
+  use 'tiagovla/tokyodark.nvim'
 
   -- lualine:
   use {
