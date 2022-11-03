@@ -27,10 +27,10 @@
 --     }
 -- })
 
--- -- Gruvbox
--- vim.g.gruvbox_contrast_dark = "hard"
--- vim.g.gruvbox_sign_column = "bg0"
--- vim.g.gruvbox_improved_warnings = 1
+-- Gruvbox
+vim.g.gruvbox_contrast_dark = "hard"
+vim.g.gruvbox_sign_column = "bg0"
+vim.g.gruvbox_improved_warnings = 1
 
 -- onedark
 require('onedark').setup {
