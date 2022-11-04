@@ -8,16 +8,16 @@ snippet main
 ##### libs
 # io
 snippet io
-	#include <stdio.h>
+	#include <stdio.h>$0
 # std
 snippet lib
-	#include <stdlib.h>
+	#include <stdlib.h>$0
 # string
 snippet string
-	#include <string.h>
+	#include <string.h>$0
 # math
 snippet math
-	#include <math.h>
+	#include <math.h>$0
 # include <...>
 snippet incs
 	#include <${0}>
@@ -48,19 +48,19 @@ snippet for
 ##### functions
 # printf
 snippet printf
-	printf("${1:%s}\n"${0});
+	printf("${1:%s}\n"${2});$0
 # fprintf
 snippet printf
-	fprintf(${1:stream}, ${2:"%s"}${0:, buff});
+	fprintf(${1:stream}, ${2:"%s"}${3:, buff});$0
 # fgets
 snippet fgets
-	fgets(${1:buff}, ${2:500}, ${0:file});
+	fgets(${1:buff}, ${2:500}, ${3:file});$0
 # scanf
 snippet scanf
-	scanf("${1:%d}", ${0});
+	scanf("${1:%d}", ${2});$0
 # fgets
 snippet fgets
-	fgets(${1:buff}, ${2:size}, ${0:file});
+	fgets(${1:buff}, ${2:size}, ${3:file});$0
 ##### Comments
 snippet /*
 	/* ${0} */
