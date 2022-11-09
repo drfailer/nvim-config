@@ -24,7 +24,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- themes:
-  use 'Mofiqul/vscode.nvim'
+  -- use 'Mofiqul/vscode.nvim'
   use 'gruvbox-community/gruvbox'
   use 'navarasu/onedark.nvim'
   use 'rose-pine/neovim'
