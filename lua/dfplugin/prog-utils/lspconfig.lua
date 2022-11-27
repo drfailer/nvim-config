@@ -43,7 +43,7 @@ require('lspconfig')['jdtls'].setup{
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    cmd = { '/home/failer/.local/share/nvim/mason/bin/rust-analyzer' },
+    cmd = { os.getenv("HOME") .. '/.local/share/nvim/mason/bin/rust-analyzer' },
     settings = {
       ["rust-analyzer"] = {}
     }

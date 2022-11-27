@@ -45,12 +45,12 @@ require("gruvbox").setup({
     SignColumn = {bg = "#1d2021"}
   },
   dim_inactive = false,
-  transparent_mode = false,
+  transparent_mode = true,
 })
 
 -- onedark
 require('onedark').setup {
-    style = 'darker'
+    style = 'dark'
 }
 
 -- rose-pine

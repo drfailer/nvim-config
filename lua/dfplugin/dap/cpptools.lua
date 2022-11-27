@@ -7,7 +7,7 @@ local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = '/home/failer/.local/share/nvim/mason/bin/OpenDebugAD7',
+  command = os.getenv("HOME") .. '/.local/share/nvim/mason/bin/OpenDebugAD7',
 }
 
 local dap = require('dap')
