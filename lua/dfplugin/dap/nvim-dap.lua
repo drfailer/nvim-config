@@ -6,15 +6,24 @@ vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''
 
 -- mappings
 local map = vim.keymap.set
-map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", { noremap = true, silent = true })
-map("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", { noremap = true, silent = true })
-map("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", { noremap = true, silent = true })
-map("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", { noremap = true, silent = true })
-map("n", "<Leader>db", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true })
-map("n", "<Leader>dB", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { noremap = true, silent = true })
-map("n", "<Leader>dp", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", { noremap = true, silent = true })
-map("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
-map("n", "<Leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
+map("n", "<leader>dc", require('dap').continue, { noremap = true })
+map("n", "<C-n>", require('dap').step_over, { noremap = true })
+map("n", "<C-s>", require('dap').step_into, { noremap = true })
+map("n", "<C-o>", require('dap').step_out, { noremap = true })
+map("n", "<leader>ds", require('dap').close, { noremap = true })
+map("n", "<leader>db", require('dap').toggle_breakpoint, { noremap = true })
+map("n", "<leader>dBc", function()
+  require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
+end, { noremap = true })
+map("n", "<leader>dBm", function()
+  require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+end, { noremap = true })
+map("n", "<leader>dr", require('dap').repl.open, { noremap = true })
+map("n", "<leader>dl", require('dap').run_last, { noremap = true })
+map("n", "<leader>di", require('dap.ui.widgets').hover, { noremap = true })
+-- map("v", "<leader>di", require('dap.ui.variables').visual_hover, { noremap = true })
+map("n", "<leader>dk", require('dap').up, { noremap = true })
+map("n", "<leader>dj", require('dap').down, { noremap = true })
 
 --------------------------------------------------------------------------------
 --                                virtual text                                --

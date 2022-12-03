@@ -17,11 +17,41 @@ local mappings = {
     vr = "view references",
     sh = "signature help",
     F = "format",
-    fr = "telescope lsp references",
-    fs = "telescope doc symbol",
-    fd = "telescope errors",
-    wa = "add workspace folder",
-    wr = "remove workspace folder"
+    f = {
+      name = "telescope actions",
+      r = "telescope lsp references",
+      s = "telescope doc symbol",
+      d = "telescope errors",
+    },
+    w = {
+      name = "workspace actions",
+      a = "add workspace folder",
+      r = "remove workspace folder"
+    }
+  },
+
+  d = {
+    name = "dap",
+    c = "continue",
+    s = "stop",
+    r = "open repl",
+    l = "run last",
+    i = "hover inspect",
+    k = "up callstack",
+    j = "down callstack",
+    u = {
+      name = "ui",
+      t = "toggle ui",
+      o = "open ui",
+      c = "close ui"
+    },
+    e = "eval",
+    b = "toggle breakpoint",
+    B = {
+      name = "beakpoint opts",
+      c = "breakpoint condition",
+      m = "breakpoint msg"
+    }
   },
 
   -- telescope

@@ -55,8 +55,8 @@ map('n', '<down>', '<CMD>move +1<cr>', { noremap = true })
 -- quick fix list
 map('n', '<leader>qo', '<CMD>copen<CR>', { noremap = true })
 map('n', '<leader>qc', '<CMD>cclose<CR>', { noremap = true })
-map('n', '<C-p>', '<CMD>previous<CR>', { noremap = true })
-map('n', '<C-n>', '<CMD>cnext<CR>', { noremap = true })
+-- map('n', '<C-p>', '<CMD>previous<CR>', { noremap = true })
+-- map('n', '<C-n>', '<CMD>cnext<CR>', { noremap = true })
 
 -- substitution
 map('n', '<leader>S', ':%s//g<Left><Left>', { noremap = true })

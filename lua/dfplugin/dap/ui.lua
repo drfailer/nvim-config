@@ -27,10 +27,10 @@ require("dapui").setup({
     {
       elements = {
       -- Elements can be strings or table with id and size keys.
-        { id = "scopes", size = 0.25 },
-        "breakpoints",
-        "stacks",
-        "watches",
+        "scopes",
+        -- "breakpoints",
+        -- "stacks",
+        -- "watches",
       },
       size = 40, -- 40 columns
       position = "left",
@@ -76,7 +76,7 @@ require("dapui").setup({
 })
 
 -- mappings
-vim.keymap.set('n', '<leader>dO', require("dapui").open, { noremap = true })
-vim.keymap.set('n', '<leader>dC', require("dapui").close, { noremap = true })
-vim.keymap.set('n', '<leader>dT', require("dapui").toggle, { noremap = true })
-vim.keymap.set('v', '<leader>dE', require("dapui").eval, { noremap = true })
+vim.keymap.set('n', '<leader>duo', require("dapui").open, { noremap = true })
+vim.keymap.set('n', '<leader>duc', require("dapui").close, { noremap = true })
+vim.keymap.set('n', '<leader>dut', require("dapui").toggle, { noremap = true })
+vim.keymap.set('v', '<leader>de', require("dapui").eval, { noremap = true })
