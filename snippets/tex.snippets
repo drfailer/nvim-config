@@ -17,48 +17,48 @@ snippet begin
 ##### listes
 # item
 snippet item
-	\begin{item}
+	\begin{itemize}
 		${0}
-	\end{item}
+	\end{itemize}
 # it
 snippet it
 	\item ${0}
 ##### header
 snippet lheader
-	documentclass[a4paper]{article}
+	\documentclass[a4paper]{article}
 
-	usepackage[utf8]{inputenc}
-	usepackage[T1]{fontenc}
-	usepackage{textcomp}
-	usepackage{mathtools,amssymb,amsthm}
-	usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
-	usepackage[francais]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{textcomp}
+	\usepackage{mathtools,amssymb,amsthm}
+	\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
+	\usepackage[francais]{babel}
 
 	%============header and foot============
-	usepackage{fancyhdr}
-	pagestyle{fancy}
-	renewcommand\headrulewidth{1pt}
-	fancyhead[L]{\LaTeX \quad \bfseries Initiation}
-	fancyhead[R]{\includegraphics[scale=0.05]{image.png}}
-	fancyfoot[L]{CHASSAGNOL Rémi}
-	fancyfoot[R]{2019-2020}
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\renewcommand\headrulewidth{1pt}
+	\fancyhead[L]{\LaTeX \quad \bfseries Initiation}
+	\fancyhead[R]{\includegraphics[scale=0.05]{image.png}}
+	\fancyfoot[L]{CHASSAGNOL Rémi}
+	\fancyfoot[R]{2019-2020}
 
 	%================image=================
-	usepackage{graphicx}
-	graphicspath{{img/}}
+	\usepackage{graphicx}
+	\graphicspath{{img/}}
 	$0
 ##### math
 snippet lmathhead
 	%================Maths=================
-	newtheorem{prop}{Proposition}
-	newtheorem{cor}{Corollaire}
-	theoremstyle{plain}
-	newtheorem{thm}{Théorème}[section]
-	theoremstyle{Définition}
-	newtheorem{defi}[thm]{Définition}
-	theoremstyle{remark}
-	newtheorem{exe}{Exemple}
-	newtheorem*{rmq}{Remarque}
+	\newtheorem{prop}{Proposition}
+	\newtheorem{cor}{Corollaire}
+	\theoremstyle{plain}
+	\newtheorem{thm}{Théorème}[section]
+	\theoremstyle{Définition}
+	\newtheorem{defi}[thm]{Définition}
+	\theoremstyle{remark}
+	\newtheorem{exe}{Exemple}
+	\newtheorem*{rmq}{Remarque}
 	$0
 ##### info
 snippet linfos
@@ -71,17 +71,17 @@ snippet linfos
 # listing config
 snippet lsthead
 	%=================code=================
-	usepackage{verbatim}
-	usepackage{listings}
-	usepackage{color}
-	usepackage[table]{xcolor}
-	renewcommand{\listfigurename}{Table des figures}
-	renewcommand{\listfigurename}{Table des figures}
+	\usepackage{verbatim}
+	\usepackage{listings}
+	\usepackage{color}
+	\usepackage[table]{xcolor}
+	\renewcommand{\listfigurename}{Table des figures}
+	\renewcommand{\listfigurename}{Table des figures}
 	%==============code settings==========
-	definecolor{darkWhite}{rgb}{1,1,1}
-	definecolor{myred}{rgb}{1,0.22,0.22}
-	definecolor{mypurple}{rgb}{0.74,0.36,0.97}
-	lstset{
+	\definecolor{darkWhite}{rgb}{1,1,1}
+	\definecolor{myred}{rgb}{1,0.22,0.22}
+	\definecolor{mypurple}{rgb}{0.74,0.36,0.97}
+	\lstset{
 		mathescape,
 		aboveskip=3mm,
 		belowskip=-2mm,
@@ -123,3 +123,9 @@ snippet lstsec
 # listing line
 snippet lstline
 	\lstinline{$1}$0
+# bibliography
+snippet lbib
+	% bibliography
+	\bibliographystyle{plain}{}
+	\bibliography{${1:refs}} % refs.bib
+	$0

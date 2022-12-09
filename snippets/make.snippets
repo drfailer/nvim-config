@@ -6,3 +6,13 @@ snippet make
 
 	prog: ${0:main.c}
 		gcc $(CFLAGS) -o $@ $^ $(LDFLAGS)
+# latex (bib)
+snippet lmake
+	pfd: article.tex refs.bib
+		pdflatex article.tex
+		bibtex article
+		pdflatex article.tex
+		pdflatex article.tex
+
+	clean:
+		rm -rf *.log *.aux *.dvi *.bbl *.blg
