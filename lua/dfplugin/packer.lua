@@ -36,9 +36,6 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  -- nvim tree
-  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', } }
-
   -- utils:
   use 'windwp/nvim-autopairs'
   use 'jiangmiao/auto-pairs'

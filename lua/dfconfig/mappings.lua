@@ -94,9 +94,8 @@ end, { noremap = true })
 
 
 -- Explorer
-map('n', '<leader>e', '<CMD>NvimTreeToggle<CR>', { noremap = true })
--- map('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
--- map('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
+map('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
+map('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
 
 -- remember folds
 map('n', '<leader>mkv', '<CMD>mkview<CR>', { noremap = true })

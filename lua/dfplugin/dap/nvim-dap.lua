@@ -9,7 +9,7 @@ local map = vim.keymap.set
 map("n", "<leader>dc", require('dap').continue, { noremap = true })
 map("n", "<C-n>", require('dap').step_over, { noremap = true })
 map("n", "<C-s>", require('dap').step_into, { noremap = true })
-map("n", "<C-o>", require('dap').step_out, { noremap = true })
+map("n", "<leader>O", require('dap').step_out, { noremap = true })
 map("n", "<leader>ds", require('dap').close, { noremap = true })
 map("n", "<leader>db", require('dap').toggle_breakpoint, { noremap = true })
 map("n", "<leader>dBc", function()
