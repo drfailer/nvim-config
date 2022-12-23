@@ -24,11 +24,9 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- themes:
-  -- use 'Mofiqul/vscode.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'navarasu/onedark.nvim'
   use 'rose-pine/neovim'
-  use 'tiagovla/tokyodark.nvim'
 
   -- lualine:
   use {
@@ -60,24 +58,27 @@ return require('packer').startup(function()
   -- Treesitter:
   use 'nvim-treesitter/nvim-treesitter'
 
-  -- LSP:
-  use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-  -- DAP:
-  use 'mfussenegger/nvim-dap'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'rcarriga/nvim-dap-ui'
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
 
-  -- completion:
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'onsails/lspkind.nvim'
-
-  -- snippets:
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
+  }
 
   -- refactor:
   use {
@@ -89,7 +90,6 @@ return require('packer').startup(function()
   }
 
   -- lsp installer:
-  use { "williamboman/mason.nvim" }
 
   require("mason").setup()
 end)

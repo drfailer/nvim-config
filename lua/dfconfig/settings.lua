@@ -25,6 +25,7 @@ o.updatetime = 300
 o.timeoutlen = 500
 vim.o.conceallevel = 0
 vim.o.hlsearch = false
+vim.o.incsearch = true
 
 -- numbers
 o.number = true
@@ -74,9 +75,7 @@ vim.g.toggleVirtualEdit = false
 o.completeopt = {'menu', 'menuone', 'noinsert', 'noselect'}
 o.wildmode = {'longest', 'list', 'full'}
 
--- other options
-vim.api.nvim_command('set guicursor=')
-vim.api.nvim_command('set path+=**')
+o.guicursor = ""
 
 vim.g.netrw_banner = 0
 

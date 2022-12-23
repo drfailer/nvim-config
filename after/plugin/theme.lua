@@ -2,31 +2,6 @@
 --                                   THEME                                    --
 --------------------------------------------------------------------------------
 
--- vscode theme
--- local c = require('vscode.colors')
--- require('vscode').setup({
---     -- Enable transparent background
---     transparent = true,
-
---     -- Enable italic comment
---     italic_comments = true,
-
---     -- Disable nvim-tree background color
---     disable_nvimtree_bg = true,
-
---     -- Override colors (see ./lua/vscode/colors.lua)
---     color_overrides = {
---         vscLineNumber = '#FFFFFF',
---     },
-
---     -- Override highlight groups (see ./lua/vscode/theme.lua)
---     group_overrides = {
---         -- this supports the same val table as vim.api.nvim_set_hl
---         -- use colors from this colorscheme by requiring vscode.colors!
---         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
---     }
--- })
-
 -- Gruvbox
 require("gruvbox").setup({
   undercurl = true,
@@ -41,9 +16,9 @@ require("gruvbox").setup({
   inverse = true, -- invert background for search, diffs, statuslines and errors
   contrast = "hard", -- can be "hard", "soft" or empty string
   palette_overrides = {},
-  overrides = {
-    SignColumn = {bg = "#1d2021"}
-  },
+  -- overrides = {
+  --   SignColumn = {bg = "#1d2021"}
+  -- },
   dim_inactive = false,
   transparent_mode = true,
 })
@@ -63,7 +38,7 @@ require('rose-pine').setup({
 	disable_italics = false,
 
 	groups = {
-		background = 'base',
+		background = '#000000',
 		panel = 'surface',
 		border = 'highlight_med',
 		comment = 'muted',
@@ -86,14 +61,10 @@ require('rose-pine').setup({
 	},
 })
 
--- tokyodark
--- init.lua
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
-vim.g.tokyodark_color_gamma = "1.0"
-
--- require('onedark').load()
-vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme onedark")
 -- vim.cmd('colorscheme rose-pine')
--- vim.cmd("colorscheme tokyodark")
+vim.cmd("colorscheme gruvbox")
+
+
+-- init lualine
+require('lualine').setup()
