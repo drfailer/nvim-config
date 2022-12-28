@@ -26,7 +26,6 @@ return require('packer').startup(function()
   -- themes:
   use 'ellisonleao/gruvbox.nvim'
   use 'navarasu/onedark.nvim'
-  use 'rose-pine/neovim'
 
   -- lualine:
   use {
@@ -54,6 +53,9 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  -- plantuml syntax
+  use 'aklt/plantuml-syntax'
 
   -- Treesitter:
   use 'nvim-treesitter/nvim-treesitter'
