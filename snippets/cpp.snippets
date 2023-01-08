@@ -1,1 +1,31 @@
 extends c
+##### main
+snippet mainargs
+	int main(int argc, char **argv)
+	{
+		${0}
+		return 0;
+	}
+snippet main
+	int main(int, char**)
+	{
+		${0}
+		return 0;
+	}
+##### libs
+# io
+snippet io
+	#include <iostream>$0
+# std
+snippet string
+	#include <string>$0
+##### function
+# cout
+snippet cout
+	std::cout << $0
+# cin
+snippet cin
+	std::cin >> $0
+# endl
+snippet endl
+	std::endl$0
