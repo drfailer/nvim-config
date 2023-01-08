@@ -28,6 +28,26 @@ require('onedark').setup {
     style = 'dark'
 }
 
+-- rose-pine
+require('rose-pine').setup({
+	dark_variant = 'main',
+	groups = {
+		-- background = 'base',
+		background = '#000000',
+		headings = {
+			h1 = 'iris',
+			h2 = 'foam',
+			h3 = 'rose',
+			h4 = 'gold',
+			h5 = 'pine',
+			h6 = 'foam',
+		}
+	},
+})
+
+-- set colorscheme after options
+vim.cmd('colorscheme rose-pine')
+
 -- vim.cmd("colorscheme onedark")
 -- vim.cmd('colorscheme rose-pine')
 vim.cmd("colorscheme gruvbox")
