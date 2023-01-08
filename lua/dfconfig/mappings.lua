@@ -47,8 +47,8 @@ vim.keymap.set('i', '<C-o>', '<CR><Esc>kA', { noremap = true })
 -- move lines
 vim.keymap.set('n', '<up>', '<CMD>move -2<cr>', { noremap = true })
 vim.keymap.set('n', '<down>', '<CMD>move +1<cr>', { noremap = true })
-vim.keymap.set("v", "<up>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<down>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<', '<gv', { noremap = true })
 vim.keymap.set('v', '>', '>gv', { noremap = true })
 
@@ -103,4 +103,4 @@ vim.keymap.set('n', '<leader>mkv', '<CMD>mkview<CR>', { noremap = true })
 -- terminal
 vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<leader>vt', '<CMD>vert split <bar> terminal<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>vtt', '<CMD>split <bar> terminal<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>vT', '<CMD>split <bar> terminal<CR>', { noremap = true })
