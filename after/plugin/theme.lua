@@ -30,10 +30,11 @@ require('onedark').setup {
 
 -- rose-pine
 require('rose-pine').setup({
-	dark_variant = 'main',
+  -- main or moon
+	dark_variant = 'moon',
 	groups = {
-		-- background = 'base',
-		background = '#000000',
+		background = 'base',
+		-- background = '#000000',
 		headings = {
 			h1 = 'iris',
 			h2 = 'foam',
