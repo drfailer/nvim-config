@@ -31,7 +31,7 @@ require('onedark').setup {
 -- rose-pine
 require('rose-pine').setup({
   -- main or moon
-	dark_variant = 'moon',
+	dark_variant = 'main',
 	groups = {
 		background = 'base',
 		-- background = '#000000',
@@ -46,12 +46,9 @@ require('rose-pine').setup({
 	},
 })
 
--- set colorscheme after options
-vim.cmd('colorscheme rose-pine')
-
 -- vim.cmd("colorscheme onedark")
--- vim.cmd('colorscheme rose-pine')
-vim.cmd("colorscheme gruvbox")
+vim.cmd('colorscheme rose-pine')
+-- vim.cmd("colorscheme gruvbox")
 
 
 -- init lualine
