@@ -29,3 +29,17 @@ snippet cin
 # endl
 snippet endl
 	std::endl$0
+##### headerfiles and preprocessor
+snippet guard
+	#ifndef __`toupper(expand('%:r'))`__
+	#define __`toupper(expand('%:r'))`__
+
+	/* FUNCTIONS: */
+	$0
+
+	#endif
+##### classes
+snippet const "constructor"
+	${1:Class}::${1:Class}($2): $3
+	{
+	}
