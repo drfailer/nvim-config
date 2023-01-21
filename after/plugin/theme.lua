@@ -24,14 +24,26 @@ require("gruvbox").setup({
 })
 
 -- onedark
-require('onedark').setup {
-    style = 'dark'
-}
+-- require('onedark').setup {
+--     style = 'dark'
+-- }
+
+-- Default options:
+require('kanagawa').setup({
+    commentStyle = { italic = true },
+    keywordStyle = { italic = true},
+    statementStyle = { bold = false },
+    typeStyle = {},
+    variablebuiltinStyle = { italic = true},
+    transparent = true,
+    theme = "default"
+})
 
 -- rose-pine
 require('rose-pine').setup({
   -- main or moon
 	dark_variant = 'main',
+  disable_background = true,
 	groups = {
 		background = 'base',
 		-- background = '#000000',
@@ -47,8 +59,9 @@ require('rose-pine').setup({
 })
 
 -- vim.cmd("colorscheme onedark")
-vim.cmd('colorscheme rose-pine')
--- vim.cmd("colorscheme gruvbox")
+-- vim.cmd('colorscheme rose-pine')
+vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme kanagawa")
 
 
 -- init lualine
