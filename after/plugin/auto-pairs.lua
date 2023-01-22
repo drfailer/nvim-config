@@ -1,5 +1,5 @@
 require('nvim-autopairs').setup({
-  disable_filetype = { "TelescopePrompt" , "vim" },
+  disable_filetype = { "TelescopePrompt" , "vim", "netrw" },
   fast_wrap = {
     map = '<M-l>',
     chars = { '{', '[', '(', '"', "'" },

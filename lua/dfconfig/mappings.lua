@@ -5,8 +5,6 @@
 -- leader key
 vim.g.mapleader = ' '
 
-vim.keymap.set('c', 'w!!', 'w !sudo tee %', {})
-
 -- resize
 vim.keymap.set('n', '<M-j>', '<CMD>resize -2<CR>', { noremap = true })
 vim.keymap.set('n', '<M-k>', '<CMD>resize +2<CR>', { noremap = true })
