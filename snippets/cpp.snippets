@@ -34,12 +34,16 @@ snippet guard
 	#ifndef __`toupper(expand('%:r'))`__
 	#define __`toupper(expand('%:r'))`__
 
-	/* FUNCTIONS: */
 	$0
 
 	#endif
 ##### classes
-snippet const "constructor"
-	${1:Class}::${1:Class}($2): $3
-	{
-	}
+snippet class
+	class $1 {
+		private:
+			$0
+
+		public:
+			$1() = default;
+			~$1() = default;
+	};
