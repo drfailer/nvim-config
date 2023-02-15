@@ -90,6 +90,18 @@ vim.keymap.set('n', '<leader>tv', function()
   end
 end, { noremap = true })
 
+-- toggle centering
+vim.keymap.set('n', '<leader>tc', function()
+  if vim.g.toggleCentering then
+    vim.g.toggleCentering = false
+    vim.opt.scrolloff = 0
+    vim.opt.sidescrolloff = 0
+  else
+    vim.g.toggleCentering = true
+    vim.opt.scrolloff = 999
+    vim.opt.sidescrolloff = 999
+  end
+end, { noremap = true })
 
 -- Explorer
 vim.keymap.set('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
