@@ -22,7 +22,7 @@ local st = 'mz'
 local gt = '`z'
 
 -- generate methode
-vim.keymap.set('n', '<C-m>', st .. yankMethod .. insertEnd .. genMethod .. gt ,
+vim.keymap.set('n', '<C-m>', st .. yankMethod .. yankClassName .. insertEnd .. genMethod .. gt ,
 {noremap = true})
 -- getter
 vim.keymap.set('n', '<leader>lgg',
