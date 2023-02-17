@@ -73,6 +73,7 @@ vim.g.toggleVirtualEdit = false
 
 -- completion
 o.completeopt = {'menu', 'menuone', 'noinsert', 'noselect'}
+-- o.completeopt = {'menu', 'menuone', 'noselect'}
 o.wildmode = {'longest', 'list', 'full'}
 
 o.guicursor = ""
