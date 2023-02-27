@@ -40,13 +40,14 @@ require('kanagawa').setup({
 })
 
 -- rose-pine
+local myBgColor = '#000000'
 require('rose-pine').setup({
   -- main or moon
 	dark_variant = 'main',
   disable_background = true,
 	groups = {
-		background = 'base',
-		-- background = '#000000',
+		-- background = 'base',
+		background = myBgColor,
 		headings = {
 			h1 = 'iris',
 			h2 = 'foam',
@@ -56,11 +57,17 @@ require('rose-pine').setup({
 			h6 = 'foam',
 		}
 	},
+  -- highlight_groups = {
+  --   TelescopeNormal = { bg = myBgColor },
+  --   TelescopeBorder = { bg = myBgColor },
+  --   NormalFloat = { bg = myBgColor },
+  --   FloatBorder = { bg = myBgColor },
+  -- }
 })
 
 -- vim.cmd("colorscheme onedark")
--- vim.cmd('colorscheme rose-pine')
-vim.cmd("colorscheme gruvbox")
+vim.cmd('colorscheme rose-pine')
+-- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme kanagawa")
 
 
