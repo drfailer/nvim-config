@@ -3,7 +3,7 @@
 -- TODO: implement a way to add it in the cpp file directly
 
 -- yank
-local yankClassName = '?^class<CR>w"cyiW'
+local yankClassName = '?^class<CR>w"cyiw'
 local yankMethod = '^"myt;'
 local yankVar = '"vyiw'
 local yankType = '^"tyt '
@@ -12,8 +12,8 @@ local yankType = '^"tyt '
 local genMethod = '<C-r>m<Esc>0f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
 local genGetterDec = '<C-r>t get!<C-r>v() const;<Esc>?!<CR>"_xvU'
 local genSetterDec = 'void set!<C-r>v(<C-r>t);<Esc>?!<CR>"_xvU'
-local genGetterDef = '<C-r>t <C-r>c::get!<C-r>v() const<CR>{<CR>return <C-r>v;<CR>}<Esc>?!<CR>"_xvU=ip'
-local genSetterDef = 'void <C-r>c::set!<C-r>v(<C-r>t <C-r>v)<CR>{<CR>this-><C-r>v = <C-r>v;<CR>}<Esc>?!<CR>"_xvU=ip'
+local genGetterDef = '<C-r>t get!<C-r>v() const { return <C-r>v; }<Esc>?!<CR>"_xvU=ip'
+local genSetterDef = 'void set!<C-r>v(<C-r>t <C-r>v) { this-><C-r>v = <C-r>v; }<Esc>?!<CR>"_xvU=ip'
 
 -- goto
 local insertEnd = '/^#endif<CR>O<Esc>O'
@@ -26,9 +26,13 @@ vim.keymap.set('n', '<C-m>', st .. yankMethod .. yankClassName .. insertEnd .. g
 {noremap = true})
 -- getter
 vim.keymap.set('n', '<leader>lgg',
-st .. yankVar .. yankType .. yankClassName .. insertPub .. genGetterDec .. insertEnd .. genGetterDef .. gt
+st .. yankVar .. yankType .. insertPub .. genGetterDef .. gt
 , {noremap = true})
 -- setter
 vim.keymap.set('n', '<leader>lgs',
-st .. yankVar .. yankType .. yankClassName .. insertPub .. genSetterDec .. insertEnd .. genSetterDef .. gt
+st .. yankVar .. yankType .. insertPub .. genSetterDef .. gt
 , {noremap = true})
+
+-- clang-format
+vim.keymap.set('n', '<leader>FF', ':%!clang-format --style=Mozilla<cr>', {
+  noremap = true })
