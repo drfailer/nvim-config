@@ -65,11 +65,31 @@ require('rose-pine').setup({
   -- }
 })
 
+-- solarized config
+local function SolarizedTheme()
+  vim.g.solarized_termtrans = 1 -- transparent
+  vim.g.solarized_italics = 1
+  vim.g.solarized_statusline = 'normal'
+  vim.cmd('colorscheme solarized-high')
+  require('lualine').setup {
+    options = { theme  = 'solarized' }
+  }
+end
+
+local function ModusVivendi()
+  vim.g.modus_green_strings = 1
+  vim.g.modus_faint_syntax = 1
+  vim.g.modus_termtrans_enable = 0
+  vim.cmd("colorscheme modus-vivendi")
+end
+
 -- vim.cmd("colorscheme onedark")
-vim.cmd('colorscheme rose-pine')
+-- vim.cmd('colorscheme rose-pine')
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme kanagawa")
-
+-- vim.cmd("colorscheme modus-operandi")
+-- ModusVivendi()
+SolarizedTheme()
 
 -- init lualine
 require('lualine').setup()
