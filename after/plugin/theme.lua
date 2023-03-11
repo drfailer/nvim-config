@@ -36,7 +36,7 @@ require('kanagawa').setup({
     typeStyle = {},
     variablebuiltinStyle = { italic = true},
     transparent = true,
-    theme = "default"
+    theme = { "default" }
 })
 
 -- rose-pine

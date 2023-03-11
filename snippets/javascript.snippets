@@ -1,0 +1,50 @@
+##### jsx elements
+snippet div
+	<div>
+		${0}
+	</div>
+snippet form
+	<form>
+		${0}
+	</form>
+##### header
+snippet h1
+	<h1> ${0} </h1>
+snippet h2
+	<h2> ${0} </h2>
+snippet h3
+	<h3> ${0} </h3>
+##### imports
+snippet improut
+	import { BrowserRouter, Routes, Route } from "react-router-dom"
+snippet impboots
+	import 'bootstrap/dist/css/bootstrap.css'
+snippet implink
+	import { Link } from "react-router-dom";
+##### Router
+snippet router
+	<BrowserRouter>
+		<Header />
+		<Routes>
+			<Route>
+				<Route path="home" element={<Home />} />
+				<Route path="*" element={<Home />} />
+			</Route>
+		</Routes>
+	</BrowserRouter>
+snippet Link
+	<Link className="nav-link" aria-current="page" to="url">
+		${0:linkname}
+	</Link>
+##### Component
+snippet component
+	export const ${1:Component} = () => {
+		return (
+			<>
+				<h1>${1:Component}</h1>
+				<p>
+					${0}
+				</p>
+			</>
+		);
+	};

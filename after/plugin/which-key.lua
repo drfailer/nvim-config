@@ -80,6 +80,13 @@ local mappings = {
     l = "get diff right",
     j = "next diff",
     k = "previous diff"
+  },
+
+  -- toggle
+  t = {
+    name = "toggle",
+    v = "virtual edit",
+    c = "centering"
   }
 }
 
