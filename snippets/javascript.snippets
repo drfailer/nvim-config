@@ -26,10 +26,8 @@ snippet router
 	<BrowserRouter>
 		<Header />
 		<Routes>
-			<Route>
-				<Route path="home" element={<Home />} />
-				<Route path="*" element={<Home />} />
-			</Route>
+			<Route path="home" element={<Home />} />
+			<Route path="*" element={<Home />} />
 		</Routes>
 	</BrowserRouter>
 snippet Link
@@ -48,3 +46,20 @@ snippet component
 			</>
 		);
 	};
+##### form
+snippet completeForm
+	<form className="w-50 mx-auto" onSubmit={mySubmit}>
+		<h2>${0:Form title}</h2>
+		<label className="row mt-3" htmlFor="NAME">
+			<div align="right" className="col">Nom: </div>
+			<input className="col" type="text" id="NAME" value={NAME}
+				onChange={(e) => setName(e.target.value)}
+				required></input>
+		</label>
+		<div>
+			<button
+				type="submit"
+				className="btn btn-primary mt-3">SUBMIT</button>
+		</div>
+		<div className="warning">WARNING MESSAGE</div>
+	</form>

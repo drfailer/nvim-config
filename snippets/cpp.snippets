@@ -16,9 +16,18 @@ snippet main
 # io
 snippet io
 	#include <iostream>$0
-# std
+# string
 snippet string
 	#include <string>$0
+# algorithm
+snippet algo
+	#include <algorithm>$0
+# iterator
+snippet iter
+	#include <iterator>$0
+# exception
+snippet exception
+	#include <exception>$0
 ##### function
 # cout
 snippet cout
@@ -31,8 +40,8 @@ snippet endl
 	std::endl$0
 ##### headerfiles and preprocessor
 snippet guard
-	#ifndef __`toupper(expand('%:r'))`__
-	#define __`toupper(expand('%:r'))`__
+	#ifndef `toupper(expand('%:r'))`
+	#define `toupper(expand('%:r'))`
 
 	$0
 
@@ -48,3 +57,8 @@ snippet class
 			$1() = default;
 			~$1() = default;
 	};
+##### iterators
+snippet osit
+	std::ostream_iterator<${1:int}>(std::cout, "\n")$0
+snippet backinsit
+	std::back_insert_iterator<${2:std::vector<int>}>(${3:vector})$0
