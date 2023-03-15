@@ -66,30 +66,49 @@ require('rose-pine').setup({
 })
 
 -- solarized config
-local function SolarizedTheme()
+local function df_solarized()
   vim.g.solarized_termtrans = 1 -- transparent
   vim.g.solarized_italics = 1
   vim.g.solarized_statusline = 'normal'
   vim.cmd('colorscheme solarized-high')
+  -- vim.cmd('colorscheme solarized')
   require('lualine').setup {
     options = { theme  = 'solarized' }
   }
 end
 
-local function ModusVivendi()
+-- modus vivendi config
+local function df_modusVivendi()
   vim.g.modus_green_strings = 1
   vim.g.modus_faint_syntax = 1
   vim.g.modus_termtrans_enable = 0
   vim.cmd("colorscheme modus-vivendi")
 end
 
--- vim.cmd("colorscheme onedark")
--- vim.cmd('colorscheme rose-pine')
--- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme kanagawa")
--- vim.cmd("colorscheme modus-operandi")
--- ModusVivendi()
-SolarizedTheme()
+-- some settings for themes
+local function df_themeSettings()
+  vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
+  vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
+end
+
+-- set the given theme
+function df_setTheme(currentTheme)
+  if currentTheme == "solarized" then
+    df_solarized()
+  elseif currentTheme == "gruvbox" then
+    vim.cmd("colorscheme gruvbox")
+  elseif currentTheme == "rose-pine" then
+    vim.cmd('colorscheme rose-pine')
+  elseif currentTheme == "modus-vivendi" then
+    df_modusVivendi()
+  elseif currentTheme == "modus-operandi" then
+    vim.cmd("colorscheme modus-operandi")
+  end
+
+  df_themeSettings()
+end
+
+df_setTheme("solarized")
 
 -- init lualine
 require('lualine').setup()

@@ -86,7 +86,8 @@ local mappings = {
   t = {
     name = "toggle",
     v = "virtual edit",
-    c = "centering"
+    c = "centering",
+    l = "change bg"
   }
 }
 

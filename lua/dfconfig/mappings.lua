@@ -103,6 +103,15 @@ vim.keymap.set('n', '<leader>tc', function()
   end
 end, { noremap = true })
 
+-- switch between light and dark bg
+vim.keymap.set('n', '<leader>tl', function()
+  if vim.o.background == "dark" then
+    vim.o.background = "light"
+  else
+    vim.o.background = "dark"
+  end
+end)
+
 -- Explorer
 vim.keymap.set('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
