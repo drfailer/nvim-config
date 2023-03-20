@@ -7,7 +7,9 @@ require("gruvbox").setup({
   undercurl = true,
   underline = true,
   bold = true,
-  italic = true,
+  italic = {
+    comments = true
+  },
   strikethrough = true,
   invert_selection = false,
   invert_signs = false,
@@ -27,17 +29,6 @@ require("gruvbox").setup({
 -- require('onedark').setup {
 --     style = 'dark'
 -- }
-
--- Default options:
-require('kanagawa').setup({
-    commentStyle = { italic = true },
-    keywordStyle = { italic = true},
-    statementStyle = { bold = false },
-    typeStyle = {},
-    variablebuiltinStyle = { italic = true},
-    transparent = true,
-    theme = { "default" }
-})
 
 -- rose-pine
 local myBgColor = '#000000'
@@ -108,7 +99,8 @@ function df_setTheme(currentTheme)
   df_themeSettings()
 end
 
-df_setTheme("solarized")
+-- df_setTheme("solarized")
+df_setTheme("rose-pine")
 
 -- init lualine
 require('lualine').setup()

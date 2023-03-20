@@ -49,6 +49,9 @@ return require('packer').startup(function()
     end
   }
 
+  -- zen mode
+  use 'folke/zen-mode.nvim'
+
   -- telescope:
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
