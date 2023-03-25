@@ -62,7 +62,7 @@ local function df_doomOne()
   vim.g.doom_one_transparent_background = false
   vim.g.doom_one_plugin_telescope = true
   vim.g.doom_one_plugin_whichkey = true
-  vim.cmd("colorscheme doom-one")
+    vim.cmd.colorscheme('doom-one')
 end
 
 -- solarized config
@@ -70,7 +70,7 @@ local function df_solarized()
   vim.g.solarized_termtrans = 1 -- transparent
   vim.g.solarized_italics = 1
   vim.g.solarized_statusline = 'normal'
-  vim.cmd('colorscheme solarized-high')
+    vim.cmd.colorscheme('solarized-high')
   -- vim.cmd('colorscheme solarized')
   require('lualine').setup {
     options = { theme  = 'solarized' }
@@ -88,9 +88,9 @@ function df_setTheme(currentTheme)
   if currentTheme == "solarized" then
     df_solarized()
   elseif currentTheme == "gruvbox" then
-    vim.cmd("colorscheme gruvbox")
+    vim.cmd.colorscheme('gruvbox')
   elseif currentTheme == "rose-pine" then
-    vim.cmd('colorscheme rose-pine')
+    vim.cmd.colorscheme('rose-pine')
   elseif currentTheme == "doom-one" then
     df_doomOne()
   end
@@ -99,8 +99,8 @@ function df_setTheme(currentTheme)
 end
 
 -- df_setTheme("solarized")
--- df_setTheme("doom-one")
-df_setTheme("rose-pine")
+df_setTheme("doom-one")
+-- df_setTheme("rose-pine")
 
 -- init lualine
 require('lualine').setup()
