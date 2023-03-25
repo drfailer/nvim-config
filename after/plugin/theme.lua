@@ -56,6 +56,15 @@ require('rose-pine').setup({
   -- }
 })
 
+local function df_doomOne()
+  vim.g.doom_one_italic_comments = true
+  vim.g.doom_one_enable_treesitter = true
+  vim.g.doom_one_transparent_background = false
+  vim.g.doom_one_plugin_telescope = true
+  vim.g.doom_one_plugin_whichkey = true
+  vim.cmd("colorscheme doom-one")
+end
+
 -- solarized config
 local function df_solarized()
   vim.g.solarized_termtrans = 1 -- transparent
@@ -66,14 +75,6 @@ local function df_solarized()
   require('lualine').setup {
     options = { theme  = 'solarized' }
   }
-end
-
--- modus vivendi config
-local function df_modusVivendi()
-  vim.g.modus_green_strings = 1
-  vim.g.modus_faint_syntax = 1
-  vim.g.modus_termtrans_enable = 0
-  vim.cmd("colorscheme modus-vivendi")
 end
 
 -- some settings for themes
@@ -90,16 +91,15 @@ function df_setTheme(currentTheme)
     vim.cmd("colorscheme gruvbox")
   elseif currentTheme == "rose-pine" then
     vim.cmd('colorscheme rose-pine')
-  elseif currentTheme == "modus-vivendi" then
-    df_modusVivendi()
-  elseif currentTheme == "modus-operandi" then
-    vim.cmd("colorscheme modus-operandi")
+  elseif currentTheme == "doom-one" then
+    df_doomOne()
   end
 
   df_themeSettings()
 end
 
 -- df_setTheme("solarized")
+-- df_setTheme("doom-one")
 df_setTheme("rose-pine")
 
 -- init lualine
