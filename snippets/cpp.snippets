@@ -40,8 +40,8 @@ snippet endl
 	std::endl$0
 ##### headerfiles and preprocessor
 snippet guard
-	#ifndef `toupper(expand('%:r'))`
-	#define `toupper(expand('%:r'))`
+	#ifndef `toupper(expand('%:r'))_HPP`
+	#define `toupper(expand('%:r'))_HPP`
 
 	$0
 
@@ -62,3 +62,30 @@ snippet osit
 	std::ostream_iterator<${1:int}>(std::cout, "\n")$0
 snippet backinsit
 	std::back_insert_iterator<${2:std::vector<int>}>(${3:vector})$0
+##### operator
+# <<
+snippet op<<
+	std::ostream& operator<<(std::ostream& os, const ${1:Obj}& ${2:obj}) {
+		$0
+		return os;
+	}
+# <
+snippet op<
+	bool operator<const ${1:Obj} &${2:obj}) const {
+		$0
+	}
+# >
+snippet op>
+	bool operator>const ${1:Obj} &${2:obj}) const {
+		$0
+	}
+# ==
+snippet op==
+	bool operator==(const ${1:Obj} &${2:obj}) const {
+		$0
+	}
+# +
+snippet op+
+	${1:Obj} operator+(const ${1:Obj} &a, const ${1:Obj} &b) {
+		$0
+	}
