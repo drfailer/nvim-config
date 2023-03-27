@@ -70,8 +70,8 @@ local function df_solarized()
   vim.g.solarized_termtrans = 1 -- transparent
   vim.g.solarized_italics = 1
   vim.g.solarized_statusline = 'normal'
-    vim.cmd.colorscheme('solarized-high')
-  -- vim.cmd('colorscheme solarized')
+    -- vim.cmd.colorscheme('solarized-high')
+  vim.cmd('colorscheme solarized')
   require('lualine').setup {
     options = { theme  = 'solarized' }
   }
@@ -98,9 +98,10 @@ function df_setTheme(currentTheme)
   df_themeSettings()
 end
 
--- df_setTheme("solarized")
-df_setTheme("doom-one")
+df_setTheme("solarized")
+-- df_setTheme("doom-one")
 -- df_setTheme("rose-pine")
+-- df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()
