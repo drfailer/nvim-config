@@ -71,12 +71,12 @@ snippet op<<
 	}
 # <
 snippet op<
-	bool operator<const ${1:Obj} &${2:obj}) const {
+	bool operator<(const ${1:Obj} &${2:obj}) const {
 		$0
 	}
 # >
 snippet op>
-	bool operator>const ${1:Obj} &${2:obj}) const {
+	bool operator>(const ${1:Obj} &${2:obj}) const {
 		$0
 	}
 # ==
