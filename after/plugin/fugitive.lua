@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 --                                  fugitive                                  --
 --------------------------------------------------------------------------------
-vim.keymap.set('n', '<leader>gg', '<CMD>G<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>gs', '<CMD>G<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>gc', '<CMD>G commit<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>gp', '<CMD>G push<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>gL', '<CMD>G log<cr>', { noremap = true })
