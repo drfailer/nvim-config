@@ -80,17 +80,8 @@ o.guicursor = ""
 
 vim.g.netrw_banner = 0
 
--- viwiki
-vim.g.vimwiki_list = { { path = '~/Documents/wiki/', syntax = 'markdown', ext = '.md', } }
-vim.api.nvim_set_hl(0, 'VimwikiHeader1', { fg = "#b8bb26", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader2', { fg = "#fabd2f", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader3', { fg = "#d3869b", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader4', { fg = "#fb4934", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader5', { fg = "#8ec07c", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader6', { fg = "#fe8819", bold = true })
-
 --------------------------------------------------------------------------------
--- auto comands
+--                                auto comands                                --
 --------------------------------------------------------------------------------
 
 -- Highlight the region on yank
@@ -116,3 +107,30 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.pde" },
   command = [[set ft=java]],
 })
+
+--------------------------------------------------------------------------------
+--                                   viwiki                                   --
+--------------------------------------------------------------------------------
+
+vim.g.vimwiki_list = {
+  {
+    path = '~/Documents/wiki/',
+    syntax = 'markdown',
+    ext = '.md',
+    nested_syntaxes = {
+      python = 'python',
+      cpp = 'cpp',
+      c = 'c',
+      haskell = 'haskell',
+      rust = 'rust'
+    }
+  }
+}
+
+-- markdown headers
+vim.api.nvim_set_hl(0, 'VimwikiHeader1', { fg = "#b8bb26", bold = true })
+vim.api.nvim_set_hl(0, 'VimwikiHeader2', { fg = "#fabd2f", bold = true })
+vim.api.nvim_set_hl(0, 'VimwikiHeader3', { fg = "#d3869b", bold = true })
+vim.api.nvim_set_hl(0, 'VimwikiHeader4', { fg = "#fb4934", bold = true })
+vim.api.nvim_set_hl(0, 'VimwikiHeader5', { fg = "#8ec07c", bold = true })
+vim.api.nvim_set_hl(0, 'VimwikiHeader6', { fg = "#fe8819", bold = true })
