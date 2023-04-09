@@ -80,6 +80,9 @@ o.guicursor = ""
 
 vim.g.netrw_banner = 0
 
+-- viwiki
+vim.g.vimwiki_list = { { path = '~/Documents/wiki/', syntax = 'markdown', ext = '.md', } }
+
 --------------------------------------------------------------------------------
 -- auto comands
 --------------------------------------------------------------------------------

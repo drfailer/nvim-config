@@ -96,6 +96,8 @@ return require('packer').startup(function()
   }
 
   -- lsp installer:
-
   require("mason").setup()
+
+  -- vimwiki
+  use 'vimwiki/vimwiki'
 end)
