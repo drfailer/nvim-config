@@ -23,16 +23,15 @@ local gt = '`z'
 
 -- generate methode
 vim.keymap.set('n', '<C-m>', st .. yankMethod .. yankClassName .. insertEnd .. genMethod .. gt ,
-{noremap = true})
+{ noremap = true, buffer = true })
 -- getter
 vim.keymap.set('n', '<leader>lgg',
 st .. yankVar .. yankType .. insertPub .. genGetterDef .. gt
-, {noremap = true})
+, { noremap = true, buffer = true })
 -- setter
 vim.keymap.set('n', '<leader>lgs',
 st .. yankVar .. yankType .. insertPub .. genSetterDef .. gt
-, {noremap = true})
+, { noremap = true, buffer = true })
 
 -- clang-format
-vim.keymap.set('n', '<leader>FF', ':%!clang-format --style=Mozilla<cr>', {
-  noremap = true })
+vim.keymap.set('n', '<leader>FF', ':%!clang-format --style=Mozilla<cr>', { noremap = true, buffer = true  })

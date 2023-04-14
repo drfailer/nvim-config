@@ -30,8 +30,8 @@ vim.keymap.set('n', '<C-p>', '<CMD>bprevious<CR>', { noremap = true })
 
 -- managing tabs
 vim.keymap.set('n', '<leader>tn', '<CMD>tabnew<CR>', { noremap = true })
-vim.keymap.set('n', '<M-n>', '<CMD>tabnext<CR>', { noremap = true })
-vim.keymap.set('n', '<M-p>', '<CMD>tabprevious<CR>', { noremap = true })
+vim.keymap.set('n', '<M-x>', '<CMD>tabnext<CR>', { noremap = true })
+vim.keymap.set('n', '<M-w>', '<CMD>tabprevious<CR>', { noremap = true })
 
 -- move threw splits
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true })
@@ -53,8 +53,8 @@ vim.keymap.set('v', '>', '>gv', { noremap = true })
 -- quick fix list
 vim.keymap.set('n', '<leader>qo', '<CMD>copen<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>qc', '<CMD>cclose<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>qp', '<CMD>previous<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>qn', '<CMD>cnext<CR>', { noremap = true })
+vim.keymap.set('n', '<M-p>', '<CMD>cprev<CR>', { noremap = true })
+vim.keymap.set('n', '<M-n>', '<CMD>cnext<CR>', { noremap = true })
 
 -- substitution
 vim.keymap.set('n', '<leader>S', ':%s//g<Left><Left>', { noremap = true })
