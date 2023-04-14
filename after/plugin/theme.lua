@@ -36,6 +36,7 @@ require('rose-pine').setup({
   -- main or moon
 	dark_variant = 'main',
   disable_background = true,
+  disable_float_background = true,
 	groups = {
 		-- background = 'base',
 		background = myBgColor,
@@ -48,12 +49,6 @@ require('rose-pine').setup({
 			h6 = 'foam',
 		}
 	},
-  -- highlight_groups = {
-  --   TelescopeNormal = { bg = myBgColor },
-  --   TelescopeBorder = { bg = myBgColor },
-  --   NormalFloat = { bg = myBgColor },
-  --   FloatBorder = { bg = myBgColor },
-  -- }
 })
 
 local function df_doomOne()
@@ -100,8 +95,8 @@ end
 
 -- df_setTheme("solarized")
 -- df_setTheme("doom-one")
--- df_setTheme("rose-pine")
-df_setTheme("gruvbox")
+df_setTheme("rose-pine")
+-- df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()
