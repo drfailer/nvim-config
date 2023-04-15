@@ -35,3 +35,14 @@ st .. yankVar .. yankType .. insertPub .. genSetterDef .. gt
 
 -- clang-format
 vim.keymap.set('n', '<leader>FF', ':%!clang-format --style=Mozilla<cr>', { noremap = true, buffer = true  })
+
+-- invoke make
+local build_directory = ''
+vim.keymap.set('n', '<leader>cc',
+function()
+  if build_directory == '' then
+    build_directory = vim.fn.input('Build directory: ', '', 'file');
+  else
+    vim.cmd('make -C ' .. build_directory);
+  end
+end);
