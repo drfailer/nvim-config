@@ -95,8 +95,8 @@ end
 
 -- df_setTheme("solarized")
 -- df_setTheme("doom-one")
-df_setTheme("rose-pine")
--- df_setTheme("gruvbox")
+-- df_setTheme("rose-pine")
+df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()

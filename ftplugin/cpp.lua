@@ -42,7 +42,10 @@ vim.keymap.set('n', '<leader>cc',
 function()
   if build_directory == '' then
     build_directory = vim.fn.input('Build directory: ', '', 'file');
-  else
-    vim.cmd('make -C ' .. build_directory);
+    if build_directory == '' then
+      build_directory = '.'
+    end
   end
-end);
+  vim.cmd('make -C ' .. build_directory);
+end,
+{ noremap = true, buffer = true });

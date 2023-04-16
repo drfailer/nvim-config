@@ -122,7 +122,10 @@ vim.g.vimwiki_list = {
       cpp = 'cpp',
       c = 'c',
       haskell = 'haskell',
-      rust = 'rust'
+      rust = 'rust',
+      sh = 'sh',
+      bash = 'sh',
+      cmake = 'cmake'
     }
   }
 }
