@@ -16,7 +16,7 @@ require("gruvbox").setup({
   invert_tabline = false,
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "medium", -- can be "hard", "soft" or empty string
+  contrast = "hard", -- can be "hard", "soft" or empty string
   palette_overrides = {},
   -- overrides = {
   --   SignColumn = {bg = "#1d2021"}
@@ -26,51 +26,31 @@ require("gruvbox").setup({
 })
 
 -- onedark
--- require('onedark').setup {
---     style = 'dark'
--- }
+require('onedark').setup {
+    style = 'dark'
+}
 
--- rose-pine
-local myBgColor = '#000000'
-require('rose-pine').setup({
-  -- main or moon
-	dark_variant = 'main',
-  disable_background = true,
-  disable_float_background = true,
-	groups = {
-		-- background = 'base',
-		background = myBgColor,
-		headings = {
-			h1 = 'iris',
-			h2 = 'foam',
-			h3 = 'rose',
-			h4 = 'gold',
-			h5 = 'pine',
-			h6 = 'foam',
-		}
-	},
-})
-
-local function df_doomOne()
-  vim.g.doom_one_italic_comments = true
-  vim.g.doom_one_enable_treesitter = true
-  vim.g.doom_one_transparent_background = false
-  vim.g.doom_one_plugin_telescope = true
-  vim.g.doom_one_plugin_whichkey = true
-    vim.cmd.colorscheme('doom-one')
-end
-
--- solarized config
-local function df_solarized()
-  vim.g.solarized_termtrans = 1 -- transparent
-  vim.g.solarized_italics = 1
-  vim.g.solarized_statusline = 'normal'
-    -- vim.cmd.colorscheme('solarized-high')
-  vim.cmd('colorscheme solarized')
-  require('lualine').setup {
-    options = { theme  = 'solarized' }
-  }
-end
+require('NeoSolarized').setup {
+  style = "dark",
+  transparent = true,
+  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+  enable_italics = true,
+  styles = {
+    -- Style to be applied to different syntax groups
+    comments = { italic = true },
+    keywords = { italic = true },
+    functions = { bold = true },
+    variables = {},
+    string = { italic = true },
+    underline = true,
+    undercurl = true,
+  },
+  -- Add specific hightlight groups
+  on_highlights = function(highlights, colors)
+    highlights.ColorColumn.bg = '#073642'
+    highlights.CursorLine.bg = '#073642'
+  end,
+}
 
 -- some settings for themes
 local function df_themeSettings()
@@ -81,21 +61,18 @@ end
 -- set the given theme
 function df_setTheme(currentTheme)
   if currentTheme == "solarized" then
-    df_solarized()
+    vim.cmd.colorscheme('NeoSolarized')
   elseif currentTheme == "gruvbox" then
     vim.cmd.colorscheme('gruvbox')
-  elseif currentTheme == "rose-pine" then
-    vim.cmd.colorscheme('rose-pine')
-  elseif currentTheme == "doom-one" then
-    df_doomOne()
+  elseif currentTheme == "one" then
+    vim.cmd.colorscheme('gruvbox')
   end
 
   df_themeSettings()
 end
 
 -- df_setTheme("solarized")
--- df_setTheme("doom-one")
--- df_setTheme("rose-pine")
+-- df_setTheme("one")
 df_setTheme("gruvbox")
 
 -- init lualine

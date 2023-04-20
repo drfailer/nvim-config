@@ -25,9 +25,8 @@ return require('packer').startup(function()
 
   -- themes:
   use 'ellisonleao/gruvbox.nvim'
-  use 'rose-pine/neovim'
-  use 'ishan9299/nvim-solarized-lua'
-  use 'NTBBloodbath/doom-one.nvim'
+  use 'Tsuzat/NeoSolarized.nvim'
+  use 'navarasu/onedark.nvim'
 
   -- lualine:
   use {
