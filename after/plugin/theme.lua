@@ -56,6 +56,7 @@ require('NeoSolarized').setup {
 local function df_themeSettings()
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
+  vim.api.nvim_set_hl(0, 'Folded', { bg = None, fg = '#555555' })
 end
 
 -- set the given theme
