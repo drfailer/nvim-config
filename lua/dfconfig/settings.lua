@@ -65,6 +65,14 @@ o.fileencoding = 'utf-8'
 
 -- fold
 o.foldmethod = 'marker'
+-- function custom_fold_text()
+--     local line = vim.fn.getline(vim.v.foldstart)
+--     local line_count = vim.v.foldend - vim.v.foldstart + 1
+--     return line_count .. " • " .. line .. " v"
+
+-- end
+-- vim.opt.foldtext = 'v:lua.custom_fold_text()'
+vim.opt.fillchars = { fold = ' ' }
 
 -- formating
 vim.o.formatoptions = vim.o.formatoptions .. 'tcrqnj'
