@@ -30,27 +30,29 @@ require('onedark').setup {
     style = 'dark'
 }
 
-require('NeoSolarized').setup {
-  style = "dark",
-  transparent = true,
-  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-  enable_italics = true,
-  styles = {
-    -- Style to be applied to different syntax groups
-    comments = { italic = true },
-    keywords = { italic = true },
-    functions = { bold = true },
-    variables = {},
-    string = { italic = true },
-    underline = true,
-    undercurl = true,
-  },
-  -- Add specific hightlight groups
-  on_highlights = function(highlights, colors)
-    highlights.ColorColumn.bg = '#073642'
-    highlights.CursorLine.bg = '#073642'
-  end,
-}
+-- solarized config
+local function df_solarized()
+  vim.g.solarized_termtrans = 1 -- transparent
+  vim.g.solarized_italics = 1
+  vim.g.solarized_statusline = 'normal'
+  vim.cmd.colorscheme('solarized')
+  require('lualine').setup {
+    options = { theme  = 'solarized' }
+  }
+end
+
+-- modus vivendi config
+local function df_modus(light)
+  vim.g.modus_faint_syntax = 0
+  vim.g.modus_green_strings = 1
+  vim.g.modus_termtrans_enable = 1
+  vim.g.modus_dim_inactive_window = 0
+  if light then
+    vim.cmd.colorscheme('modus-operandi')
+  else
+    vim.cmd.colorscheme('modus-vivendi')
+  end
+end
 
 -- some settings for themes
 local function df_themeSettings()
@@ -62,17 +64,23 @@ end
 -- set the given theme
 function df_setTheme(currentTheme)
   if currentTheme == "solarized" then
-    vim.cmd.colorscheme('NeoSolarized')
+    df_solarized()
   elseif currentTheme == "gruvbox" then
     vim.cmd.colorscheme('gruvbox')
   elseif currentTheme == "one" then
     vim.cmd.colorscheme('gruvbox')
+  elseif currentTheme == "vivendi" then
+    df_modus(false)
+  elseif currentTheme == "operandi" then
+    df_modus(true)
   end
 
   df_themeSettings()
 end
 
 -- df_setTheme("solarized")
+-- df_setTheme("vivendi")
+-- df_setTheme("operandi")
 -- df_setTheme("one")
 df_setTheme("gruvbox")
 

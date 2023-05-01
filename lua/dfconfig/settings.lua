@@ -79,7 +79,7 @@ vim.opt.fillchars = { fold = ' ' }
 -- function! MyFoldText()
 --     let line = getline(v:foldstart)
 --     let folded_line_num = v:foldend - v:foldstart
---     let line_text = substitute(line, '{{{', '', 'g')
+--     let line_text = substitute(line, '', '', 'g')
 --     let fillcharcount = &textwidth - len(line_text) - len(folded_line_num)
 --     return '+'. repeat('-', 4) . line_text . repeat('.', fillcharcount) . ' (' . folded_line_num . ' L)'
 -- endfunction
@@ -143,7 +143,7 @@ vim.g.vimwiki_list = {
       rust = 'rust',
       sh = 'sh',
       bash = 'sh',
-      cmake = 'cmake'
+      cmake = 'cmake',
     }
   }
 }
