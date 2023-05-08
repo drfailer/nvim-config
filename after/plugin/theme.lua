@@ -6,7 +6,7 @@
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
-  bold = true,
+  bold = false,
   italic = {
     comments = true
   },
@@ -79,10 +79,10 @@ function df_setTheme(currentTheme)
 end
 
 -- df_setTheme("solarized")
--- df_setTheme("vivendi")
+df_setTheme("vivendi")
 -- df_setTheme("operandi")
 -- df_setTheme("one")
-df_setTheme("gruvbox")
+-- df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()

@@ -67,7 +67,7 @@ o.fileencoding = 'utf-8'
 o.foldmethod = 'marker'
 function custom_fold_text()
     local line = vim.fn.getline(vim.v.foldstart)
-    local text = vim.fn.substitute(line, '{{{', '', 'g')
+    local text = vim.fn.substitute(line, '', '', 'g')
     local line_count = vim.v.foldend - vim.v.foldstart + 1
     return text .. " • (" .. line_count .. " L)"
 
