@@ -5,7 +5,6 @@
 local o = vim.opt
 
 o.termguicolors = true
-
 o.hidden = true
 o.wrap = false
 o.ruler = true
@@ -64,6 +63,7 @@ o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'
 
 -- fold
+vim.g.custom_fold = false
 o.foldmethod = 'marker'
 function custom_fold_text()
     local line = vim.fn.getline(vim.v.foldstart)
@@ -72,17 +72,10 @@ function custom_fold_text()
     return text .. " • (" .. line_count .. " L)"
 
 end
-vim.opt.foldtext = 'v:lua.custom_fold_text()'
-vim.opt.fillchars = { fold = ' ' }
-
--- origninal
--- function! MyFoldText()
---     let line = getline(v:foldstart)
---     let folded_line_num = v:foldend - v:foldstart
---     let line_text = substitute(line, '', '', 'g')
---     let fillcharcount = &textwidth - len(line_text) - len(folded_line_num)
---     return '+'. repeat('-', 4) . line_text . repeat('.', fillcharcount) . ' (' . folded_line_num . ' L)'
--- endfunction
+if vim.g.custom_fold then
+  vim.opt.foldtext = 'v:lua.custom_fold_text()'
+  vim.opt.fillchars = { fold = ' ' }
+end
 
 -- formating
 vim.o.formatoptions = vim.o.formatoptions .. 'tcrqnj'

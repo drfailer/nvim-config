@@ -6,7 +6,8 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'clangd',
   'rust_analyzer',
-  'tsserver' -- TODO: remove this thing
+  'bashls',
+  -- 'tsserver'
 })
 
 local cmp = require('cmp')

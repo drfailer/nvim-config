@@ -25,11 +25,6 @@ require("gruvbox").setup({
   transparent_mode = true,
 })
 
--- onedark
-require('onedark').setup {
-    style = 'dark'
-}
-
 -- solarized config
 local function df_solarized()
   vim.g.solarized_termtrans = 1 -- transparent
@@ -67,8 +62,14 @@ function df_setTheme(currentTheme)
     df_solarized()
   elseif currentTheme == "gruvbox" then
     vim.cmd.colorscheme('gruvbox')
-  elseif currentTheme == "one" then
-    vim.cmd.colorscheme('gruvbox')
+  elseif currentTheme == "everforest" then
+    vim.g.everforest_background = 'hard'
+    vim.g.everforest_enable_italic = 1
+    vim.g.everforest_disable_italic_comment = 1
+    vim.g.everforest_transparent_background = 1
+    vim.g.everforest_dim_inactive_windows = 0
+    vim.g.everforest_sign_column_background = 'none'
+    vim.cmd.colorscheme('everforest')
   elseif currentTheme == "vivendi" then
     df_modus(false)
   elseif currentTheme == "operandi" then
@@ -81,8 +82,8 @@ end
 -- df_setTheme("solarized")
 -- df_setTheme("vivendi")
 -- df_setTheme("operandi")
--- df_setTheme("one")
-df_setTheme("gruvbox")
+df_setTheme("everforest")
+-- df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()
