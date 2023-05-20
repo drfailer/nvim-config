@@ -49,6 +49,21 @@ local function df_modus(light)
   end
 end
 
+-- everforest theme
+local function df_everforest()
+  vim.g.everforest_background = 'hard'
+  vim.g.everforest_enable_italic = 1
+  vim.g.everforest_disable_italic_comment = 1
+  vim.g.everforest_transparent_background = 1
+  vim.g.everforest_dim_inactive_windows = 0
+  vim.g.everforest_sign_column_background = 'none'
+  vim.g.everforest_spell_foreground = 'colored'
+  vim.g.everforest_spell_foreground = 'colored'
+  vim.g.everforest_diagnostic_text_highlight = 1
+  vim.g.everforest_diagnostic_virtual_text = 'colored'
+  vim.cmd.colorscheme('everforest')
+end
+
 -- some settings for themes
 local function df_themeSettings()
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
@@ -63,13 +78,7 @@ function df_setTheme(currentTheme)
   elseif currentTheme == "gruvbox" then
     vim.cmd.colorscheme('gruvbox')
   elseif currentTheme == "everforest" then
-    vim.g.everforest_background = 'hard'
-    vim.g.everforest_enable_italic = 1
-    vim.g.everforest_disable_italic_comment = 1
-    vim.g.everforest_transparent_background = 1
-    vim.g.everforest_dim_inactive_windows = 0
-    vim.g.everforest_sign_column_background = 'none'
-    vim.cmd.colorscheme('everforest')
+    df_everforest()
   elseif currentTheme == "vivendi" then
     df_modus(false)
   elseif currentTheme == "operandi" then
