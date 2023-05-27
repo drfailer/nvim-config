@@ -58,10 +58,11 @@ local function df_everforest()
   vim.g.everforest_dim_inactive_windows = 0
   vim.g.everforest_sign_column_background = 'none'
   vim.g.everforest_spell_foreground = 'colored'
-  vim.g.everforest_spell_foreground = 'colored'
+  -- vim.g.everforest_ui_contrast = 'high'
   vim.g.everforest_diagnostic_text_highlight = 1
   vim.g.everforest_diagnostic_virtual_text = 'colored'
   vim.cmd.colorscheme('everforest')
+  vim.api.nvim_set_hl(0, 'Visual', { bg = "#5d6b66" }) -- the default color is not visible enough for me
 end
 
 -- some settings for themes
