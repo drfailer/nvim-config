@@ -25,8 +25,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set('i', '<c-u>', '<ESC>viwUea', { noremap = true })
 
 -- buffer navigation
-vim.keymap.set('n', '<C-n>', '<CMD>bnext<CR>', { noremap = true })
-vim.keymap.set('n', '<C-p>', '<CMD>bprevious<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>bn', '<CMD>bnext<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>bp', '<CMD>bprevious<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>bk', '<CMD>bdelete<CR>', { noremap = true })
 
 -- managing tabs
 vim.keymap.set('n', '<leader>tn', '<CMD>tabnew<CR>', { noremap = true })
