@@ -1,4 +1,4 @@
---------------------------------------------------------------------------------oacjer
+--------------------------------------------------------------------------------
 --                                  PLUGINS                                   --
 --------------------------------------------------------------------------------
 
@@ -28,6 +28,7 @@ return require('packer').startup(function()
   use 'ishan9299/nvim-solarized-lua'
   use 'ishan9299/modus-theme-vim'
   use 'sainnhe/everforest'
+  use 'habamax/vim-habanight'
 
   -- lualine:
   use {

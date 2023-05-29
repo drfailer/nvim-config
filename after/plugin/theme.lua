@@ -64,6 +64,11 @@ local function df_everforest()
   vim.cmd.colorscheme('everforest')
 end
 
+local function df_habanight()
+  vim.g.habanight_transp_bg = true
+  vim.cmd.colorscheme('habanight')
+end
+
 -- some settings for themes
 local function df_themeSettings()
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
@@ -79,6 +84,8 @@ function df_setTheme(currentTheme)
     vim.cmd.colorscheme('gruvbox')
   elseif currentTheme == "everforest" then
     df_everforest()
+  elseif currentTheme == "habanight" then
+    df_habanight()
   elseif currentTheme == "vivendi" then
     df_modus(false)
   elseif currentTheme == "operandi" then
@@ -91,7 +98,8 @@ end
 -- df_setTheme("solarized")
 -- df_setTheme("vivendi")
 -- df_setTheme("operandi")
-df_setTheme("everforest")
+-- df_setTheme("everforest")
+df_setTheme("habanight")
 -- df_setTheme("gruvbox")
 
 -- init lualine
