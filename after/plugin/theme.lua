@@ -70,6 +70,14 @@ local function df_habanight()
   vim.cmd.colorscheme('habanight')
 end
 
+local function df_matrix()
+  vim.g.matrix_contrast = false
+  vim.g.matrix_borders = true
+  vim.g.matrix_disable_background = true
+  vim.g.matrix_italic = true
+  vim.cmd.colorscheme('matrix')
+end
+
 -- some settings for themes
 local function df_themeSettings()
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
@@ -91,17 +99,20 @@ function df_setTheme(currentTheme)
     df_modus(false)
   elseif currentTheme == "operandi" then
     df_modus(true)
+  elseif currentTheme == "matrix" then
+    df_matrix()
   end
 
   df_themeSettings()
 end
 
 -- df_setTheme("solarized")
--- df_setTheme("vivendi")
+df_setTheme("vivendi")
 -- df_setTheme("operandi")
-df_setTheme("everforest")
+-- df_setTheme("everforest")
 -- df_setTheme("habanight")
 -- df_setTheme("gruvbox")
+-- df_setTheme("matrix")
 
 -- init lualine
 require('lualine').setup()
