@@ -1,3 +1,7 @@
+--------------------------------------------------------------------------------
+--                              code generation                               --
+--------------------------------------------------------------------------------
+
 -- note: this could be done in a better way using treesitter
 -- generate methodes
 -- TODO: implement a way to add it in the cpp file directly
@@ -9,7 +13,7 @@ local yankVar = '"vyiw'
 local yankType = '^"tyt '
 
 -- generation
-local genMethod = '<C-r>m<Esc>0f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
+local genMethod = '<C-r>m<Esc>-4f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
 local genGetterDec = '<C-r>t get!<C-r>v() const;<Esc>?!<CR>"_xvU'
 local genSetterDec = 'void set!<C-r>v(<C-r>t);<Esc>?!<CR>"_xvU'
 local genGetterDef = '<C-r>t get!<C-r>v() const { return <C-r>v; }<Esc>?!<CR>"_xvU=ip'
@@ -22,30 +26,14 @@ local st = 'mz'
 local gt = '`z'
 
 -- generate methode
-vim.keymap.set('n', '<C-m>', st .. yankMethod .. yankClassName .. insertEnd .. genMethod .. gt ,
-{ noremap = true, buffer = true })
+vim.keymap.set('n', '<C-m>',
+  st .. yankMethod .. yankClassName .. insertEnd .. genMethod .. gt,
+  { noremap = true, buffer = true })
 -- getter
 vim.keymap.set('n', '<leader>lgg',
-st .. yankVar .. yankType .. insertPub .. genGetterDef .. gt
-, { noremap = true, buffer = true })
+  st .. yankVar .. yankType .. insertPub .. genGetterDef .. gt,
+  { noremap = true, buffer = true })
 -- setter
 vim.keymap.set('n', '<leader>lgs',
-st .. yankVar .. yankType .. insertPub .. genSetterDef .. gt
-, { noremap = true, buffer = true })
-
--- clang-format
-vim.keymap.set('n', '<leader>FF', ':%!clang-format --style=Mozilla<cr>', { noremap = true, buffer = true  })
-
--- invoke make
-local build_directory = ''
-vim.keymap.set('n', '<leader>cc',
-function()
-  if build_directory == '' then
-    build_directory = vim.fn.input('Build directory: ', '', 'file');
-    if build_directory == '' then
-      build_directory = '.'
-    end
-  end
-  vim.cmd('make -C ' .. build_directory);
-end,
-{ noremap = true, buffer = true });
+  st .. yankVar .. yankType .. insertPub .. genSetterDef .. gt,
+  { noremap = true, buffer = true })

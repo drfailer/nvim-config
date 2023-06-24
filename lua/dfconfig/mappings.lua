@@ -18,6 +18,9 @@ vim.keymap.set('i', 'kl', '<Esc>la', { noremap = true })
 -- fix J
 vim.keymap.set("n", "J", "mzJ`z")
 
+-- avoid Q to run the last macro
+vim.keymap.set("n", "Q", "A")
+
 -- no delete copy
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
