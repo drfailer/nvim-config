@@ -128,12 +128,39 @@ vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<leader>vt', '<CMD>vert split <bar> terminal<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>vT', '<CMD>split <bar> terminal<CR>', { noremap = true })
 
+-- netrw mapping (https://www.reddit.com/r/neovim/comments/ud2w4k/how_to_remap_netrw_to_n_in_keybindingsinitlua/)
+vim.api.nvim_create_autocmd('filetype', {
+  pattern = 'netrw',
+  desc = 'Better mappings for netrw',
+  callback = function()
+    local bind = function(lhs, rhs)
+      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
+    end
+    -- mappings
+    bind('l', '<CR>')
+    bind('h', '-')
+  end
+})
 
---------------------------------------------------------------------------------
---                             freestyle keyboard                             --
---------------------------------------------------------------------------------
 
--- insert some character that are difficult to reach
+-- remap keys that are difficult to reach
+
+-- insert
 vim.keymap.set('i', '<C-y>', '`', { noremap = true })
 vim.keymap.set('i', '<C-u>', '<C-v>\\', { noremap = true })
+
+-- remap the C-^
 vim.keymap.set('n', '<C-p>', '<C-^>', { noremap = true })
+
+-- yet another escape cmd
+vim.keymap.set('v', '<C-Space>', '<Esc>', { noremap = true })
+
+-- [ is difficult to reach on azerty keyboards
+vim.keymap.set('n', 'viq', 'vi[', { noremap = true })
+vim.keymap.set('n', 'vaq', 'va[', { noremap = true })
+vim.keymap.set('n', 'yiq', 'yi[', { noremap = true })
+vim.keymap.set('n', 'yaq', 'ya[', { noremap = true })
+vim.keymap.set('n', 'diq', 'di[', { noremap = true })
+vim.keymap.set('n', 'daq', 'da[', { noremap = true })
+vim.keymap.set('n', 'ciq', 'ci[', { noremap = true })
+vim.keymap.set('n', 'caq', 'ca[', { noremap = true })
