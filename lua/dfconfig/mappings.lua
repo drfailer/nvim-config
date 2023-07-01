@@ -127,3 +127,13 @@ vim.keymap.set('n', '<leader>mkv', '<CMD>mkview<CR>', { noremap = true })
 vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<leader>vt', '<CMD>vert split <bar> terminal<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>vT', '<CMD>split <bar> terminal<CR>', { noremap = true })
+
+
+--------------------------------------------------------------------------------
+--                             freestyle keyboard                             --
+--------------------------------------------------------------------------------
+
+-- insert some character that are difficult to reach
+vim.keymap.set('i', '<C-y>', '`', { noremap = true })
+vim.keymap.set('i', '<C-u>', '<C-v>\\', { noremap = true })
+vim.keymap.set('n', '<C-p>', '<C-^>', { noremap = true })

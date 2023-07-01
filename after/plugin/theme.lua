@@ -106,8 +106,8 @@ function df_setTheme(currentTheme)
   df_themeSettings()
 end
 
--- df_setTheme("solarized")
-df_setTheme("vivendi")
+df_setTheme("solarized")
+-- df_setTheme("vivendi")
 -- df_setTheme("operandi")
 -- df_setTheme("everforest")
 -- df_setTheme("habanight")
