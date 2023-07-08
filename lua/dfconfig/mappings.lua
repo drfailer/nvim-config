@@ -147,7 +147,7 @@ vim.api.nvim_create_autocmd('filetype', {
 
 -- insert
 vim.keymap.set('i', '<C-y>', '`', { noremap = true })
-vim.keymap.set('i', '<C-u>', '<C-v>\\', { noremap = true })
+vim.keymap.set('i', '<C-_>', '<C-v>\\', { noremap = true })
 
 -- remap the C-^
 vim.keymap.set('n', '<C-p>', '<C-^>', { noremap = true })

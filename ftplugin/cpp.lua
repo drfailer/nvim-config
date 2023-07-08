@@ -13,7 +13,7 @@ local yankVar = '"vyiw'
 local yankType = '^"tyt '
 
 -- generation
-local genMethod = '<C-r>m<Esc>-4f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
+local genMethod = '<C-r>m<Esc>0f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
 local genGetterDec = '<C-r>t get!<C-r>v() const;<Esc>?!<CR>"_xvU'
 local genSetterDec = 'void set!<C-r>v(<C-r>t);<Esc>?!<CR>"_xvU'
 local genGetterDef = '<C-r>t get!<C-r>v() const { return <C-r>v; }<Esc>?!<CR>"_xvU=ip'
