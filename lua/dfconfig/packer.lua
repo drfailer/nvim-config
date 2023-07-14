@@ -24,12 +24,10 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- themes:
-  use 'ellisonleao/gruvbox.nvim'
+  use 'gruvbox-community/gruvbox'
+  use 'sainnhe/everforest'
   use 'ishan9299/nvim-solarized-lua'
   use 'ishan9299/modus-theme-vim'
-  use 'sainnhe/everforest'
-  use 'habamax/vim-habanight'
-  use 'iruzo/matrix-nvim'
 
   -- lualine:
   use {

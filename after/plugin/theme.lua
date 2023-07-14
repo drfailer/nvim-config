@@ -2,28 +2,14 @@
 --                                   THEME                                    --
 --------------------------------------------------------------------------------
 
--- Gruvbox
-require("gruvbox").setup({
-  undercurl = true,
-  underline = true,
-  bold = false,
-  italic = {
-    comments = true
-  },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "hard", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  -- overrides = {
-  --   SignColumn = {bg = "#1d2021"}
-  -- },
-  dim_inactive = false,
-  transparent_mode = true,
-})
+-- gruvbox
+local function df_gruvbox()
+  vim.g.gruvbox_contrast_dark = 'hard'
+  -- vim.g.gruvbox_contrast_dark = 'medium'
+  vim.cmd.colorscheme('gruvbox')
+  vim.api.nvim_set_hl(0, 'Normal', { bg = None })
+  vim.api.nvim_set_hl(0, 'Float', { bg = None })
+end
 
 -- solarized config
 local function df_solarized()
@@ -65,19 +51,6 @@ local function df_everforest()
   vim.api.nvim_set_hl(0, 'Visual', { bg = "#5d6b66" }) -- the default color is not visible enough for me
 end
 
-local function df_habanight()
-  vim.g.habanight_transp_bg = true
-  vim.cmd.colorscheme('habanight')
-end
-
-local function df_matrix()
-  vim.g.matrix_contrast = false
-  vim.g.matrix_borders = true
-  vim.g.matrix_disable_background = true
-  vim.g.matrix_italic = true
-  vim.cmd.colorscheme('matrix')
-end
-
 -- some settings for themes
 local function df_themeSettings()
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
@@ -90,17 +63,13 @@ function df_setTheme(currentTheme)
   if currentTheme == "solarized" then
     df_solarized()
   elseif currentTheme == "gruvbox" then
-    vim.cmd.colorscheme('gruvbox')
+    df_gruvbox()
   elseif currentTheme == "everforest" then
     df_everforest()
-  elseif currentTheme == "habanight" then
-    df_habanight()
   elseif currentTheme == "vivendi" then
     df_modus(false)
   elseif currentTheme == "operandi" then
     df_modus(true)
-  elseif currentTheme == "matrix" then
-    df_matrix()
   end
 
   df_themeSettings()
@@ -109,10 +78,8 @@ end
 -- df_setTheme("solarized")
 -- df_setTheme("vivendi")
 -- df_setTheme("operandi")
-df_setTheme("everforest")
--- df_setTheme("habanight")
--- df_setTheme("gruvbox")
--- df_setTheme("matrix")
+-- df_setTheme("everforest")
+df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()

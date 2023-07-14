@@ -68,7 +68,7 @@ vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { norema
 -- spell PROBLEME
 vim.keymap.set('n', '<F6>', '<CMD>setlocal spell! spelllang=fr,cjk<cr>', { noremap = true })
 vim.keymap.set('n', '<F7>', '<CMD>set spelllang=en,cjk<cr>', { noremap = true })
-vim.keymap.set('n', '<M-;>', '<ESC>1z=', { noremap = true })
+vim.keymap.set('n', '<leader>s', '<ESC>1z=', { noremap = true })
 vim.keymap.set('n', '<left>', '[s', { noremap = true })
 vim.keymap.set('n', '<right>', ']s', { noremap = true })
 
