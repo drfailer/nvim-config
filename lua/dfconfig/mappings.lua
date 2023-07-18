@@ -34,8 +34,9 @@ vim.keymap.set('n', '<leader>bk', '<CMD>bdelete<CR>', { noremap = true })
 
 -- managing tabs
 vim.keymap.set('n', '<leader>tn', '<CMD>tabnew<CR>', { noremap = true })
-vim.keymap.set('n', '<M-x>', '<CMD>tabnext<CR>', { noremap = true })
-vim.keymap.set('n', '<M-w>', '<CMD>tabprevious<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>te', '<CMD>tabe %<CR>', { noremap = true })
+vim.keymap.set('n', '<M-o>', '<CMD>tabnext<CR>', { noremap = true })
+vim.keymap.set('n', '<M-y>', '<CMD>tabprevious<CR>', { noremap = true })
 
 -- move threw splits
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true })
