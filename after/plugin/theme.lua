@@ -78,8 +78,8 @@ end
 -- df_setTheme("solarized")
 -- df_setTheme("vivendi")
 -- df_setTheme("operandi")
--- df_setTheme("everforest")
-df_setTheme("gruvbox")
+df_setTheme("everforest")
+-- df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()

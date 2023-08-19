@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'clangd',
   'rust_analyzer',
   'bashls',
+  'ltex',
   -- 'tsserver'
 })
 
