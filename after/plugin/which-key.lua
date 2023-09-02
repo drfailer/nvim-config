@@ -15,6 +15,7 @@ local mappings = {
     h = "signature help",
     s = "workspace symbol",
     vr = "view references",
+    F = "buff format",
     f = {
       name = "telescope actions",
       r = "telescope lsp references",
@@ -22,30 +23,6 @@ local mappings = {
       d = "telescope errors",
     },
   },
-
-  -- d = {
-  --   name = "dap",
-  --   c = "continue",
-  --   s = "stop",
-  --   r = "open repl",
-  --   l = "run last",
-  --   i = "hover inspect",
-  --   k = "up callstack",
-  --   j = "down callstack",
-  --   u = {
-  --     name = "ui",
-  --     t = "toggle ui",
-  --     o = "open ui",
-  --     c = "close ui"
-  --   },
-  --   e = "eval",
-  --   b = "toggle breakpoint",
-  --   B = {
-  --     name = "beakpoint opts",
-  --     c = "breakpoint condition",
-  --     m = "breakpoint msg"
-  --   }
-  -- },
 
   -- telescope
   f = {

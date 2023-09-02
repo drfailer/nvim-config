@@ -26,8 +26,7 @@ return require('packer').startup(function()
   -- themes:
   use 'gruvbox-community/gruvbox'
   use 'sainnhe/everforest'
-  use 'ishan9299/nvim-solarized-lua'
-  use 'ishan9299/modus-theme-vim'
+  use 'savq/melange-nvim'
 
   -- lualine:
   use {
