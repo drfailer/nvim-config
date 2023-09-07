@@ -11,4 +11,9 @@ vim.keymap.set('n', '<leader>fs', function()
   require('telescope.builtin').grep_string({ search = "^#", grep_open_files = true, use_regex = true })
 end, {})
 
+-- format text
+vim.keymap.set('v', '<leader>mb', 'c**<C-r>"**<Esc>', { noremap = true, buffer = true})
+vim.keymap.set('v', '<leader>mi', 'c*<C-r>"*<Esc>', { noremap = true, buffer = true})
+vim.keymap.set('v', '<leader>ml', 'c[<C-r>"](<C-r>")<Esc>0f(i<CR><Esc>V:s/ /-/g<CR>kgJ', { noremap = true, buffer = true})
+
 -- vim.cmd("TSDisable highlight") -- disable doesn't work in Treesitter config

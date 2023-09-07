@@ -45,8 +45,8 @@ function df_setTheme(currentTheme)
   df_themeSettings()
 end
 
-df_setTheme("everforest")
--- df_setTheme("melange")
+-- df_setTheme("everforest")
+df_setTheme("melange")
 -- df_setTheme("gruvbox")
 
 -- init lualine

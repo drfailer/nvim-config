@@ -142,9 +142,9 @@ vim.g.vimwiki_list = {
 }
 
 -- markdown headers
-vim.api.nvim_set_hl(0, 'VimwikiHeader1', { fg = "#b8bb26", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader2', { fg = "#fabd2f", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader3', { fg = "#d3869b", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader4', { fg = "#fb4934", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader5', { fg = "#8ec07c", bold = true })
-vim.api.nvim_set_hl(0, 'VimwikiHeader6', { fg = "#fe8819", bold = true })
+-- vim.api.nvim_set_hl(0, 'VimwikiHeader1', { fg = "#b8bb26", bold = true })
+-- vim.api.nvim_set_hl(0, 'VimwikiHeader2', { fg = "#fabd2f", bold = true })
+-- vim.api.nvim_set_hl(0, 'VimwikiHeader3', { fg = "#d3869b", bold = true })
+-- vim.api.nvim_set_hl(0, 'VimwikiHeader4', { fg = "#fb4934", bold = true })
+-- vim.api.nvim_set_hl(0, 'VimwikiHeader5', { fg = "#8ec07c", bold = true })
+-- vim.api.nvim_set_hl(0, 'VimwikiHeader6', { fg = "#fe8819", bold = true })
