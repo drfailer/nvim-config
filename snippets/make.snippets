@@ -5,7 +5,7 @@ snippet make
 	LDFLAGS = ${1:-lm}
 
 	prog: ${0:main.c}
-		gcc $(CFLAGS) -o $@ $^ $(LDFLAGS)
+		$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 # latex (bib)
 snippet lmake
 	pfd: article.tex refs.bib
