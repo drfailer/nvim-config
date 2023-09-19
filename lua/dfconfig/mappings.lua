@@ -115,6 +115,7 @@ vim.keymap.set('n', '<leader>tl', function()
   else
     vim.o.background = "dark"
   end
+  df_themeSettings()
 end)
 
 -- Explorer

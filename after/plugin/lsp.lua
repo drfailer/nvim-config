@@ -6,7 +6,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'clangd',
   'rust_analyzer',
-  'bashls',
+  -- 'bashls',
   -- 'ltex',
   -- 'tsserver'
 })

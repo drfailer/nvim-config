@@ -24,7 +24,7 @@ local function df_everforest()
 end
 
 -- some settings for themes
-local function df_themeSettings()
+function df_themeSettings()
   vim.api.nvim_set_hl(0, 'Normal', { bg = None })
   vim.api.nvim_set_hl(0, 'Float', { bg = None })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
