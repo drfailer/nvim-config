@@ -3,13 +3,27 @@ vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-  'clangd',
-  'rust_analyzer',
-  -- 'bashls',
-  -- 'ltex',
-  -- 'tsserver'
+--------------------------------------------------------------------------------
+--                                   Mason                                    --
+--------------------------------------------------------------------------------
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'clangd',
+    'rust_analyzer',
+    -- 'bashls',
+    -- 'ltex',
+    -- 'tsserver'
+  },
+  handlers = {
+    lsp.default_setup,
+  },
 })
+
+--------------------------------------------------------------------------------
+--                                    cmp                                     --
+--------------------------------------------------------------------------------
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Insert}
@@ -18,15 +32,14 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-j>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
+  -- disable completion with tab
+  -- this helps with copilot setup
+  ['<CR>'] = nil,
+  ['<Tab>'] = nil,
+  ['<S-Tab>'] = nil,
 })
 
--- disable completion with tab
--- this helps with copilot setup
-cmp_mappings['<CR>'] = nil
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
+cmp.setup({
   mapping = cmp_mappings,
   preselect = 'none',
   sources = {
@@ -36,6 +49,10 @@ lsp.setup_nvim_cmp({
     {name = 'luasnip', keyword_length = 2},
   }
 })
+
+--------------------------------------------------------------------------------
+--                                    lsp                                     --
+--------------------------------------------------------------------------------
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
@@ -70,6 +87,9 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+--------------------------------------------------------------------------------
+--                                  snippets                                  --
+--------------------------------------------------------------------------------
 
 -- snipmate like snippet load
 require("luasnip.loaders.from_snipmate").lazy_load()
