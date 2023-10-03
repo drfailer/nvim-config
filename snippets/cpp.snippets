@@ -50,12 +50,12 @@ snippet guard
 snippet class
 	class $1
 	{
-		private:
-			$0
+	public:
+		$1() = default;
+		~$1() = default;
 
-		public:
-			$1() = default;
-			~$1() = default;
+	private:
+		$0
 	};
 ##### iterators
 snippet osit
