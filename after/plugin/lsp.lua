@@ -63,21 +63,27 @@ vim.diagnostic.config({
 --------------------------------------------------------------------------------
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Insert}
 local cmp_action = require('lsp-zero').cmp_action()
+local cmp_format = require('lsp-zero').cmp_format()
+
+local cmp_select = {behavior = cmp.SelectBehavior.Insert}
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-j>'] = cmp.mapping.confirm({ select = true }),
   ['<C-Space>'] = cmp.mapping.complete(),
   ['<CR>'] = nil,
-  ['<Tab>'] = cmp_action.luasnip_supertab(),
-  ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+  ['<Tab>'] = nil,
+  ['<S-Tab>'] = nil,
 })
 
 cmp.setup({
   mapping = cmp_mappings,
-  preselect = 'none',
+  preselect = 'item',
+  formatting = cmp_format,
+  completion = {
+      completeopt = 'menu,menuone,noselect'
+  },
   sources = {
     {name = 'path'},
     {name = 'nvim_lsp', keyword_length = 1},
