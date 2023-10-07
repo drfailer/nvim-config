@@ -22,35 +22,6 @@ require('mason-lspconfig').setup({
 })
 
 --------------------------------------------------------------------------------
---                                    cmp                                     --
---------------------------------------------------------------------------------
-
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Insert}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-j>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-  -- disable completion with tab
-  -- this helps with copilot setup
-  ['<CR>'] = nil,
-  ['<Tab>'] = nil,
-  ['<S-Tab>'] = nil,
-})
-
-cmp.setup({
-  mapping = cmp_mappings,
-  preselect = 'none',
-  sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp', keyword_length = 1},
-    {name = 'buffer', keyword_length = 3},
-    {name = 'luasnip', keyword_length = 2},
-  }
-})
-
---------------------------------------------------------------------------------
 --                                    lsp                                     --
 --------------------------------------------------------------------------------
 
@@ -85,6 +56,34 @@ lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,
+})
+
+--------------------------------------------------------------------------------
+--                                    cmp                                     --
+--------------------------------------------------------------------------------
+
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Insert}
+local cmp_action = require('lsp-zero').cmp_action()
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-j>'] = cmp.mapping.confirm({ select = true }),
+  ['<C-Space>'] = cmp.mapping.complete(),
+  ['<CR>'] = nil,
+  ['<Tab>'] = cmp_action.luasnip_supertab(),
+  ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+})
+
+cmp.setup({
+  mapping = cmp_mappings,
+  preselect = 'none',
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp', keyword_length = 1},
+    {name = 'buffer', keyword_length = 3},
+    {name = 'luasnip', keyword_length = 2},
+  }
 })
 
 --------------------------------------------------------------------------------
