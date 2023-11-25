@@ -17,6 +17,9 @@ vim.keymap.set('n', '<leader>FT', 'I/*{ <Esc>A }<Esc>:set virtualedit=all<CR>079
 -- generate header automatically
 vim.keymap.set('n', '<leader>FH', 'O<Escape>80i*<Escape>0r/$r/yyjpk<CMD>center 80<CR>0r/lr*<CMD>set virtualedit=all<CR>078lr*lr/:set virtualedit=none<CR>', { noremap = true, buffer = true })
 
+-- clangd switch between c and h file
+vim.keymap.set('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', { noremap = true, buffer = true })
+
 -- invoke make
 local build_directory = ''
 vim.keymap.set('n', '<leader>cc',
