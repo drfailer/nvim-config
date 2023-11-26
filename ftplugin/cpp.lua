@@ -11,23 +11,25 @@ local yankClassName = '?^class<CR>w"cyiw'
 local yankMethod = '^"myt;'
 local yankVar = '"vyiw'
 local yankType = '^"tyt '
+local cut = 'vipokd'
 
 -- generation
 local genMethod = '<C-r>m<Esc>0f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
 local genGetterDec = '<C-r>t get!<C-r>v() const;<Esc>?!<CR>"_xvU'
 local genSetterDec = 'void set!<C-r>v(<C-r>t);<Esc>?!<CR>"_xvU'
-local genGetterDef = '<C-r>t get!<C-r>v() const { return <C-r>v; }<Esc>?!<CR>"_xvU=ip'
-local genSetterDef = 'void set!<C-r>v(<C-r>t <C-r>v) { this-><C-r>v = <C-r>v; }<Esc>?!<CR>"_xvU=ip'
+local genGetterDef = '<C-r>t get!<C-r>v() const { return <C-r>v; }<Esc>?!<CR>"_xvU=='
+local genSetterDef = 'void set!<C-r>v(<C-r>t <C-r>v) { this-><C-r>v = <C-r>v; }<Esc>?!<CR>"_xvU=='
+local switchToSrc = ':e %:r.cpp<CR>'
 
 -- goto
-local insertEnd = '/^#endif<CR>O<Esc>O'
+local insertEnd = 'GO<Esc>O'
 local insertPub = '/public:<CR>o'
 local st = 'mz'
 local gt = '`z'
 
 -- generate methode
 vim.keymap.set('n', '<C-m>',
-  st .. yankMethod .. yankClassName .. insertEnd .. genMethod .. gt,
+  st .. yankMethod .. yankClassName .. switchToSrc .. insertEnd .. genMethod,
   { noremap = true, buffer = true })
 -- getter
 vim.keymap.set('n', '<leader>lgg',
