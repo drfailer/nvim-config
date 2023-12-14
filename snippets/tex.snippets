@@ -143,14 +143,14 @@ snippet lbib
 	$0
 # better code (require caption package)
 snippet code
-	\begin{minted}{${1:C}}
+	\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=LightGray,fontsize=\normalsize,linenos]{${1:C}}
 	$0
 	\captionof{listing}{${2:caption}}
 	\label{${3:lable}}
 # this version use listing (but it's float)
 snippet lstcode
 	\begin{listing}[ht!]
-	\begin{minted}{${1:C}}
+	\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=LightGray,fontsize=\normalsize,linenos]{${1:C}}
 	$0
 	\end{minted}
 	\caption{${2:caption}}
