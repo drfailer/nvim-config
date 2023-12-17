@@ -8,13 +8,13 @@
 
 -- yank
 local yankClassName = '?^class<CR>w"cyiw'
-local yankMethod = '^"myt;'
+local yankMethod = '$F)v^"my'
 local yankVar = '"vyiw'
 local yankType = '^"tyt '
 local cut = 'vipokd'
 
 -- generation
-local genMethod = '<C-r>m<Esc>0f(Bi<C-r>c::<Esc>o{<CR>}<Esc>=ip'
+local genMethod = '<C-r>m<Esc>0f(Bi<C-r>c::<Esc>A {<CR>}<Esc>=ip'
 local genGetterDec = '<C-r>t get!<C-r>v() const;<Esc>?!<CR>"_xvU'
 local genSetterDec = 'void set!<C-r>v(<C-r>t);<Esc>?!<CR>"_xvU'
 local genGetterDef = '<C-r>t get!<C-r>v() const { return <C-r>v; }<Esc>?!<CR>"_xvU=='
