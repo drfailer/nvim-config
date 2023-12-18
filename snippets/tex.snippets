@@ -1,8 +1,10 @@
 ##### emphasis
 snippet b
 	\textbf{${1}}${0}
-snippet tt
+snippet it
 	\textit{${1}}${0}
+snippet tt
+	\texttt{${1}}${0}
 snippet verb
 	\verb|$0|
 snippet cite
@@ -25,8 +27,8 @@ snippet item
 	\begin{itemize}
 		${0}
 	\end{itemize}
-# it
-snippet it
+# itm
+snippet itm
 	\item ${0}
 ##### math
 snippet frac
@@ -145,6 +147,7 @@ snippet lbib
 snippet code
 	\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=LightGray,fontsize=\normalsize,linenos]{${1:C}}
 	$0
+	\end{minted}
 	\captionof{listing}{${2:caption}}
 	\label{${3:lable}}
 # this version use listing (but it's float)
