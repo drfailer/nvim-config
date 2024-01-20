@@ -13,11 +13,16 @@ require('mason-lspconfig').setup({
     'clangd',
     'rust_analyzer',
     -- 'bashls',
-    -- 'ltex',
+    'ltex',
     -- 'tsserver'
   },
   handlers = {
     lsp.default_setup,
+    ltex = function()
+      require('lspconfig').ltex.setup({
+          filetypes = { 'tex', 'latex' },
+      })
+    end,
   },
 })
 
