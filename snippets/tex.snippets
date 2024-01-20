@@ -48,7 +48,7 @@ snippet lheader
 	\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
 	\usepackage[francais]{babel}
 
-	%============header and foot============
+	%= Header & Footer =============================================================
 	\usepackage{fancyhdr}
 	\pagestyle{fancy}
 	\renewcommand\headrulewidth{1pt}
@@ -57,13 +57,13 @@ snippet lheader
 	\fancyfoot[L]{CHASSAGNOL Rémi}
 	\fancyfoot[R]{2019-2020}
 
-	%================image=================
+	%= Images ======================================================================
 	\usepackage{graphicx}
 	\graphicspath{{img/}}
 	$0
 ##### math
 snippet lmathhead
-	%================Maths=================
+	%= Maths =======================================================================
 	\newtheorem{prop}{Proposition}
 	\newtheorem{cor}{Corollaire}
 	\theoremstyle{plain}
@@ -76,7 +76,7 @@ snippet lmathhead
 	$0
 ##### info
 snippet linfos
-	%================infos=================
+	%= infos =======================================================================
 	title{${1:rapport}}
 	author{CHASSAGNOL Rémi}
 	date{\today}
@@ -84,13 +84,15 @@ snippet linfos
 # bibliography
 snippet lbib
 	% bibliography
-	\bibliographystyle{plain}{}
-	\bibliography{${1:refs}} % refs.bib
+	\clearpage{}
+	\pagestyle{empty}
+	\printbibliography[keyword={paper}, title={Bibliographie}]
+	\printbibliography[keyword={web}, title={Webographie}]
 	$0
 ##### listings
 # code config
 snippet codehead
-	%=================code=================
+	%= code ========================================================================
 	\usepackage{verbatim,listings,minted}
 	\usepackage{xcolor}
 	\renewcommand\listoflistingscaption{Table des extraits de codes}
@@ -98,16 +100,16 @@ snippet codehead
 	$0
 # better code (require caption package)
 snippet code
-	%- begin listing ---------------------------------------------------------------
+	%- begin listing ------------------------------------------------------------{{{
 	\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\normalsize,linenos]{${1:C}}
 	$0
 	\end{minted}
 	\captionof{listing}{${2:caption}}
 	\label{${3:lable}}
-	%- end listing -----------------------------------------------------------------
+	%- end listing --------------------------------------------------------------}}}
 # this version use listing (but it's float)
 snippet lstcode
-	%- begin listing ---------------------------------------------------------------
+	%- begin listing ------------------------------------------------------------{{{
 	\begin{listing}[ht!]
 	\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,fontsize=\normalsize,linenos]{${1:C}}
 	$0
@@ -115,4 +117,15 @@ snippet lstcode
 	\caption{${2:caption}}
 	\label{${3:lable}}
 	\end{listing}
-	%- end listing -----------------------------------------------------------------
+	%- end listing --------------------------------------------------------------}}}
+##### figures
+snippet figure
+	% [${1:caption}] {{{
+	\begin{figure}[h!]
+	  \begin{center}
+	    \includegraphics[scale=0.2]{${0:img.png}}
+	    \caption{${1:caption}}
+	    \label{fig:label}
+	  \end{center}
+	\end{figure}
+	%}}}
