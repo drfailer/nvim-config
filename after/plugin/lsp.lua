@@ -20,7 +20,12 @@ require('mason-lspconfig').setup({
     lsp.default_setup,
     ltex = function()
       require('lspconfig').ltex.setup({
-          filetypes = { 'tex', 'latex' },
+        filetypes = { 'tex', 'latex' },
+        settings = {
+          ltex = {
+            language = "fr",
+          },
+        },
       })
     end,
   },
