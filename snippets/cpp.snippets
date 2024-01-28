@@ -1,14 +1,12 @@
 extends c
 ##### main
 snippet mainargs
-	int main(int argc, char **argv)
-	{
+	int main(int argc, char **argv) {
 		${0}
 		return 0;
 	}
 snippet main
-	int main(int, char**)
-	{
+	int main(int, char**) {
 		${0}
 		return 0;
 	}
@@ -48,13 +46,12 @@ snippet guard
 	#endif
 ##### classes
 snippet class
-	class $1
-	{
-	public:
+	class $1 {
+	  public:
 		$1() = default;
 		~$1() = default;
 
-	private:
+	  private:
 		$0
 	};
 ##### iterators
