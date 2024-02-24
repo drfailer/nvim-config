@@ -40,13 +40,16 @@ function df_setTheme(currentTheme)
     df_everforest()
   elseif currentTheme == "melange" then
     vim.cmd.colorscheme("melange")
+  elseif currentTheme == "space" then
+    vim.cmd.colorscheme("space_vim_theme")
   end
 
   df_themeSettings()
 end
 
 -- df_setTheme("everforest")
-df_setTheme("melange")
+-- df_setTheme("melange")
+df_setTheme("space")
 -- df_setTheme("gruvbox")
 
 -- init lualine
