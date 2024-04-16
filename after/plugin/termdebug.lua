@@ -58,5 +58,5 @@ function toggle_debugger(reload)
     end
 end
 
-vim.keymap.set('n', '<leader>dd', function() toggle_debugger(false) end, { noremap = true })
-vim.keymap.set('n', '<leader>dD', function() toggle_debugger(true) end, { noremap = true })
+vim.keymap.set('n', '<leader>DD', function() toggle_debugger(false) end, { noremap = true })
+vim.keymap.set('n', '<leader>Dd', function() toggle_debugger(true) end, { noremap = true })

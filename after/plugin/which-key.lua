@@ -59,6 +59,28 @@ local mappings = {
     k = "previous diff"
   },
 
+  -- compile
+  c = {
+      name = "compile",
+      c = "compile"
+  },
+
+  -- gdb (C & Cpp)
+  d = {
+      name = "gdb",
+      d = "reset build directory",
+      b = "break",
+      c = "conditional break",
+      C = "clear"
+  },
+
+  -- termdebug
+  D = {
+      name = "termdebug",
+      D = "toggle",
+      d = "toggle + reload"
+  },
+
   -- toggle
   t = {
     name = "toggle",
