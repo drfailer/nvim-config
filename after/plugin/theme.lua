@@ -2,6 +2,37 @@
 --                                   THEME                                    --
 --------------------------------------------------------------------------------
 
+require('kanagawa').setup({
+    undercurl = true,            -- enable undercurls
+    commentStyle = { italic = true },
+    keywordStyle = { italic = false },
+    statementStyle = { bold = false },
+    transparent = true,         -- do not set background color
+    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+    overrides = function(colors) -- add/modify highlights
+        local theme = colors.theme
+        return {
+            NormalFloat = { bg = "none" },
+            FloatBorder = { bg = "none" },
+            FloatTitle = { bg = "none" },
+            NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+            LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+            TelescopeTitle = { fg = theme.ui.special, bold = true },
+            TelescopePromptBorder = { fg = theme.ui.fg_p1, bg = "none" },
+            TelescopeResultsBorder = { fg = theme.ui.fg_p1, bg = "none" },
+            TelescopePreviewBorder = { fg = theme.ui.fg_p1, bg = "none" },
+            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+            PmenuSbar = { bg = theme.ui.bg_m1 },
+            PmenuThumb = { bg = theme.ui.bg_p2 },
+        }
+    end,
+    theme = "dragon",
+    background = { dark = "dragon", },
+})
+
 -- gruvbox
 local function df_gruvbox()
   vim.g.gruvbox_contrast_dark = 'hard'
@@ -42,13 +73,19 @@ function df_setTheme(currentTheme)
     vim.cmd.colorscheme("melange")
   elseif currentTheme == "space" then
     vim.cmd.colorscheme("space_vim_theme")
+  elseif currentTheme == "dragon" then
+    vim.cmd.colorscheme("kanagawa-dragon")
+  elseif currentTheme == "kanagawa" then
+    vim.cmd.colorscheme("kanagawa")
   end
 
   df_themeSettings()
 end
 
 -- df_setTheme("everforest")
-df_setTheme("melange")
+-- df_setTheme("melange")
+df_setTheme("dragon")
+-- df_setTheme("kanagawa")
 -- df_setTheme("space")
 -- df_setTheme("gruvbox")
 
