@@ -20,16 +20,21 @@ vim.keymap.set('n', '<leader>FH', 'O<Escape>80i*<Escape>0r/$r/yyjpk<CMD>center 8
 -- clangd switch between c and h file
 vim.keymap.set('n', '<C-f>', ':ClangdSwitchSourceHeader<CR>', { noremap = true, buffer = true })
 
--- invoke make
+-- build directory
 local build_directory = ''
-vim.keymap.set('n', '<leader>cc',
-function()
-  if build_directory == '' then
+function set_build_directory()
+  if build_directory == '' then -- NOTE: we use the build directory as it contains a .gdbinit
     build_directory = vim.fn.input('Build directory: ', '', 'file')
     if build_directory == '' then
       build_directory = '.'
     end
   end
+end
+
+-- invoke make
+vim.keymap.set('n', '<leader>cc',
+function()
+  set_build_directory()
   vim.cmd('make -C ' .. build_directory)
 end,
 { noremap = true, buffer = true })
@@ -39,30 +44,29 @@ end,
 --------------------------------------------------------------------------------
 
 -- gdbutilities
+
+-- reset build directory
+vim.keymap.set('n', '<leader>dd',
+function()
+  build_directory = ''
+  set_build_directory()
+end,
+{ noremap = true, buffer = true })
+
 -- place a breakpoint in the .gdbinit file (it's sourced automatically when
 -- entering a new debugging session)
-vim.keymap.set('n', '<leader>Db',
+vim.keymap.set('n', '<leader>db',
 function()
-  if build_directory == '' then -- NOTE: we use the build directory as it contains a .gdbinit
-    build_directory = vim.fn.input('Build directory: ', '', 'file')
-    if build_directory == '' then
-      build_directory = '.'
-    end
-  end
+  set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   vim.cmd('!echo "break %: ' .. r .. '" >> ' .. build_directory .. '/.gdbinit')
 end,
 { noremap = true, buffer = true })
 
 -- conditional breakpoint
-vim.keymap.set('n', '<leader>Dc',
+vim.keymap.set('n', '<leader>dc',
 function()
-  if build_directory == '' then -- NOTE: we use the build directory as it contains a .gdbinit
-    build_directory = vim.fn.input('Build directory: ', '', 'file')
-    if build_directory == '' then
-      build_directory = '.'
-    end
-  end
+  set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   condition = vim.fn.input('if: ', '', 'file')
   if condition ~= '' then
@@ -72,14 +76,9 @@ end,
 { noremap = true, buffer = true })
 
 -- clear breakpoint (juste remote the .gdbinit file in the build directory)
-vim.keymap.set('n', '<leader>DC',
+vim.keymap.set('n', '<leader>dC',
 function()
-  if build_directory == '' then -- NOTE: we use the build directory as it contains a .gdbinit
-    build_directory = vim.fn.input('Build directory: ', '', 'file')
-    if build_directory == '' then
-      build_directory = '.'
-    end
-  end
+  set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   vim.cmd('!rm ' .. build_directory .. '/.gdbinit')
 end,
@@ -87,15 +86,10 @@ end,
 
 -- place a break at the current and attatch a command to it to print the
 -- highlighted value
-vim.keymap.set('v', '<leader>Dp',
+vim.keymap.set('v', '<leader>dp',
 function()
   vim.cmd('normal "vy')
-  if build_directory == '' then -- NOTE: we use the build directory as it contains a .gdbinit
-    build_directory = vim.fn.input('Build directory: ', '', 'file')
-    if build_directory == '' then
-      build_directory = '.'
-    end
-  end
+  set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   local initfile = build_directory .. '/.gdbinit'
   local value = vim.api.nvim_exec("echo getreg('v')", true):gsub("[\n\r]", "^J") -- it works...
