@@ -41,6 +41,18 @@ o.autoindent = true
 o.smartindent = true
 o.cindent = true
 
+-- listchars (for showing tabs and spaces)
+vim.opt.list = false
+vim.opt.listchars = {
+    lead = '·',
+    trail = '~',
+    tab = '>·',
+    space = '·',
+    eol = '¬',
+    extends = '>',
+    precedes = '<'
+}
+
 -- cases
 o.ignorecase = true
 o.smartcase = true
