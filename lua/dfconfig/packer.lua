@@ -27,7 +27,7 @@ return require('packer').startup(function()
   use 'gruvbox-community/gruvbox'
   use 'sainnhe/everforest'
   use 'savq/melange-nvim'
-  use 'liuchengxu/space-vim-theme'
+  use 'navarasu/onedark.nvim'
   use "rebelot/kanagawa.nvim"
 
   -- lualine:
