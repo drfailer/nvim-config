@@ -14,7 +14,6 @@ o.history = 50
 o.signcolumn = 'yes'
 o.cursorline = true
 o.textwidth = 80
-o.list = false
 o.clipboard = 'unnamedplus'
 o.colorcolumn = "80"
 o.scrolloff = 0
