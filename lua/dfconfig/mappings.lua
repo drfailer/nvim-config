@@ -122,6 +122,16 @@ end)
 vim.keymap.set('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
 
+-- rename file
+vim.keymap.set('n', '<leader>R', function()
+    local path = vim.fn.expand('%:h')
+    local filename = vim.fn.expand('%:t')
+    newname = vim.fn.input('rename file: ', '', 'file')
+    os.rename(path .. "/" .. filename, path .. "/" .. newname)
+    vim.api.nvim_buf_delete(0, { force = true })
+    vim.cmd("e " .. path .. "/" .. newname)
+end, { noremap = true })
+
 -- remember folds
 vim.keymap.set('n', '<leader>mkv', '<CMD>mkview<CR>', { noremap = true })
 
