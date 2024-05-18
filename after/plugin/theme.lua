@@ -84,9 +84,9 @@ end
 
 -- df_setTheme("everforest")
 -- df_setTheme("melange")
--- df_setTheme("dragon")
+df_setTheme("dragon")
 -- df_setTheme("kanagawa")
-df_setTheme("onedark")
+-- df_setTheme("onedark")
 -- df_setTheme("gruvbox")
 
 -- init lualine

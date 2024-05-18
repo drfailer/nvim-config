@@ -15,7 +15,7 @@ snippet main
 snippet io
 	#include <iostream>$0
 # string
-snippet string
+snippet incstr
 	#include <string>$0
 # algorithm
 snippet algo
@@ -38,8 +38,8 @@ snippet endl
 	std::endl$0
 ##### headerfiles and preprocessor
 snippet guard
-	#ifndef `toupper(expand('%:t:r'))`_HPP
-	#define `toupper(expand('%:t:r'))`_HPP
+	#ifndef `toupper(expand('%:t:r'))`_H
+	#define `toupper(expand('%:t:r'))`_H
 
 	$0
 
@@ -86,3 +86,8 @@ snippet op+
 	${1:Obj} operator+(const ${1:Obj} &a, const ${1:Obj} &b) {
 		$0
 	}
+##### templates
+snippet temp
+    template <$0>
+snippet tpn
+    typename $0
