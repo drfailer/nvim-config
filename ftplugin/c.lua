@@ -2,10 +2,10 @@
 --                                   abrev                                    --
 --------------------------------------------------------------------------------
 
-vim.cmd("ab todo TODO(RC):")
-vim.cmd("ab note NOTE(RC):")
-vim.cmd("ab warn WARNNING(RC):")
-vim.cmd("ab q? QUESTION(RC):")
+-- vim.cmd("ab todo TODO(RC):")
+-- vim.cmd("ab note NOTE(RC):")
+-- vim.cmd("ab warn WARNNING(RC):")
+-- vim.cmd("ab q? QUESTION(RC):")
 
 --------------------------------------------------------------------------------
 --                                  mappings                                  --
