@@ -28,6 +28,35 @@ require('mason-lspconfig').setup({
         },
       })
     end,
+    clangd = function()
+      require('lspconfig').clangd.setup({
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
+          "--clang-tidy",
+          -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
+          -- to add more checks, create .clang-tidy file in the root directory
+          -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
+          -- "--clang-tidy-checks=*",
+          "--all-scopes-completion",
+          "--cross-file-rename",
+          "--completion-style=detailed",
+          "--completion-parse=always",
+          "--include-ineligible-results",
+          "--parse-forwarding-functions",
+          "--function-arg-placeholders",
+          "--header-insertion-decorators",
+          "--header-insertion=iwyu",
+          "--pch-storage=memory",
+          "--limit-results=500",
+          "--use-dirty-headers",
+          "--malloc-trim",
+          "--compile-commands-dir=../build/",
+          -- "-j=2",
+        }
+      })
+    end,
   },
 })
 
@@ -111,6 +140,11 @@ cmp.setup({
 -- snipmate like snippet load
 require("luasnip.loaders.from_snipmate").lazy_load()
 local ls = require("luasnip")
+
+ls.config.set_config({
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave'
+})
 
 -- -- luasnip mappings
 vim.keymap.set({"i"}, "<Tab>", function()

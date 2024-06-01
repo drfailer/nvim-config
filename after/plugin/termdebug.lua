@@ -15,11 +15,15 @@ vim.api.nvim_create_autocmd('User', {
         vim.keymap.set('n', 'c', ':Continue<CR>', { noremap = true })
         vim.keymap.set('n', 'r', ':Run<CR>',      { noremap = true })
         vim.keymap.set('n', 'S', ':Stop<CR>',     { noremap = true })
-        vim.keymap.set('n', 'u', ':Until<CR>',    { noremap = true })
+        vim.keymap.set('n', 'u', ':Up<CR>',    { noremap = true })
+        vim.keymap.set('n', 'd', ':Down<CR>',    { noremap = true })
+        vim.keymap.set('n', 'U', ':Until<CR>',    { noremap = true })
         vim.keymap.set('n', 'B', ':Break<CR>',    { noremap = true })
         vim.keymap.set('n', 'C', ':Clear<CR>',    { noremap = true })
         vim.keymap.set('n', 'x', ':Evaluate<CR>', { noremap = true })
         vim.keymap.set('v', 'x', ':Evaluate<CR>', { noremap = true })
+        vim.keymap.set('n', 'X', 'yiw:Gdb<CR>pi<C-a>p *<CR><C-\\><C-n><C-w><C-h>', { noremap = true })
+        vim.keymap.set('v', 'X', 'y:Gdb<CR>pi<C-a>p *<CR><C-\\><C-n><C-w><C-h>', { noremap = true })
     end
 })
 
@@ -32,10 +36,14 @@ vim.api.nvim_create_autocmd('User', {
         vim.keymap.set('n', 'r', 'r', { noremap = true })
         vim.keymap.set('n', 'S', 'S', { noremap = true })
         vim.keymap.set('n', 'u', 'u', { noremap = true })
+        vim.keymap.set('n', 'U', 'U', { noremap = true })
+        vim.keymap.set('n', 'd', 'd', { noremap = true })
         vim.keymap.set('n', 'B', 'B', { noremap = true })
         vim.keymap.set('n', 'C', 'C', { noremap = true })
         vim.keymap.set('n', 'x', 'x', { noremap = true })
         vim.keymap.set('v', 'x', 'x', { noremap = true })
+        vim.keymap.set('n', 'X', 'X', { noremap = true })
+        vim.keymap.set('v', 'X', 'X', { noremap = true })
     end
 })
 
