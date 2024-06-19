@@ -91,3 +91,60 @@ snippet temp
     template <$0>
 snippet tpn
     typename $0
+##### hedgehog
+snippet hh
+	#include <hedgehog/hedgehog.h>
+snippet hhtask
+	#define ${2:CN}TaskInNb 1
+	#define ${2:CN}TaskIn TYPE
+	#define ${2:CN}TaskOut TYPE
+
+	template <typename T>
+	class ${1:ClassName} : hh::AbstractTask<${2:CN}TaskInNb, ${2:CN}TaskIn,
+	                                        ${2:CN}TaskOut> {
+		public:
+		${1:ClassName}(size_t nbThreads):
+			hh::AbstractTask<${2:CN}TaskInNb, ${2:CN}TaskIn, ${2:CN}TaskOut>("name", nbThreads) {}
+
+		void execute(std::shared_ptr<TYPE> data) override {
+			// todo $0
+		}
+
+		std::shared_ptr<hh::AbstractTask<${2:CN}TaskInNb, ${2:CN}TaskIn, ${2:CN}TaskOut>>
+		copy() override {
+			return std::make_shared<${1:ClassName}<T>>(this->numberThreads());
+		}
+	};
+snippet hhstate
+	#define ${2:CN}StateInNb 1
+	#define ${2:CN}StateIn TYPE
+	#define ${2:CN}StateOut TYPE
+
+	template <typename T>
+	class ${1:ClassName} : hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn,
+	                                        ${2:CN}StateOut> {
+		public:
+		${1:ClassName}(size_t nbThreads):
+			hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn, ${2:CN}StateOut>() {}
+
+		void execute(std::shared_ptr<TYPE> data) override {
+			// todo $0
+		}
+
+		[[nodiscard]] bool idDone() { return false }
+	};
+snippet hhstatemanager
+	template <typename T>
+	class ${1:ClassName} : hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn,
+	                                        ${2:CN}StateOut> {
+		public:
+		${1:ClassName}(std::shared_ptr<${3:State}<T>> const &state):
+			hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn, ${2:CN}StateOut>(state, "name") {}
+
+		[[nodiscard]] bool canTerminate() const override {
+			this->state()->lock();
+			auto ret = std::dynamic_pointer_cast<${3:State}<T>>(this->state())->isDone();
+			this->state()->unlock();
+			return ret;
+		}
+	};
