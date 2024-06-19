@@ -65,29 +65,23 @@ return require('packer').startup(function()
   -- Treesitter:
   use 'nvim-treesitter/nvim-treesitter'
 
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
-      {'hrsh7th/cmp-nvim-lsp-signature-help'},
+  -- Autocompletion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
-      -- Snippets
-      {'L3MON4D3/LuaSnip', tag = 'v2.*'},
-      {'rafamadriz/friendly-snippets'},
-    }
-  }
+  -- Snippets
+  use {'L3MON4D3/LuaSnip', tag = 'v2.*'}
+  use 'rafamadriz/friendly-snippets'
 
   -- refactor:
   use {
