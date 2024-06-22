@@ -5,6 +5,7 @@ return function()
     cmd = {
       "clangd",
       "--background-index",
+      "--limit-results=500",
       "--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
       "--clang-tidy",
       "--all-scopes-completion",
