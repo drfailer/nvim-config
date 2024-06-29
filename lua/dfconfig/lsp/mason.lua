@@ -17,9 +17,8 @@ require('mason-lspconfig').setup({
     'ltex',
   },
   handlers = {
-    vim.lsp.default_setup,
+    default_handler,
     ltex = require('dfconfig.lsp.languages.ltex'),
     clangd = require('dfconfig.lsp.languages.clangd'),
-    rust_analyzer = default_handler('rust_analyzer'),
   },
 })
