@@ -3,92 +3,78 @@
 --------------------------------------------------------------------------------
 
 local wk = require("which-key")
-local mappings = {
+
+wk.setup({
+  preset = "modern"
+})
+
+wk.add({
   -- lsp
-  l = {
-    name = "lsp",
-    a = "code action",
-    r = "rename",
-    d = "diagnostic",
-    n = "next error",
-    p = "previous error",
-    h = "signature help",
-    s = "workspace symbol",
-    vr = "view references",
-    F = "buff format",
-    f = {
-      name = "telescope actions",
-      r = "telescope lsp references",
-      s = "telescope doc symbol",
-      d = "telescope errors",
-    },
-  },
+  { "<leader>l", group = "lsp" },
+  { "<leader>l", desc = "lsp" },
+  { "<leader>la", desc = "code action" },
+  { "<leader>lr", desc = "rename" },
+  { "<leader>ld", desc = "diagnostic" },
+  { "<leader>ln", desc = "next error" },
+  { "<leader>lp", desc = "previous error" },
+  { "<leader>lh", desc = "signature help" },
+  { "<leader>ls", desc = "workspace symbol" },
+  { "<leader>lvr", desc = "view references" },
+  { "<leader>lF", desc = "buff format" },
+  { "<leader>lf", group = "lsp telescope" },
+  { "<leader>lfr", desc = "telescope lsp references" },
+  { "<leader>lfs", desc = "telescope doc symbol" },
+  { "<leader>lfd", desc = "telescope errors" },
 
   -- telescope
-  f = {
-    name = "telescope",
-    f = "find files",
-    g = "live grep",
-    b = "buffers",
-    h = "help tags",
-    k = "keymaps",
-    s = "spell",
-    G = "git branches"
-  },
+  { "<leader>f", group = "telescope" },
+  { "<leader>ff", desc = "find files" },
+  { "<leader>fg", desc = "live grep" },
+  { "<leader>fb", desc = "buffers" },
+  { "<leader>fh", desc = "help tags" },
+  { "<leader>fk", desc = "keymaps" },
+  { "<leader>fs", desc = "spell" },
+  { "<leader>fG", desc = "git branches" },
 
   -- refactor
-  r = {
-    name = "refactor",
-    r = "telescope refactor",
-    p = "refactor debug printf",
-    dv = "refactor debug print var",
-    dc = "refactor debug cleanup"
-  },
+  { "<leader>r", group = "refactor" },
+  { "<leader>rr", desc = "telescope refactor" },
+  { "<leader>rp", desc = "refactor debug printf" },
+  { "<leader>rdv", desc = "refactor debug print var" },
+  { "<leader>rdc", desc = "refactor debug cleanup" },
 
   -- fugitive
-  g = {
-    name = "fugitive",
-    g = "status",
-    c = "commit",
-    L = "log",
-    m = "merge",
-    d = "resolve conflict",
-    h = "get diff left",
-    l = "get diff right",
-    j = "next diff",
-    k = "previous diff"
-  },
+  { "<leader>g", group = "fugitive" },
+  { "<leader>gg", desc = "status" },
+  { "<leader>gc", desc = "commit" },
+  { "<leader>gL", desc = "log" },
+  { "<leader>gm", desc = "merge" },
+  { "<leader>gd", desc = "resolve conflict" },
+  { "<leader>gh", desc = "get diff left" },
+  { "<leader>gl", desc = "get diff right" },
+  { "<leader>gj", desc = "next diff" },
+  { "<leader>gk", desc = "previous diff" },
 
   -- compile
-  c = {
-      name = "compile",
-      c = "compile"
-  },
+  { "<leader>c", group = "compile" },
+  { "<leader>cc", desc = "compile" },
+  { "<leader>cr", desc = "run" },
 
   -- gdb (C & Cpp)
-  d = {
-      name = "gdb",
-      d = "reset build directory",
-      b = "break",
-      c = "conditional break",
-      C = "clear"
-  },
+  { "<leader>d", group = "gdb" },
+  { "<leader>dd", desc = "reset build directory" },
+  { "<leader>db", desc = "set breakpoint" },
+  { "<leader>dc", desc = "set conditional breakpoint" },
+  { "<leader>dC", desc = "clear" },
 
   -- termdebug
-  D = {
-      name = "termdebug",
-      D = "toggle",
-      d = "toggle + reload"
-  },
+  { "<leader>D", group = "termdebug" },
+  { "<leader>DD", desc = "toggle" },
+  { "<leader>Dd", desc = "toggle + reload" },
 
   -- toggle
-  t = {
-    name = "toggle",
-    v = "virtual edit",
-    c = "centering",
-    l = "change bg"
-  }
-}
-
-local opt = { prefix = '<leader>' }
-wk.register(mappings, opt)
+  { "<leader>t", group = "toggle options" },
+  { "<leader>tv", desc = "virtual edit" },
+  { "<leader>tc", desc = "centering" },
+  { "<leader>tl", desc = "light / dark background" },
+})
