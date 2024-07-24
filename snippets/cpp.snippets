@@ -100,7 +100,7 @@ snippet hhtask
 	#define ${2:CN}TaskOut TYPE
 
 	template <typename T>
-	class ${1:ClassName} : hh::AbstractTask<${2:CN}TaskInNb, ${2:CN}TaskIn,
+	class ${1:ClassName} : public hh::AbstractTask<${2:CN}TaskInNb, ${2:CN}TaskIn,
 	                                        ${2:CN}TaskOut> {
 		public:
 		${1:ClassName}(size_t nbThreads):
@@ -121,7 +121,7 @@ snippet hhstate
 	#define ${2:CN}StateOut TYPE
 
 	template <typename T>
-	class ${1:ClassName} : hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn,
+	class ${1:ClassName} : public hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn,
 	                                        ${2:CN}StateOut> {
 		public:
 		${1:ClassName}(size_t nbThreads):
@@ -131,15 +131,15 @@ snippet hhstate
 			// todo $0
 		}
 
-		[[nodiscard]] bool idDone() { return false }
+		[[nodiscard]] bool isDone() { return false }
 	};
 snippet hhstatemanager
 	template <typename T>
-	class ${1:ClassName} : hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn,
+	class ${1:ClassName} : public hh::StateManager<${2:CN}StateInNb, ${2:CN}StateIn,
 	                                        ${2:CN}StateOut> {
 		public:
 		${1:ClassName}(std::shared_ptr<${3:State}<T>> const &state):
-			hh::AbstractState<${2:CN}StateInNb, ${2:CN}StateIn, ${2:CN}StateOut>(state, "name") {}
+			hh::StateManager<${2:CN}StateInNb, ${2:CN}StateIn, ${2:CN}StateOut>(state, "name") {}
 
 		[[nodiscard]] bool canTerminate() const override {
 			this->state()->lock();

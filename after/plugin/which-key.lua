@@ -72,6 +72,11 @@ wk.add({
   { "<leader>DD", desc = "toggle" },
   { "<leader>Dd", desc = "toggle + reload" },
 
+  -- quickfix list
+  { "<leader>q", group = "quickfix list" },
+  { "<leader>qo", desc = "open" },
+  { "<leader>qc", desc = "close" },
+
   -- toggle
   { "<leader>t", group = "toggle options" },
   { "<leader>tv", desc = "virtual edit" },
