@@ -98,4 +98,12 @@ return require('packer').startup(function()
 
   -- vimwiki
   use 'vimwiki/vimwiki'
+
+  -- noice
+  use {
+    "folke/noice.nvim",
+    requires = {
+      {"MunifTanjim/nui.nvim"},
+    }
+  }
 end)
