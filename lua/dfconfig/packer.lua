@@ -33,7 +33,7 @@ return require('packer').startup(function()
   -- lualine:
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
   -- utils:
@@ -59,6 +59,12 @@ return require('packer').startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- oil
+  use {
+    'stevearc/oil.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
   -- plantuml syntax
   use 'aklt/plantuml-syntax'
 
@@ -69,6 +75,17 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+
+  -- dap
+  use {
+    'mfussenegger/nvim-dap',
+    requires = {
+      'nvim-neotest/nvim-nio',
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
+      'jay-babu/mason-nvim-dap.nvim',
+    }
+  }
 
   -- Autocompletion
   use 'hrsh7th/nvim-cmp'
@@ -98,12 +115,4 @@ return require('packer').startup(function()
 
   -- vimwiki
   use 'vimwiki/vimwiki'
-
-  -- noice
-  use {
-    "folke/noice.nvim",
-    requires = {
-      {"MunifTanjim/nui.nvim"},
-    }
-  }
 end)

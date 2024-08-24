@@ -46,7 +46,7 @@ end,
 -- gdbutilities
 
 -- reset build directory
-vim.keymap.set('n', '<leader>dd',
+vim.keymap.set('n', '<leader>Dd',
 function()
   build_directory = ''
   set_build_directory()
@@ -55,7 +55,7 @@ end,
 
 -- place a breakpoint in the .gdbinit file (it's sourced automatically when
 -- entering a new debugging session)
-vim.keymap.set('n', '<leader>db',
+vim.keymap.set('n', '<leader>Db',
 function()
   set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
@@ -64,7 +64,7 @@ end,
 { noremap = true, buffer = true })
 
 -- conditional breakpoint
-vim.keymap.set('n', '<leader>dc',
+vim.keymap.set('n', '<leader>Dc',
 function()
   set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
@@ -76,7 +76,7 @@ end,
 { noremap = true, buffer = true })
 
 -- clear breakpoint (juste remote the .gdbinit file in the build directory)
-vim.keymap.set('n', '<leader>dC',
+vim.keymap.set('n', '<leader>DC',
 function()
   set_build_directory()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
@@ -86,7 +86,7 @@ end,
 
 -- place a break at the current and attatch a command to it to print the
 -- highlighted value
-vim.keymap.set('v', '<leader>dp',
+vim.keymap.set('v', '<leader>Dp',
 function()
   vim.cmd('normal "vy')
   set_build_directory()

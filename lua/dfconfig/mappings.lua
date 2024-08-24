@@ -48,8 +48,8 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true })
 vim.keymap.set('i', '<C-o>', '<CR><Esc>kA', { noremap = true })
 
 -- move lines
-vim.keymap.set('n', '<up>', '<CMD>move -2<cr>', { noremap = true })
-vim.keymap.set('n', '<down>', '<CMD>move +1<cr>', { noremap = true })
+-- vim.keymap.set('n', '<up>', '<CMD>move -2<cr>', { noremap = true })
+-- vim.keymap.set('n', '<down>', '<CMD>move +1<cr>', { noremap = true })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<', '<gv', { noremap = true })
@@ -70,8 +70,8 @@ vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { norema
 vim.keymap.set('n', '<F6>', '<CMD>setlocal spell! spelllang=fr,cjk<cr>', { noremap = true })
 vim.keymap.set('n', '<F7>', '<CMD>set spelllang=en,cjk<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>s', '<ESC>1z=', { noremap = true })
-vim.keymap.set('n', '<left>', '[s', { noremap = true })
-vim.keymap.set('n', '<right>', ']s', { noremap = true })
+-- vim.keymap.set('n', '<left>', '[s', { noremap = true })
+-- vim.keymap.set('n', '<right>', ']s', { noremap = true })
 
 -- toggle auto comment on new line
 vim.keymap.set('n', '<leader>t/', function()
@@ -119,8 +119,8 @@ vim.keymap.set('n', '<leader>tl', function()
 end)
 
 -- Explorer
-vim.keymap.set('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
+-- vim.keymap.set('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
+-- vim.keymap.set('n', '<leader>x', '<CMD>Ex<CR>', { noremap = true })
 
 -- rename file
 vim.keymap.set('n', '<leader>R', function()
