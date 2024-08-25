@@ -62,7 +62,14 @@ return require('packer').startup(function()
   -- oil
   use {
     'stevearc/oil.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    requires = {
+      {
+        'echasnovski/mini.icons',
+        config = function()
+          require("mini.icons").setup()
+        end,
+      }
+    }
   }
 
   -- plantuml syntax
