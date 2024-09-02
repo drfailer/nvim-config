@@ -35,7 +35,12 @@ require('kanagawa').setup({
 
 -- gruvbox
 local function df_gruvbox()
-  vim.g.gruvbox_contrast_dark = 'hard'
+  -- vim.g.gruvbox_contrast_dark = 'hard'
+  -- vim.cmd.colorscheme('gruvbox')
+  require("gruvbox").setup({
+    contrast = "hard",
+    transparent_mode = true,
+  })
   vim.cmd.colorscheme('gruvbox')
 end
 
@@ -86,8 +91,8 @@ end
 -- df_setTheme("melange")
 -- df_setTheme("dragon")
 -- df_setTheme("kanagawa")
-df_setTheme("onedark")
--- df_setTheme("gruvbox")
+-- df_setTheme("onedark")
+df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()
