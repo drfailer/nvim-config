@@ -29,15 +29,12 @@ local insertPub = '/public:<CR>}O'
 local st = 'mz'
 local gt = '`z'
 
--- generate methode
-vim.keymap.set('n', '<C-m>',
-  st .. yankMethod .. yankClassName .. switchToSrc .. insertEnd .. genMethod,
-  { noremap = true, buffer = true })
--- getter
-vim.keymap.set('n', '<leader>lgg',
-  st .. yankVar .. yankType .. insertPub .. genGetterDef_ .. gt,
-  { noremap = true, buffer = true })
--- setter
-vim.keymap.set('n', '<leader>lgs',
-  st .. yankVar .. yankType .. insertPub .. genSetterDef_ .. gt,
-  { noremap = true, buffer = true })
+-- full commands
+local generate_getter = st .. yankVar .. yankType .. insertPub .. genGetterDef_ .. gt
+local generate_setter = st .. yankVar .. yankType .. insertPub .. genSetterDef_ .. gt
+local generate_method = st .. yankMethod .. yankClassName .. switchToSrc .. insertEnd .. genMethod
+
+-- mappings
+vim.keymap.set('n', '<C-m>', generate_method, { noremap = true, buffer = true })
+vim.keymap.set('n', '<leader>lgg', generate_setter, { noremap = true, buffer = true })
+vim.keymap.set('n', '<leader>lgs', generate_setter, { noremap = true, buffer = true })
