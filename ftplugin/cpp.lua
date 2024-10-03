@@ -10,7 +10,7 @@
 local yankClassName = '?^class<CR>w"cyiw'
 local yankMethod = '$F)v^"my'
 local yankVar = '"vyiw'
-local yankType = '^v/[=;]<CR>B?[a-zA-Z0-9>*]<CR>"ty'
+local yankType = '^v/[=;]<CR>b?[a-zA-Z0-9>\\*]<CR>"ty'
 local cut = 'vipokd'
 
 -- generation
