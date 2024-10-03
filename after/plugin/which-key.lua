@@ -55,22 +55,13 @@ wk.add({
   { "<leader>gj", desc = "next diff" },
   { "<leader>gk", desc = "previous diff" },
 
-  -- compile
-  { "<leader>c", group = "compile" },
-  { "<leader>cc", desc = "compile" },
-  { "<leader>cr", desc = "run" },
-
-  -- gdb (C & Cpp)
+  -- gdb
   { "<leader>d", group = "gdb" },
   { "<leader>dd", desc = "reset build directory" },
   { "<leader>db", desc = "set breakpoint" },
   { "<leader>dc", desc = "set conditional breakpoint" },
+  { "<leader>dp", desc = "set print breakpoint (visual mode)" },
   { "<leader>dC", desc = "clear" },
-
-  -- termdebug
-  { "<leader>D", group = "termdebug" },
-  { "<leader>DD", desc = "toggle" },
-  { "<leader>Dd", desc = "toggle + reload" },
 
   -- quickfix list
   { "<leader>q", group = "quickfix list" },
