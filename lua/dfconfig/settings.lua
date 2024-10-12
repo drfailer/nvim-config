@@ -31,9 +31,9 @@ o.relativenumber = true
 o.numberwidth = 2
 
 -- tab and indent
-o.tabstop = 2
-o.shiftwidth = 2
-o.softtabstop = 2
+o.tabstop = 4
+o.shiftwidth = 4
+o.softtabstop = 4
 o.expandtab = true
 o.smarttab = true
 o.autoindent = true
