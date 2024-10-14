@@ -2,41 +2,15 @@
 --                                   THEME                                    --
 --------------------------------------------------------------------------------
 
-require('kanagawa').setup({
-    undercurl = true,            -- enable undercurls
-    commentStyle = { italic = true },
-    keywordStyle = { italic = false },
-    statementStyle = { bold = false },
-    transparent = true,         -- do not set background color
-    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    overrides = function(colors) -- add/modify highlights
-        local theme = colors.theme
-        return {
-            NormalFloat = { bg = "none" },
-            FloatBorder = { bg = "none" },
-            FloatTitle = { bg = "none" },
-            NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-            LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-            MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-            TelescopeTitle = { fg = theme.ui.special, bold = true },
-            TelescopePromptBorder = { fg = theme.ui.fg_p1, bg = "none" },
-            TelescopeResultsBorder = { fg = theme.ui.fg_p1, bg = "none" },
-            TelescopePreviewBorder = { fg = theme.ui.fg_p1, bg = "none" },
-            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
-            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
-            PmenuSbar = { bg = theme.ui.bg_m1 },
-            PmenuThumb = { bg = theme.ui.bg_p2 },
-        }
-    end,
-    theme = "dragon",
-    background = { dark = "dragon", },
+-- modus
+-- Default options
+require("modus-themes").setup({
+    variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+	transparent = true, -- Transparent background (as supported by the terminal)
 })
 
 -- gruvbox
 local function df_gruvbox()
-  -- vim.g.gruvbox_contrast_dark = 'hard'
-  -- vim.cmd.colorscheme('gruvbox')
   require("gruvbox").setup({
     contrast = "hard",
     transparent_mode = true,
@@ -64,6 +38,9 @@ function df_themeSettings()
   vim.api.nvim_set_hl(0, 'Normal', { bg = None })
   vim.api.nvim_set_hl(0, 'Float', { bg = None })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
+  vim.api.nvim_set_hl(0, 'LineNrAbove', { bg = None })
+  vim.api.nvim_set_hl(0, 'LineNrBelow', { bg = None })
+  vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
   vim.api.nvim_set_hl(0, 'Folded', { bg = None, fg = '#555555' })
 end
@@ -76,12 +53,8 @@ function df_setTheme(currentTheme)
     df_everforest()
   elseif currentTheme == "melange" then
     vim.cmd.colorscheme("melange")
-  elseif currentTheme == "onedark" then
-    vim.cmd.colorscheme("onedark")
-  elseif currentTheme == "dragon" then
-    vim.cmd.colorscheme("kanagawa-dragon")
-  elseif currentTheme == "kanagawa" then
-    vim.cmd.colorscheme("kanagawa")
+  elseif currentTheme == "modus" then
+    vim.cmd.colorscheme("modus_vivendi")
   end
 
   df_themeSettings()
@@ -89,10 +62,9 @@ end
 
 -- df_setTheme("everforest")
 -- df_setTheme("melange")
--- df_setTheme("dragon")
--- df_setTheme("kanagawa")
--- df_setTheme("onedark")
-df_setTheme("gruvbox")
+df_setTheme("modus")
+  vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
+-- df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()
