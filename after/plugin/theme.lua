@@ -2,13 +2,6 @@
 --                                   THEME                                    --
 --------------------------------------------------------------------------------
 
--- modus
--- Default options
-require("modus-themes").setup({
-    variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
-	transparent = true, -- Transparent background (as supported by the terminal)
-})
-
 -- gruvbox
 local function df_gruvbox()
   require("gruvbox").setup({
@@ -53,8 +46,6 @@ function df_setTheme(currentTheme)
     df_everforest()
   elseif currentTheme == "melange" then
     vim.cmd.colorscheme("melange")
-  elseif currentTheme == "modus" then
-    vim.cmd.colorscheme("modus_vivendi")
   end
 
   df_themeSettings()
@@ -62,9 +53,7 @@ end
 
 -- df_setTheme("everforest")
 -- df_setTheme("melange")
-df_setTheme("modus")
-  vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
--- df_setTheme("gruvbox")
+df_setTheme("gruvbox")
 
 -- init lualine
 require('lualine').setup()
