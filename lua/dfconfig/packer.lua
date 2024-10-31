@@ -24,8 +24,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- themes:
-  use 'ellisonleao/gruvbox.nvim'
-  use 'sainnhe/everforest'
+  use 'RRethy/base16-nvim'
   use 'savq/melange-nvim'
 
   -- lualine:
