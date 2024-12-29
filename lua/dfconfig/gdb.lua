@@ -59,8 +59,8 @@ function gdb_clear()
 end
 
 -- mappings
-vim.keymap.set('n', '<leader>dd', reset_build_dir, { noremap = true, buffer = true })
-vim.keymap.set('n', '<leader>db', gdb_break, { noremap = true, buffer = true })
-vim.keymap.set('n', '<leader>dc', gdb_cbreak, { noremap = true, buffer = true })
-vim.keymap.set('v', '<leader>dp', gdb_print_break, { noremap = true, buffer = true })
-vim.keymap.set('n', '<leader>dC', gdb_clear, { noremap = true, buffer = true })
+vim.keymap.set('n', '<leader>dd', reset_build_dir, { noremap = true })
+vim.keymap.set('n', '<leader>db', gdb_break, { noremap = true })
+vim.keymap.set('n', '<leader>dc', gdb_cbreak, { noremap = true })
+vim.keymap.set('v', '<leader>dp', gdb_print_break, { noremap = true })
+vim.keymap.set('n', '<leader>dC', gdb_clear, { noremap = true })

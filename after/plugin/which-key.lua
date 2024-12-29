@@ -60,7 +60,7 @@ wk.add({
   { "<leader>dd", desc = "reset build directory" },
   { "<leader>db", desc = "set breakpoint" },
   { "<leader>dc", desc = "set conditional breakpoint" },
-  { "<leader>dp", desc = "set print breakpoint (visual mode)" },
+  { "<leader>dp", desc = "set print breakpoint", mode = 'v' },
   { "<leader>dC", desc = "clear" },
 
   -- quickfix list
