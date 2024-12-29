@@ -15,16 +15,14 @@ end
 
 -- set the given theme
 function df_setTheme(currentTheme)
-  if currentTheme == "melange" then
-    vim.cmd.colorscheme("melange")
-    df_clearColors()
-  else
-    vim.cmd.colorscheme(currentTheme)
-  end
+  vim.cmd.colorscheme(currentTheme)
+  df_clearColors()
 end
 
 -- df_setTheme("melange")
-df_setTheme("base16-tomorrow-night")
+-- df_setTheme("base16-tomorrow-night")
+df_setTheme("base16-gruvbox-dark-hard")
+-- df_setTheme("base16-black-metal-bathory")
 
 -- init lualine
 require('lualine').setup()
