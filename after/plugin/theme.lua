@@ -10,7 +10,7 @@ function df_clearColors()
   vim.api.nvim_set_hl(0, 'LineNrBelow', { bg = None })
   vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
-  vim.api.nvim_set_hl(0, 'Folded', { fg = '#fabd2f', bg = '#333333' })
+  vim.api.nvim_set_hl(0, 'Folded', { fg = '#fabd2f', bg = None })
 end
 
 -- set the given theme

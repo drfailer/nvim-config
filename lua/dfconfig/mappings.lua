@@ -128,12 +128,22 @@ vim.keymap.set('n', '<leader>R', function()
 end, { noremap = true })
 
 -- remember folds
-vim.keymap.set('n', '<leader>mkv', '<CMD>mkview<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>vm', '<CMD>mkview<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>vl', '<CMD>loadview<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>vd', function()
+    local path = vim.fn.substitute(vim.fn.expand('%'), '/', '=+', 'g')
+    local vd = vim.o.viewdir
+    local file = vd .. '~=+' .. path .. '='
+    print('delete: ' .. file)
+    vim.cmd('call delete("' .. file .. '")')
+end, { noremap = true })
+vim.keymap.set('n', '<leader>vM', '<CMD>set foldmethod=manual<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>vK', '<CMD>set foldmethod=marker<CR>', { noremap = true })
 
 -- terminal
 vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', { noremap = true })
-vim.keymap.set('n', '<leader>vt', '<CMD>vert split <bar> terminal<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>vT', '<CMD>split <bar> terminal<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tt', '<CMD>vert split <bar> terminal<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tT', '<CMD>split <bar> terminal<CR>', { noremap = true })
 
 -- netrw mapping (https://www.reddit.com/r/neovim/comments/ud2w4k/how_to_remap_netrw_to_n_in_keybindingsinitlua/)
 vim.api.nvim_create_autocmd('filetype', {
