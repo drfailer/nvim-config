@@ -4,6 +4,7 @@
 
 function df_clearColors()
   vim.api.nvim_set_hl(0, 'Normal', { bg = None })
+  vim.api.nvim_set_hl(0, 'NormalNC', { bg = None })
   vim.api.nvim_set_hl(0, 'Float', { bg = None })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'LineNrAbove', { bg = None })
