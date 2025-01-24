@@ -11,9 +11,6 @@ vim.keymap.set('n', '<M-k>', '<CMD>resize +2<CR>', { noremap = true })
 vim.keymap.set('n', '<M-h>', '<CMD>vertical resize -2<CR>', { noremap = true })
 vim.keymap.set('n', '<M-l>', '<CMD>vertical resize +2<CR>', { noremap = true })
 
--- escape
-vim.keymap.set('i', 'kl', '<Esc>la', { noremap = true })
-
 -- fix J
 vim.keymap.set("n", "J", "mzJ`z")
 
@@ -58,10 +55,12 @@ vim.keymap.set('n', '<leader>qc', '<CMD>cclose<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>qp', '<CMD>cprev<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>qn', '<CMD>cnext<CR>', { noremap = true })
 
--- substitution
+-- substitution & search
 vim.keymap.set('n', '<leader>S', ':%s//g<Left><Left>', { noremap = true })
 vim.keymap.set('v', '<leader>S', ':s//g<Left><Left>', { noremap = true })
 vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { noremap = true })
+vim.keymap.set('v', '<leader>/', '"vyV/<C-r>v<CR>', { noremap = true })
+vim.keymap.set('v', '<leader>*', ':s/<C-r>v//g<Left><Left>', { noremap = true })
 
 -- spell PROBLEME
 vim.keymap.set('n', '<F6>', '<CMD>setlocal spell! spelllang=fr,cjk<cr>', { noremap = true })
