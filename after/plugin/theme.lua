@@ -26,4 +26,9 @@ df_setTheme("base16-gruvbox-dark-hard")
 -- df_setTheme("base16-black-metal-bathory")
 
 -- init lualine
-require('lualine').setup()
+local lualine_gruvbox = require('lualine.themes.gruvbox')
+lualine_gruvbox.normal.c.bg = '#282828'
+lualine_gruvbox.inactive.c.bg = '#282828'
+require('lualine').setup {
+  options = { theme  = lualine_gruvbox },
+}
