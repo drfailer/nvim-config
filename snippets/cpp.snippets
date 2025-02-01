@@ -38,8 +38,8 @@ snippet endl
 	std::endl$0
 ##### headerfiles and preprocessor
 snippet guard
-	#ifndef `toupper(tr(expand('%:r'), "/", "_"))`_H
-	#define `toupper(tr(expand('%:r'), "/", "_"))`_H
+	#ifndef `toupper(tr(substitute(expand('%:r'), getcwd() .. "/", "", ""), "/", "_"))`_H
+	#define `toupper(tr(substitute(expand('%:r'), getcwd() .. "/", "", ""), "/", "_"))`_H
 
 	$0
 
