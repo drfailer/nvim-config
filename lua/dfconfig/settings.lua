@@ -53,8 +53,8 @@ vim.opt.listchars = {
 }
 
 -- cases
-o.ignorecase = true
-o.smartcase = true
+o.ignorecase = false
+o.smartcase = false
 
 -- no backups or swap
 o.backup = false
