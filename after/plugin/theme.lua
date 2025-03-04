@@ -15,20 +15,25 @@ function df_clearColors()
 end
 
 -- set the given theme
-function df_setTheme(currentTheme)
+function df_setTheme(currentTheme, custom_config)
   vim.cmd.colorscheme(currentTheme)
-  df_clearColors()
+  if custom_config then
+      df_clearColors()
+  end
+  if string.find(currentTheme, "gruvbox") then
+    local lualine_gruvbox = require('lualine.themes.gruvbox')
+    lualine_gruvbox.normal.c.bg = '#282828'
+    lualine_gruvbox.inactive.c.bg = '#282828'
+    require('lualine').setup {
+      options = { theme  = lualine_gruvbox },
+    }
+  else
+    require('lualine').setup {}
+  end
 end
 
--- df_setTheme("melange")
--- df_setTheme("base16-tomorrow-night")
-df_setTheme("base16-gruvbox-dark-hard")
--- df_setTheme("base16-black-metal-bathory")
+-- df_setTheme("melange", true)
+-- df_setTheme("base16-tomorrow-night", true)
+df_setTheme("base16-gruvbox-dark-hard", true)
+-- df_setTheme("base16-black-metal-gorgoroth")
 
--- init lualine
-local lualine_gruvbox = require('lualine.themes.gruvbox')
-lualine_gruvbox.normal.c.bg = '#282828'
-lualine_gruvbox.inactive.c.bg = '#282828'
-require('lualine').setup {
-  options = { theme  = lualine_gruvbox },
-}
