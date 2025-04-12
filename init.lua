@@ -5,5 +5,6 @@
 require('dfconfig.settings')
 require('dfconfig.mappings')
 require('dfconfig.ab')
-require('dfconfig.packer')
 require('dfconfig.gdb')
+require('dfconfig.fold')
+require('dfconfig.lazy')
