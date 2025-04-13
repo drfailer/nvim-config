@@ -1,7 +1,6 @@
 return function()
-  require('lspconfig').ltex.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+  vim.lsp.config.ltex = {
+    capabilities = require("dfconfig.lsp.cmp").capabilities,
     filetypes = { 'tex', 'latex' },
     settings = {
       ltex = {
@@ -9,5 +8,6 @@ return function()
         language = "en",
       },
     },
-  })
+  }
+  vim.lsp.enable("ltex")
 end

@@ -1,7 +1,6 @@
 return function()
-  require('lspconfig').clangd.setup({
-    capabilities = require('dfconfig.lsp.cmp').capabilities,
-    on_attach = require('dfconfig.lsp.lsp-config').on_attach,
+  vim.lsp.config.clangd = {
+    capabilities = require("dfconfig.lsp.cmp").capabilities,
     cmd = {
       "clangd",
       "--background-index",
@@ -17,5 +16,6 @@ return function()
       "--header-insertion=iwyu",
       "--compile-commands-dir=../build/",
     }
-  })
+  }
+  vim.lsp.enable("clangd")
 end

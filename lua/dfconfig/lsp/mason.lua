@@ -3,17 +3,16 @@
 --------------------------------------------------------------------------------
 
 function default_handler(language)
-  require('lspconfig')[language].setup({
+  vim.lsp.config[language] = {
     capabilities = require('dfconfig.lsp.cmp').capabilities,
-    on_attach = require('dfconfig.lsp.lsp-config').on_attach,
-  })
+  }
+  vim.lsp.enable(language)
 end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
     'clangd',
-    -- 'rust_analyzer',
     'ltex',
   },
   handlers = {

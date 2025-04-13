@@ -2,7 +2,6 @@
 --                                    cmp                                     --
 --------------------------------------------------------------------------------
 
-local cmp_config = {}
 local cmp = require('cmp')
 
 cmp.setup({
@@ -59,7 +58,6 @@ cmp.setup.cmdline(':', {
   matching = { disallow_symbol_nonprefix_matching = false }
 })
 
--- for lsp config
-cmp_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-return cmp_config
+return {
+  capabilities = require('cmp_nvim_lsp').default_capabilities()
+}
