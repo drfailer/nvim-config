@@ -11,21 +11,11 @@ ls.config.set_config({
   delete_check_events = 'InsertLeave'
 })
 
--- -- luasnip mappings
-vim.keymap.set({"i"}, "<Tab>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  else
-    local tabkey = ""
-    for i=1,vim.o.tabstop do
-      tabkey = tabkey.." "
-    end
-    vim.api.nvim_feedkeys(tabkey, "i", true)
-  end
-end, {silent = true})
-vim.keymap.set({"s"}, "<Tab>", function() ls.jump( 1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-E>", function()
+vim.keymap.set({"i"}, "<C-i>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<M-l>", function() ls.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<M-h>", function() ls.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-e>", function()
   if ls.choice_active() then
     ls.change_choice(1)
   end
