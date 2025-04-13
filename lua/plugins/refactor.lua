@@ -9,44 +9,65 @@ return {
             prompt_func_return_type = {
                 go = false,
                 java = false,
-                cpp = false,
+                cpp = true,
                 c = true,
-                h = false,
-                hpp = false,
-                cxx = false,
+                h = true,
+                hpp = true,
+                cxx = true,
             },
             prompt_func_param_type = {
                 go = false,
                 java = false,
-                cpp = false,
+                cpp = true,
                 c = true,
-                h = false,
-                hpp = false,
-                cxx = false,
+                h = true,
+                hpp = true,
+                cxx = true,
             },
-            printf_statements = {},
+            printf_statements = {
+                cpp = {
+                    'std::cout << "%s" << std::endl;'
+                }
+            },
             print_var_statements = {},
         })
 
-        -- load refactoring Telescope extension
-        require("telescope").load_extension("refactoring")
+        -- extract
+        vim.keymap.set({ "n", "x" }, "<leader>re", function()
+            return require('refactoring').refactor('Extract Function')
+        end, { expr = true })
+        vim.keymap.set({ "n", "x" }, "<leader>rf", function()
+            return require('refactoring').refactor('Extract Function To File')
+        end, { expr = true })
+        vim.keymap.set({ "n", "x" }, "<leader>rv", function()
+            return require('refactoring').refactor('Extract Variable')
+        end, { expr = true })
 
-        -- Use telescope to select options
-        vim.api.nvim_set_keymap( "v", "<leader>rr", "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-        { noremap = true })
+        -- inline
+        vim.keymap.set({ "n", "x" }, "<leader>rI", function()
+            return require('refactoring').refactor('Inline Function')
+        end, { expr = true })
+        vim.keymap.set({ "n", "x" }, "<leader>ri", function()
+            return require('refactoring').refactor('Inline Variable')
+        end, { expr = true })
 
-        -- debug printf
-        vim.api.nvim_set_keymap( "n", "<leader>rp", ":lua require('refactoring').debug.printf({below = false})<CR>",
-        { noremap = true })
+        -- block
+        vim.keymap.set({ "n", "x" }, "<leader>rbb", function()
+            return require('refactoring').refactor('Extract Block')
+        end, { expr = true })
+        vim.keymap.set({ "n", "x" }, "<leader>rbf", function()
+            return require('refactoring').refactor('Extract Block To File')
+        end, { expr = true })
 
-        -- debug printf variable
-        vim.api.nvim_set_keymap("n", "<leader>rdv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>",
-        { noremap = true })
-        vim.api.nvim_set_keymap("v", "<leader>rdv", ":lua require('refactoring').debug.print_var({})<CR>",
-        { noremap = true })
-
-        -- cleanup debug printf
-        vim.api.nvim_set_keymap("n", "<leader>rdc", ":lua require('refactoring').debug.cleanup({})<CR>",
-        { noremap = true })
+        -- debug print
+        vim.keymap.set("n", "<leader>rp", function()
+            require('refactoring').debug.printf({below = false})
+        end)
+        vim.keymap.set({"x", "n"}, "<leader>rv", function()
+            require('refactoring').debug.print_var()
+        end)
+        vim.keymap.set("n", "<leader>rc", function()
+            require('refactoring').debug.cleanup({})
+        end)
     end
 }
