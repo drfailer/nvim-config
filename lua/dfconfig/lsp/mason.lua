@@ -4,9 +4,10 @@
 
 function default_handler(language)
   vim.lsp.config[language] = {
-    capabilities = require('dfconfig.lsp.cmp').capabilities,
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
   }
   vim.lsp.enable(language)
+  print("default handler called for ", language)
 end
 
 require('mason').setup({})

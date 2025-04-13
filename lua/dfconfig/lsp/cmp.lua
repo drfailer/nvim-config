@@ -57,7 +57,3 @@ cmp.setup.cmdline(':', {
   }),
   matching = { disallow_symbol_nonprefix_matching = false }
 })
-
-return {
-  capabilities = require('cmp_nvim_lsp').default_capabilities()
-}

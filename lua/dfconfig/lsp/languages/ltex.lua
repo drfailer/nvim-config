@@ -1,6 +1,6 @@
 return function()
   vim.lsp.config.ltex = {
-    capabilities = require("dfconfig.lsp.cmp").capabilities,
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
     filetypes = { 'tex', 'latex' },
     settings = {
       ltex = {

@@ -1,6 +1,6 @@
 return function()
   vim.lsp.config.clangd = {
-    capabilities = require("dfconfig.lsp.cmp").capabilities,
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
     cmd = {
       "clangd",
       "--background-index",
