@@ -2,7 +2,7 @@ return {
     "stevearc/oil.nvim",
     lazy = false,
     opts = {
-        columns = { "icon" },
+        columns = {},
         skip_confirm_for_simple_edits = false,
         keymaps = {
             ["<C-h>"] = false,
