@@ -36,7 +36,11 @@ cmp.setup({
       }
     },
     { name = 'luasnip', keyword_length = 2 },
-  })
+  }),
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
