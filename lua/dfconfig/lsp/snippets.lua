@@ -11,7 +11,7 @@ ls.config.set_config({
   delete_check_events = 'InsertLeave'
 })
 
-vim.keymap.set({"i"}, "<C-i>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i"}, "<C-j>", function() ls.expand() end, {silent = true})
 vim.keymap.set({"i", "s"}, "<M-l>", function() ls.jump( 1) end, {silent = true})
 vim.keymap.set({"i", "s"}, "<M-h>", function() ls.jump(-1) end, {silent = true})
 
