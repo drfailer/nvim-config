@@ -58,7 +58,7 @@ vim.keymap.set('n', '<leader>qn', '<CMD>cnext<CR>', { noremap = true })
 -- substitution & search
 vim.keymap.set('n', '<leader>S', ':%s//g<Left><Left>', { noremap = true })
 vim.keymap.set('v', '<leader>S', ':s//g<Left><Left>', { noremap = true })
-vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>//g<Left><Left>', { noremap = true })
+vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>', { noremap = true })
 vim.keymap.set('v', '<C-n>', '"vyV/\\V<C-r>v<CR>', { noremap = true })
 vim.keymap.set('v', '<leader>*', ':s/\\V<C-r>v//g<Left><Left>', { noremap = true })
 
