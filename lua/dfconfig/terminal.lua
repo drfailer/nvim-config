@@ -2,9 +2,24 @@ local state = {
   floating = {
     buf = -1,
     win = -1,
+    job = -1,
   },
-  job_id = -1,
+  bottom = {
+    buf = -1,
+    win = -1,
+    job = -1,
+  },
 }
+
+local function create_buff(buf)
+  local result = nil
+  if vim.api.nvim_buf_is_valid(buf) then
+    result = buf
+  else
+    result = vim.api.nvim_create_buf(false, true) -- No file, scratch buffer
+  end
+  return result
+end
 
 local function create_floating_window(opts)
   opts = opts or {}
@@ -15,13 +30,7 @@ local function create_floating_window(opts)
   local col = math.floor((vim.o.columns - width) / 2)
   local row = math.floor((vim.o.lines - height) / 2)
 
-  -- Create a buffer
-  local buf = nil
-  if vim.api.nvim_buf_is_valid(opts.buf) then
-    buf = opts.buf
-  else
-    buf = vim.api.nvim_create_buf(false, true) -- No file, scratch buffer
-  end
+  local buf = create_buff(opts.buf)
 
   -- Define window configuration
   local win_config = {
@@ -40,32 +49,44 @@ local function create_floating_window(opts)
   return { buf = buf, win = win }
 end
 
--- toggle a terminal in a floating window and execute the given command if any
-local toggle_terminal = function(cmd)
-  if not vim.api.nvim_win_is_valid(state.floating.win) then
-    state.floating = create_floating_window { buf = state.floating.buf }
-    if vim.bo[state.floating.buf].buftype ~= "terminal" then
+local function create_boom_window(opts)
+  local buf = create_buff(opts.buf)
+
+  vim.cmd.new()
+  vim.api.nvim_win_set_height(0, 15);
+
+  local win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_set_buf(win, buf)
+
+  return { buf = buf, win = win }
+end
+
+local toggle_terminal = function(cmd, win_id, create_window)
+  if not vim.api.nvim_win_is_valid(state[win_id].win) then
+    local result = create_window({ buf = state[win_id].buf })
+    state[win_id].buf = result.buf
+    state[win_id].win = result.win
+    if vim.bo[state[win_id].buf].buftype ~= "terminal" then
       vim.cmd.terminal()
-      state.job_id = vim.bo.channel
+      state[win_id].job = vim.bo.channel
     end
-  elseif cmd == "" then
-    vim.api.nvim_win_hide(state.floating.win)
+  elseif cmd == nil or cmd == "" then
+    vim.api.nvim_win_hide(state[win_id].win)
   end
-  if cmd ~= "" then
-    vim.fn.chansend(state.job_id, { cmd .. "\r" })
+  if cmd and cmd ~= "" then
+    vim.fn.chansend(state[win_id].job, { cmd .. "\r" })
   end
 end
 
--- open a terminal in the bottom
-local job_id = 0
-local open_bottom_terminal = function()
-  vim.cmd.new()
-  vim.cmd.term()
-  vim.api.nvim_win_set_height(0, 15);
-  job_id = vim.bo.channel
+local toggle_float_terminal = function(cmd)
+  toggle_terminal(cmd, "floating", create_floating_window)
+end
+
+local toggle_bottom_terminal = function(cmd)
+  toggle_terminal(cmd, "bottom", create_boom_window)
 end
 
 return {
-    toggle_terminal = toggle_terminal,
-    open_bottom_terminal = open_bottom_terminal,
+    toggle_float_terminal = toggle_float_terminal,
+    toggle_bottom_terminal = toggle_bottom_terminal,
 }

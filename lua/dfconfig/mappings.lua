@@ -142,14 +142,18 @@ vim.keymap.set('n', '<leader>vK', '<CMD>set foldmethod=marker<CR>', { noremap = 
 -- terminal
 vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set("n", "<leader>tt", function()
-    require("dfconfig.terminal").toggle_terminal("")
+    require("dfconfig.terminal").toggle_float_terminal()
 end, { noremap = true })
 vim.keymap.set("n", "<leader>tT", function()
-    require("dfconfig.terminal").open_bottom_terminal()
+    require("dfconfig.terminal").toggle_bottom_terminal()
 end, { noremap = true })
 
-vim.api.nvim_create_user_command("Floaterminal", function(args)
-  require("dfconfig.terminal").toggle_terminal(args.args)
+vim.api.nvim_create_user_command("FTerminal", function(args)
+  require("dfconfig.terminal").toggle_float_terminal(args.args)
+end, { nargs = "*" })
+
+vim.api.nvim_create_user_command("BTerminal", function(args)
+  require("dfconfig.terminal").toggle_bottom_terminal(args.args)
 end, { nargs = "*" })
 
 -- netrw mapping (https://www.reddit.com/r/neovim/comments/ud2w4k/how_to_remap_netrw_to_n_in_keybindingsinitlua/)
