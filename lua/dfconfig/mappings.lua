@@ -140,7 +140,7 @@ vim.keymap.set('n', '<leader>vM', '<CMD>set foldmethod=manual<CR>', { noremap = 
 vim.keymap.set('n', '<leader>vK', '<CMD>set foldmethod=marker<CR>', { noremap = true })
 
 -- terminal
-vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set("n", "<leader>tt", function()
     require("dfconfig.terminal").toggle_float_terminal()
 end, { noremap = true })

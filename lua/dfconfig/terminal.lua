@@ -52,7 +52,8 @@ end
 local function create_boom_window(opts)
   local buf = create_buff(opts.buf)
 
-  vim.cmd.new()
+  vim.cmd.vnew()
+  vim.cmd.wincmd("J")
   vim.api.nvim_win_set_height(0, 15);
 
   local win = vim.api.nvim_get_current_win()
