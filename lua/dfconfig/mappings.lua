@@ -144,7 +144,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set("n", "<leader>tt", function()
     require("dfconfig.terminal").toggle_float_terminal()
 end, { noremap = true })
-vim.keymap.set("n", "<leader>tT", function()
+vim.keymap.set("n", "<leader>!", function()
     require("dfconfig.terminal").toggle_bottom_terminal()
 end, { noremap = true })
 
