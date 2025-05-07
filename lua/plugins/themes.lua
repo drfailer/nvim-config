@@ -26,7 +26,7 @@ function df_setTheme(currentTheme, custom_config)
       options = { theme  = lualine_gruvbox },
     }
   else
-    require('lualine').setup {}
+    require('dfconfig.statusline')
   end
 end
 
