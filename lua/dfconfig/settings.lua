@@ -72,7 +72,6 @@ o.fileencoding = 'utf-8'
 
 -- formating
 vim.o.formatoptions = vim.o.formatoptions .. 'tcrqnj'
-vim.g.toggleCRO = true
 vim.g.toggleVirtualEdit = false
 
 -- completion

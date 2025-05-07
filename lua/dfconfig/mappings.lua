@@ -67,17 +67,6 @@ vim.keymap.set('n', '<F6>', '<CMD>setlocal spell! spelllang=fr,cjk<cr>', { norem
 vim.keymap.set('n', '<F7>', '<CMD>set spelllang=en,cjk<cr>', { noremap = true })
 vim.keymap.set('n', '<leader>s', '<ESC>1z=', { noremap = true })
 
--- toggle auto comment on new line
-vim.keymap.set('n', '<leader>t/', function()
-  if vim.g.toggleCRO then
-    vim.g.toggleCRO = false
-    vim.cmd("setlocal formatoptions-=cro")
-  else
-    vim.g.toggleCRO = true
-    vim.cmd("setlocal formatoptions+=cro")
-  end
-end, { noremap = true })
-
 -- toggle virtual edit
 vim.keymap.set('n', '<leader>tv', function()
   if vim.g.toggleVirtualEdit then

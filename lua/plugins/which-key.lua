@@ -55,9 +55,14 @@ return {
 
             -- toggle
             { "<leader>t", group = "toggle options" },
+            { "<leader>tt", desc = "terminal" },
             { "<leader>tv", desc = "virtual edit" },
             { "<leader>tc", desc = "centering" },
             { "<leader>tl", desc = "light / dark background" },
+
+            -- utils
+            { "<leader>!", desc = "terminal" },
+            { "<leader>R", desc = "rename file" },
         })
     end
 }
