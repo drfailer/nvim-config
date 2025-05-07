@@ -1,6 +1,7 @@
 function df_clearColors()
   vim.api.nvim_set_hl(0, 'Normal', { bg = None })
   vim.api.nvim_set_hl(0, 'NormalNC', { bg = None })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = None })
   vim.api.nvim_set_hl(0, 'Float', { bg = None })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'LineNrAbove', { bg = None })
@@ -8,6 +9,7 @@ function df_clearColors()
   vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
   vim.api.nvim_set_hl(0, 'Folded', { fg = '#fabd2f', bg = None })
+  vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Normal' })
 end
 
 -- set the given theme
@@ -40,7 +42,8 @@ return {
       cmp = false,
     })
     -- df_setTheme("base16-tomorrow-night", true)
-    df_setTheme("base16-gruvbox-dark-hard", true)
+    -- df_setTheme("base16-gruvbox-dark-hard", true)
+    df_setTheme("base16-rose-pine", true)
     -- df_setTheme("base16-black-metal-gorgoroth")
   end
 }
