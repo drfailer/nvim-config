@@ -14,11 +14,12 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
     'clangd',
-    'ltex',
+    'texlab',
+    -- 'ltex',
   },
   handlers = {
     default_handler,
-    ltex = require('dfconfig.lsp.languages.ltex'),
+    -- ltex = require('dfconfig.lsp.languages.ltex'),
     clangd = require('dfconfig.lsp.languages.clangd'),
   },
 })
