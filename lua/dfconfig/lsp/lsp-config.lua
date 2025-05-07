@@ -5,6 +5,7 @@
 -- diagnostic
 vim.diagnostic.config({
   virtual_text = true,
+  float = { border = "rounded" },
 })
 
 -- log
@@ -22,7 +23,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local tb = require("telescope.builtin")
 
     -- generic mappings
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'K', function()
+      vim.lsp.buf.hover({ border = 'rounded', })
+    end, { buffer = args.buf })
+    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "gd", tb.lsp_definitions, opts)
     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>lF", vim.lsp.buf.format, opts)
