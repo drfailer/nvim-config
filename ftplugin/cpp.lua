@@ -24,7 +24,7 @@ local genSetterDef_ = 'void <C-r>v(<C-r>t <C-r>v) { this-><C-r>v = <C-r>v; }<Esc
 local switchToSrc = ':e %:r.cpp<CR>'
 
 -- goto
-local insertEnd = 'GO<Esc>O'
+local insertEnd = 'Go<Esc>O'
 local insertPub = '/public:<CR>}O'
 local st = 'mz'
 local gt = '`z'
@@ -35,6 +35,6 @@ local generate_setter = st .. yankVar .. yankType .. insertPub .. genSetterDef_ 
 local generate_method = st .. yankMethod .. yankClassName .. switchToSrc .. insertEnd .. genMethod
 
 -- mappings
-vim.keymap.set('n', '<C-m>', generate_method, { noremap = true, buffer = true })
-vim.keymap.set('n', '<leader>lgg', generate_setter, { noremap = true, buffer = true })
+vim.keymap.set('n', '<leader>lgm', generate_method, { noremap = true, buffer = true })
+vim.keymap.set('n', '<leader>lgg', generate_getter, { noremap = true, buffer = true })
 vim.keymap.set('n', '<leader>lgs', generate_setter, { noremap = true, buffer = true })
