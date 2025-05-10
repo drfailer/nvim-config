@@ -8,7 +8,7 @@ return {
     s("cstr", { t("#include <cstring>") }),
 
     -- functions
-    s("cout", { t("std::count << ") }),
+    s("cout", { t("std::cout << ") }),
     s("cerr", { t("std::cerr << ") }),
     s("cin", { t("std::cin >> ") }),
     s("endl", { t("std::endl") }),
