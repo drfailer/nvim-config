@@ -20,5 +20,14 @@ return {
         vim.keymap.set("n", "<leader>fM", builtin.man_pages, { desc = "man" })
         vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "makrs" })
         vim.keymap.set("n", "<leader>fj", builtin.jumplist, { desc = "jumplist" })
+
+        -- pick and insert a file (relative path)
+        vim.keymap.set("i", "<M-i>f", function()
+            require("dfconfig.telescope").telescope_file("Insert File",
+            { file_type = "f", cwd = "." },
+            function(result)
+                vim.api.nvim_put({ result }, "", false, true)
+            end)
+        end, { noremap = true, buffer = true })
     end
 }
