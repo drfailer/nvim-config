@@ -27,6 +27,7 @@ return {
             { file_type = "f", cwd = "." },
             function(result)
                 vim.api.nvim_put({ result }, "", false, true)
+                vim.api.nvim_input("a")
             end)
         end, { noremap = true, buffer = true })
     end
