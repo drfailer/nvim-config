@@ -1,3 +1,8 @@
+function create_section_label(args)
+    local label = vim.fn.tolower(vim.fn.tr(args[1][1], " ", "-"))
+    return string.format("\\label{sec:%s}", label)
+end
+
 return {
     -- text emphase
     s("b", { t("\\textbf{"), i(1), t("}"), i(0) }),
@@ -12,24 +17,15 @@ return {
     -- sections
     s("sec", {
         t("\\section{"), i(1), t({ "}", "" }),
-        f(function(args)
-            local label = vim.fn.tolower(vim.fn.tr(args[1][1], " ", "-"))
-            return string.format("\\label{sec:%s}", label)
-        end, {1}), t({ "", "", "" }), i(0)
+        f(create_section_label, {1}), t({ "", "", "" }), i(0)
     }),
     s("sub", {
         t("\\subsection{"), i(1), t({ "}", "" }),
-        f(function(args)
-            local label = vim.fn.tolower(vim.fn.tr(args[1][1], " ", "-"))
-            return string.format("\\label{sec:%s}", label)
-        end, {1}), t({ "", "", "" }), i(0)
+        f(create_section_label, {1}), t({ "", "", "" }), i(0)
     }),
     s("subsub", {
         t("\\subsubsection{"), i(1), t({ "}", "" }),
-        f(function(args)
-            local label = vim.fn.tolower(vim.fn.tr(args[1][1], " ", "-"))
-            return string.format("\\label{sec:%s}", label)
-        end, {1}), t({ "", "", "" }), i(0)
+        f(create_section_label, {1}), t({ "", "", "" }), i(0)
     }),
 
     -- packages
