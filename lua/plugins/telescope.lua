@@ -22,13 +22,13 @@ return {
         vim.keymap.set("n", "<leader>fj", builtin.jumplist, { desc = "jumplist" })
 
         -- pick and insert a file (relative path)
-        vim.keymap.set("i", "<M-i>f", function()
+        vim.keymap.set("i", "<C-f><C-f>", function()
             require("dfconfig.telescope").telescope_file("Insert File",
             { file_type = "f", cwd = "." },
             function(result)
                 vim.api.nvim_put({ result }, "", false, true)
                 vim.api.nvim_input("a")
             end)
-        end, { noremap = true, buffer = true })
+        end, { noremap = true })
     end
 }
