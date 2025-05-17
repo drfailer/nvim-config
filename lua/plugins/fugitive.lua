@@ -4,7 +4,7 @@ return {
     "nvim-lua/plenary.nvim",
   },
   keys = {
-    { "<leader>gs", function() require("neogit").open({ kind = "split" }) end, desc = "open neogit" },
+    { "<leader>gs", function() require("neogit").open({ kind = "split", cwd = vim.fn.expand("%:p:h") }) end, desc = "open neogit" },
   }
 }
 
