@@ -44,8 +44,8 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true })
 vim.keymap.set('i', '<C-o>', '<CR><Esc>kA', { noremap = true })
 
 -- move lines
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<', '<gv', { noremap = true })
 vim.keymap.set('v', '>', '>gv', { noremap = true })
 
