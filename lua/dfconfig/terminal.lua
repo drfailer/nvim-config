@@ -52,7 +52,9 @@ end
 local function create_boom_window(opts)
   local buf = create_buff(opts.buf)
 
-  vim.cmd.vnew()
+  -- If the file is not specified, it creates an empty unamed buffer which is
+  -- infinitely added to telescope's buffer list.
+  vim.cmd.vnew(vim.fn.expand("%"))
   vim.cmd.wincmd("J")
   vim.api.nvim_win_set_height(0, 15);
 
