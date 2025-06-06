@@ -5,7 +5,7 @@ hi link Keywords Keyword
 syn keyword Delimiters bgn end
 hi link Delimiters Keyword
 
-syn keyword Conditions cnd els
+syn keyword Conditions cnd otw
 hi link Conditions Conditional
 
 syn keyword Loops whl for rng
@@ -52,3 +52,4 @@ hi link File Identifier
 " comments
 syn match Comments /\~\~\~.*/
 hi link Comments Comment
+
