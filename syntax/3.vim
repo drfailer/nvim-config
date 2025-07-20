@@ -12,11 +12,11 @@ syn keyword Loops whl for rng
 hi link Loops Repeat
 
 " types
-syn keyword Types nil int flt chr
+syn keyword Types nil int flt chr str
 hi link Types Type
 
 " operators
-syn keyword Operators set add mns tms div lor xor and eql ieq seq sup inf
+syn keyword Operators set add sub mul div lor xor and eql ieq seq sup inf
 hi link Operators Operator
 
 " string
@@ -33,8 +33,8 @@ syn match Characters /'\\.'/
 hi link Characters Character
 
 " numbers
-syn match Flt /[ ,(][-]\?[0-9]\+\.[0-9]*/
-syn match Int /[ ,(][-]\?[0-9]\+/
+syn match Flt /[ ,(]\zs[-]\?[0-9]\+\.[0-9]*/
+syn match Int /[ ,(]\zs[-]\?[0-9]\+/
 hi link Flt Number
 hi link Int Number
 

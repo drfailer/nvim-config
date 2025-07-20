@@ -65,6 +65,6 @@ return {
     -- df_setTheme("base16-tomorrow-night", true)
     -- df_setTheme("base16-gruvbox-dark-hard", true)
     -- df_setTheme("base16-rose-pine", true)
-    df_setTheme("rose-pine", true)
+    df_setTheme("rose-pine", false)
   end
 }
