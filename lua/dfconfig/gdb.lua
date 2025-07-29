@@ -32,7 +32,7 @@ end
 function gdb_cbreak()
   set_build_dir()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
-  condition = vim.fn.input('if: ', '', 'file')
+  condition = vim.fn.input('if: ', '')
   if condition ~= '' then
     vim.cmd('!echo "break %: ' .. r .. ' if ' .. condition .. '" >> ' .. build_directory .. '/.gdbinit')
   end

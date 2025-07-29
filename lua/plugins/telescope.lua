@@ -2,20 +2,15 @@ return {
     "nvim-telescope/telescope.nvim", branch = "0.1.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        { "nvim-telescope/telescope-fzf-native.nvim", build = 'make' }
     },
     config = function()
-        require("telescope").setup( {
-            extensions = {
-                fzf = {
-                    fuzzy = true,
-                    override_generic_sorter = true,
-                    override_file_sorter = true,
-                    case_mode = "smart_case",
-                }
-            }
+        require("telescope").setup({
+            pickers = {
+                find_files = { theme = "ivy" },
+                live_grep = { theme = "ivy" },
+                buffers = { theme = "dropdown" },
+            },
         })
-        require('telescope').load_extension('fzf')
 
         -- keymaps
         local builtin = require("telescope.builtin")
@@ -28,8 +23,6 @@ return {
         vim.keymap.set("n", "<leader>fS", builtin.spell_suggest, { desc = "spell" })
         vim.keymap.set("n", "<leader>fG", builtin.git_branches, { desc = "git branches" })
         vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "commands" })
-        vim.keymap.set("n", "<leader>fC", builtin.command_history, { desc = "command history" })
-        vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "quickfix" })
         vim.keymap.set("n", "<leader>fM", builtin.man_pages, { desc = "man" })
         vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "makrs" })
         vim.keymap.set("n", "<leader>fj", builtin.jumplist, { desc = "jumplist" })

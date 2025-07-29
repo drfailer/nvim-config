@@ -1,5 +1,5 @@
 " keywords
-syn keyword Keywords ret
+syn keyword Keywords ret dcl
 hi link Keywords Keyword
 
 syn keyword Delimiters bgn end

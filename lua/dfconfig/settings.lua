@@ -12,8 +12,9 @@ o.cmdheight = 1
 o.pumheight = 10
 o.history = 50
 o.signcolumn = 'yes'
-o.cursorline = false
-o.textwidth = 80
+o.cursorline = true
+o.cursorcolumn = false
+o.textwidth = 0
 o.clipboard = 'unnamedplus'
 o.colorcolumn = "80"
 o.scrolloff = 0
@@ -154,7 +155,7 @@ function custom_fold_text()
     return text .. " (" .. line_count .. " L)"
 end
 
-vim.g.custom_fold = true
+vim.g.custom_fold = false
 vim.opt.foldmethod = 'marker'
 
 if vim.g.custom_fold then

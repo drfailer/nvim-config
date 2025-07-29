@@ -23,11 +23,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- easy caps
 vim.keymap.set('i', '<c-u>', '<ESC>viwUea', { noremap = true })
 
--- buffer navigation
-vim.keymap.set('n', '<leader>bn', '<CMD>bnext<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>bp', '<CMD>bprevious<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>bk', '<CMD>bdelete<CR>', { noremap = true })
-
 -- managing tabs
 vim.keymap.set('n', '<leader>Tn', '<CMD>tabnew<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>Te', '<CMD>tabe %<CR>', { noremap = true })
@@ -41,7 +36,7 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true })
 
 -- add line bellow
-vim.keymap.set('i', '<C-o>', '<CR><Esc>kA', { noremap = true })
+vim.keymap.set('i', '<C-o>', '<Esc>O', { noremap = true })
 
 -- move lines
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
@@ -50,16 +45,16 @@ vim.keymap.set('v', '<', '<gv', { noremap = true })
 vim.keymap.set('v', '>', '>gv', { noremap = true })
 
 -- quick fix list
-vim.keymap.set('n', '<leader>qo', '<CMD>copen<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>qc', '<CMD>cclose<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>qp', '<CMD>cprev<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>qn', '<CMD>cnext<CR>', { noremap = true })
+vim.keymap.set('n', '<C-q><C-o>', '<CMD>copen<CR>', { noremap = true })
+vim.keymap.set('n', '<C-q><C-c>', '<CMD>cclose<CR>', { noremap = true })
+vim.keymap.set('n', '<C-q><C-p>', '<CMD>cprev<CR>', { noremap = true })
+vim.keymap.set('n', '<C-q><C-n>', '<CMD>cnext<CR>', { noremap = true })
 
 -- substitution & search
 vim.keymap.set('n', '<leader>S', ':%s//g<Left><Left>', { noremap = true })
 vim.keymap.set('v', '<leader>S', ':s//g<Left><Left>', { noremap = true })
 vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>', { noremap = true })
-vim.keymap.set('v', '<C-n>', '"vyV/\\V<C-r>v<CR>', { noremap = true })
+vim.keymap.set('v', '<C-f>', '"vyV/\\V<C-r>v<CR>', { noremap = true })
 vim.keymap.set('v', '<leader>*', ':s/\\V<C-r>v//g<Left><Left>', { noremap = true })
 
 -- spell PROBLEME
@@ -90,16 +85,6 @@ vim.keymap.set('n', '<leader>tc', function()
     vim.opt.sidescrolloff = 999
   end
 end, { noremap = true })
-
--- switch between light and dark bg
-vim.keymap.set('n', '<leader>tl', function()
-  if vim.o.background == "dark" then
-    vim.o.background = "light"
-  else
-    vim.o.background = "dark"
-  end
-  df_themeSettings()
-end)
 
 -- Explorer
 -- vim.keymap.set('n', '<leader>e', '<CMD>vert split <BAR> Ex<CR>', { noremap = true })
