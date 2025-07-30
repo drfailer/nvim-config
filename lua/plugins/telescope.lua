@@ -4,11 +4,21 @@ return {
         "nvim-lua/plenary.nvim",
     },
     config = function()
+        local picker_theme = {
+            theme = "ivy",
+            results_height = 25,
+            previewer = false,
+            layout_config = { height = 0.2 },
+        }
         require("telescope").setup({
             pickers = {
-                find_files = { theme = "ivy" },
-                live_grep = { theme = "ivy" },
-                buffers = { theme = "dropdown" },
+                find_files = picker_theme,
+                live_grep = picker_theme,
+                buffers = picker_theme,
+                buffers = picker_theme,
+                spell_suggest = picker_theme,
+                man_pages = picker_theme,
+                marks = picker_theme,
             },
         })
 

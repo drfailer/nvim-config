@@ -46,7 +46,7 @@ vim.keymap.set('v', '>', '>gv', { noremap = true })
 
 -- quick fix list
 vim.keymap.set('n', '<C-q><C-o>', '<CMD>copen<CR>', { noremap = true })
-vim.keymap.set('n', '<C-q><C-c>', '<CMD>cclose<CR>', { noremap = true })
+vim.keymap.set('n', '<C-q><C-q>', '<CMD>cclose<CR>', { noremap = true })
 vim.keymap.set('n', '<C-q><C-p>', '<CMD>cprev<CR>', { noremap = true })
 vim.keymap.set('n', '<C-q><C-n>', '<CMD>cnext<CR>', { noremap = true })
 
