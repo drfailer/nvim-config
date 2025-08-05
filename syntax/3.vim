@@ -33,10 +33,8 @@ syn match Characters /'\\.'/
 hi link Characters Character
 
 " numbers
-syn match Flt /[ ,(]\zs[-]\?[0-9]\+\.[0-9]*/
-syn match Int /[ ,(]\zs[-]\?[0-9]\+/
-hi link Flt Number
-hi link Int Number
+syn match Numbers /[ ,(]\zs[-]\?[0-9]\+\.\?[0-9]*/
+hi link Numbers Number
 
 " functions
 syn match Functions /[a-zA-Z][0-9a-zA-Z_]*\ze(/

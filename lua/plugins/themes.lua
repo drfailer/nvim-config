@@ -46,7 +46,7 @@ function setup_rose_pine()
 
     styles = {
       bold = false,
-      italic = true,
+      italic = false,
       transparency = true,
     },
   })
