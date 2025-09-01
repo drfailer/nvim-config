@@ -2,15 +2,13 @@
 --                                    lsp                                     --
 --------------------------------------------------------------------------------
 
+vim.lsp.enable({ "clangd" });
+
 -- diagnostic
 vim.diagnostic.config({
   virtual_text = true,
   float = { border = "rounded" },
 })
-
--- log
-vim.lsp.set_log_level('trace')
-require('vim.lsp.log').set_format_func(vim.inspect)
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp_group', {}),
