@@ -14,6 +14,7 @@ return {
             pickers = {
                 find_files = picker_theme,
                 live_grep = picker_theme,
+                grep_string = picker_theme,
                 buffers = picker_theme,
                 buffers = picker_theme,
                 spell_suggest = picker_theme,
@@ -46,5 +47,16 @@ return {
                 vim.api.nvim_input("a")
             end)
         end, { noremap = true })
+
+        -- search simbol under cursor
+        vim.keymap.set('n', '<C-f><C-f>', function()
+          vim.cmd.normal("\"fyiw")
+          require('telescope.builtin').grep_string({ search = vim.fn.getreg("f"), grep_open_files = true, case_sensitive = true })
+        end, { noremap = true, buffer = true })
+
+        vim.keymap.set('v', '<C-f><C-f>', function()
+          vim.cmd.normal("\"fy")
+          require('telescope.builtin').grep_string({ search = vim.fn.getreg("f"), grep_open_files = true, case_sensitive = true })
+        end, { noremap = true, buffer = true })
     end
 }
