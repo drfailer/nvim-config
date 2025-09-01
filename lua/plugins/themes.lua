@@ -30,13 +30,6 @@ function df_setTheme(currentTheme, custom_config)
   end
 end
 
-function setup_base16()
-  require("base16-colorscheme").with_config({
-    telescope = false,
-    cmp = false,
-  })
-end
-
 function setup_rose_pine()
   require("rose-pine").setup({
     variant = "auto", -- auto, main, moon, or dawn
@@ -53,18 +46,13 @@ function setup_rose_pine()
 end
 
 return {
-  "RRethy/base16-nvim",
+  "rose-pine/neovim",
   dependencies = {
     "nvim-lualine/lualine.nvim",
-    "rose-pine/neovim",
   },
   lazy = false,
   config = function()
-    setup_base16()
     setup_rose_pine()
-    -- df_setTheme("base16-tomorrow-night", true)
-    -- df_setTheme("base16-gruvbox-dark-hard", true)
-    -- df_setTheme("base16-rose-pine", true)
     df_setTheme("rose-pine", false)
   end
 }

@@ -40,19 +40,6 @@ return {
             -- telescope
             { "<leader>ff", group = "telescope" },
 
-            -- refactor
-            { "<leader>r", group = "refactor", mode = { "n", "x" }  },
-            { "<leader>re", desc = "extract function", mode = { "n", "x" } },
-            { "<leader>rf", desc = "extract function to file", mode = { "n", "x" } },
-            { "<leader>rv", desc = "extract variable", mode = { "n", "x" } },
-            { "<leader>rI", desc = "inline function", mode = { "n", "x" } },
-            { "<leader>ri", desc = "inline variable", mode = { "n", "x" } },
-            { "<leader>rbb", desc = "extract block", mode = { "n", "x" } },
-            { "<leader>rbf", desc = "extract block to file", mode = { "n", "x" } },
-            { "<leader>rp", desc = "debug print" },
-            { "<leader>rv", desc = "debug print variable", mode = { "n", "x" } },
-            { "<leader>rc", desc = "debug print clean" },
-
             -- fugitive
             { "<leader>g", group = "fugitive" },
 
