@@ -54,7 +54,7 @@ vim.keymap.set('n', '<C-q><C-n>', '<CMD>cnext<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>S', ':%s//g<Left><Left>', { noremap = true })
 vim.keymap.set('v', '<leader>S', ':s//g<Left><Left>', { noremap = true })
 vim.keymap.set('n', '<leader>*', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>', { noremap = true })
-vim.keymap.set('v', '<C-f>', '"vyV/\\<\\V<C-r>v\\><CR>', { noremap = true })
+vim.keymap.set('v', '<M-r>', '"vyV/\\<\\V<C-r>v\\><CR>', { noremap = true })
 vim.keymap.set('v', '<leader>*', ':s/\\<\\V<C-r>v\\>//g<Left><Left>', { noremap = true })
 
 -- spell PROBLEME

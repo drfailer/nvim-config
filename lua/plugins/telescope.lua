@@ -52,11 +52,11 @@ return {
         vim.keymap.set('n', '<C-f><C-f>', function()
           vim.cmd.normal("\"fyiw")
           require('telescope.builtin').grep_string({ search = vim.fn.getreg("f"), grep_open_files = true, case_sensitive = true })
-        end, { noremap = true, buffer = true })
+        end, { noremap = true })
 
         vim.keymap.set('v', '<C-f><C-f>', function()
           vim.cmd.normal("\"fy")
           require('telescope.builtin').grep_string({ search = vim.fn.getreg("f"), grep_open_files = true, case_sensitive = true })
-        end, { noremap = true, buffer = true })
+        end, { noremap = true })
     end
 }
