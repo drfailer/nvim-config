@@ -1,7 +1,8 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     enabled = function()
-        return vim.fn.executable('gcc') or vim.fn.executable('clang')
+        -- return vim.fn.executable('gcc') or vim.fn.executable('clang')
+        return not (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1)
     end,
     config = function()
         require("nvim-treesitter.configs").setup {
