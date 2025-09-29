@@ -2,7 +2,7 @@
 --                                  mappings                                  --
 --------------------------------------------------------------------------------
 
-vim.keymap.set('n', '<leader>FF', ':%!clang-format --style=Mozilla<cr>', { noremap = true, buffer = true })
+vim.keymap.set('n', '<leader>FF', ':%!clang-format<cr>', { noremap = true, buffer = true })
 vim.keymap.set('n', '<leader>FT', 'I/*{ <Esc>A }<Esc>:set virtualedit=all<CR>079lr/hr*hr{hr{hr{hvT}r*:set virtualedit=none<CR>o/<Esc>78a*<Esc>A/<Esc>hhr}hr}hr}', { noremap = true, buffer = true })
 
 -- generate header automatically
