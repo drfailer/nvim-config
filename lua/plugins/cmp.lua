@@ -10,7 +10,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
   },
-  enabled = false,
+  -- enabled = false,
   config = function()
     local cmp = require('cmp')
 
@@ -32,10 +32,8 @@ return {
         ['<S-Tab>'] = nil,
       }),
       sources = cmp.config.sources({
-        { name = 'path' },
         { name = 'nvim_lsp', keyword_length = 1 },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'nvim_lua', keyword_length = 2 },
         {
           name = 'buffer',
           keyword_length = 3,
@@ -45,6 +43,8 @@ return {
             end
           }
         },
+        { name = 'path' },
+        { name = 'nvim_lua', keyword_length = 2 },
         { name = 'luasnip', keyword_length = 2 },
       }),
       window = {
