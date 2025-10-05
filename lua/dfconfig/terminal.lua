@@ -54,7 +54,8 @@ local function create_boom_window(opts)
 
   -- If the file is not specified, it creates an empty unamed buffer which is
   -- infinitely added to telescope's buffer list.
-  vim.cmd.vnew(vim.fn.expand("%"))
+  -- vim.cmd.vnew(vim.fn.expand("%"))
+  vim.cmd.vnew("terminal")
   vim.cmd.wincmd("J")
   vim.api.nvim_win_set_height(0, 15);
 
@@ -65,7 +66,7 @@ local function create_boom_window(opts)
 end
 
 local toggle_terminal = function(cmd, win_id, create_window)
-  if not vim.api.nvim_win_is_valid(state[win_id].win) then
+  if not vim.api.nvim_win_is_valid(state[win_id].win) or vim.api.nvim_win_get_buf(state[win_id].win) ~= state[win_id].buf then
     local result = create_window({ buf = state[win_id].buf })
     state[win_id].buf = result.buf
     state[win_id].win = result.win
