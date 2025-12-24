@@ -5,6 +5,11 @@
 -- leader key
 vim.g.mapleader = ' '
 
+-- buffers
+vim.keymap.set('n', '<leader>bn', '<CMD>bnext<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>bp', '<CMD>bprev<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>bk', '<CMD>bdelete<CR>', { noremap = true })
+
 -- resize
 vim.keymap.set('n', '<M-j>', '<CMD>resize -2<CR>', { noremap = true })
 vim.keymap.set('n', '<M-k>', '<CMD>resize +2<CR>', { noremap = true })

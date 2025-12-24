@@ -7,7 +7,7 @@ return {
     lazy = false,
     config = function()
         vim.api.nvim_create_autocmd('FileType', {
-            pattern = { 'c', 'c++', 'asm', 'odin' },
+            pattern = { 'c', 'cpp', 'asm', 'odin' },
             callback = function() vim.treesitter.start() end,
         })
     end
