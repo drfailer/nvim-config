@@ -6,6 +6,7 @@ return {
     end,
     lazy = false,
     config = function()
+        require('nvim-treesitter').install({ 'c', 'cpp', 'asm', 'odin' })
         vim.api.nvim_create_autocmd('FileType', {
             pattern = { 'c', 'cpp', 'asm', 'odin' },
             callback = function() vim.treesitter.start() end,
