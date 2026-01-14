@@ -46,13 +46,15 @@ function setup_rose_pine()
 end
 
 return {
-  "rose-pine/neovim",
+  -- "rose-pine/neovim",
+  "vague-theme/vague.nvim",
   dependencies = {
     "nvim-lualine/lualine.nvim",
   },
   lazy = false,
   config = function()
-    setup_rose_pine()
-    df_setTheme("rose-pine", false)
+    -- setup_rose_pine()
+    -- df_setTheme("rose-pine", false)
+    df_setTheme("vague", true)
   end
 }
