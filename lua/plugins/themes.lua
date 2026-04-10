@@ -8,8 +8,17 @@ function df_clearColors()
   vim.api.nvim_set_hl(0, 'LineNrBelow', { bg = None })
   vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = None })
   vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
-  vim.api.nvim_set_hl(0, 'Folded', { fg = '#fabd2f', bg = None })
+  vim.api.nvim_set_hl(0, 'Folded', { fg = '#a0a0a0', bg = None })
   vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Normal' })
+  -- completion menu
+  for _, group in ipairs({'Pmenu', 'PmenuKind', 'PmenuExtra'}) do
+      vim.api.nvim_set_hl(0, group, { bg = '#101010' })
+  end
+  for _, group in ipairs({'PmenuSel', 'PmenuKindSel', 'PmenuExtraSel'}) do
+      vim.api.nvim_set_hl(0, group, { bg = '#1a1a1a' })
+  end
+  vim.api.nvim_set_hl(0, 'PmenuMatch', { fg = '#e8b589' })
+  vim.api.nvim_set_hl(0, 'PmenuMatchSel', { fg = '#e8b589' })
 end
 
 -- set the given theme
