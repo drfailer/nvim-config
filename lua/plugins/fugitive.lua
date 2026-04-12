@@ -1,25 +1,14 @@
--- return {
---   "NeogitOrg/neogit",
---   dependencies = {
---     "nvim-lua/plenary.nvim",
---   },
---   keys = {
---     { "<leader>gs", function() require("neogit").open({ kind = "split", cwd = vim.fn.expand("%:p:h") }) end, desc = "open neogit" },
---   }
--- }
+vim.pack.add({"https://github.com/tpope/vim-fugitive.git"})
 
-return {
-  "tpope/vim-fugitive",
-  keys = {
-    { "<leader>gs", "<CMD>G<cr>", desc = "status" },
-    { "<leader>gc", "<CMD>G commit<cr>", desc = "commit" },
-    { "<leader>gp", "<CMD>G push<cr>", desc = "push" },
-    { "<leader>gL", "<CMD>G log<cr>", desc = "log" },
-    { "<leader>gm", ":G merge ", desc = "merge" },
-    { "<leader>gd", ":Gvdiffsplit!<cr>", desc = "diff split" },
-    { "<leader>gh", "<CMD>diffget //2<cr>", desc = "diff get left" },
-    { "<leader>gl", "<CMD>diffget //3<cr>", desc = "diff get right" },
-    { "<leader>gj", "]c", desc = "next diff" },
-    { "<leader>gk", "[c", desc = "next diff" },
-  }
-}
+require("dfconfig.functions")
+
+nmap("<leader>gs", "<CMD>G<cr>", "status")
+nmap("<leader>gc", "<CMD>G commit<cr>", "commit")
+nmap("<leader>gp", "<CMD>G push<cr>", "push")
+nmap("<leader>gL", "<CMD>G log<cr>", "log")
+nmap("<leader>gm", ":G merge ", "merge")
+nmap("<leader>gd", ":Gvdiffsplit!<cr>", "diff split")
+nmap("<leader>gh", "<CMD>diffget //2<cr>", "diff get left")
+nmap("<leader>gl", "<CMD>diffget //3<cr>", "diff get right")
+nmap("<leader>gj", "]c", "next diff")
+nmap("<leader>gk", "[c", "next diff")

@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader>cu', '0f[lr ', { noremap = true, buffer = true })
 
 -- search threw section
 vim.keymap.set('n', '<leader>fs', function()
-  require('telescope.builtin').grep_string({ search = "^#", grep_open_files = true, use_regex = true })
+  require('telescope.builtin').grep_string({ search = "^#", use_regex = true })
 end, {})
 
 -- format text

@@ -1,4 +1,1 @@
-return {
-    "vimwiki/vimwiki",
-    event = "VeryLazy",
-}
+vim.pack.add({"https://github.com/vimwiki/vimwiki.git"})

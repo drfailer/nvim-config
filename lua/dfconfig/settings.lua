@@ -82,44 +82,11 @@ o.completeopt = {'menu', 'menuone', 'noselect'}
 o.guicursor = ""
 o.mouse = "a"
 
+-- folds
+vim.opt.foldmethod = 'marker'
+
 -- netrw
 vim.g.netrw_banner = 0
-
---------------------------------------------------------------------------------
---                                auto comands                                --
---------------------------------------------------------------------------------
-
--- Highlight the region on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
-    group = num_au,
-    callback = function()
-        vim.highlight.on_yank({ higroup = 'Visual', timeout = 120 })
-    end,
-})
-
--- trim whitespaces
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
-  command = [[%s/\s\+$//e]],
-})
-
--- detect filetypes
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.tex" },
-  command = [[set ft=tex]],
-})
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.pde" },
-  command = [[set ft=java]],
-})
-
-vim.api.nvim_create_autocmd("TermOpen", {
-    group = vim.api.nvim_create_augroup("term-open", { clear = true }),
-    callback = function()
-        vim.opt.number = false
-        vim.opt.relativenumber = false
-    end
-})
 
 --------------------------------------------------------------------------------
 --                                  vimwiki                                   --
@@ -142,23 +109,3 @@ vim.g.vimwiki_list = {
     }
   }
 }
-
---------------------------------------------------------------------------------
---                                    fold                                    --
---------------------------------------------------------------------------------
-
-function custom_fold_text()
-    local line = vim.fn.getline(vim.v.foldstart)
-    local text = vim.fn.substitute(line, '{{{', '', 'g')
-    local line_count = vim.v.foldend - vim.v.foldstart + 1
-    -- return "  " .. text .. " (" .. line_count .. " L)"
-    return text .. " (" .. line_count .. " L)"
-end
-
-vim.g.custom_fold = false
-vim.opt.foldmethod = 'marker'
-
-if vim.g.custom_fold then
-  vim.opt.foldtext = 'v:lua.custom_fold_text()'
-  vim.opt.fillchars = { fold = ' ' }
-end
