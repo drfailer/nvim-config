@@ -33,8 +33,8 @@ imap("<c-u>", "<ESC>viwUea")
 
 -- managing tabs
 key_group("<leader>t", "tabs")
-nmap("<leader>tn", "<CMD>tabnew<CR>")
-nmap("<leader>te", "<CMD>tabe %<CR>")
+nmap("<leader>tn", "<CMD>tabnew<CR>", "tab new")
+nmap("<leader>te", "<CMD>tabe %<CR>", "tab edit")
 nmap("<M-n>", "<CMD>tabnext<CR>")
 nmap("<M-p>", "<CMD>tabprevious<CR>")
 
@@ -60,16 +60,16 @@ nmap("<C-q><C-p>", "<CMD>cprev<CR>")
 nmap("<C-q><C-n>", "<CMD>cnext<CR>")
 
 -- substitution & search
-nmap("<leader>S", ":%s//g<Left><Left>")
-vmap("<leader>S", ":s//g<Left><Left>")
-nmap("<leader>*", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>")
-vmap("<M-r>", '"vyV/\\<\\V<C-r>v\\><CR>')
-vmap("<leader>*", ":s/\\<\\V<C-r>v\\>//g<Left><Left>")
+nmap("<leader>S", ":%s//g<Left><Left>", "global replace")
+vmap("<leader>S", ":s//g<Left><Left>", "region replace")
+nmap("<leader>*", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>", "replace word")
+vmap("<M-r>", '"vyV/\\<\\V<C-r>v\\><CR>', "match replace")
+vmap("<leader>*", ":s/\\<\\V<C-r>v\\>//g<Left><Left>", "replace matches")
 
 -- spell
 nmap("<F6>", "<CMD>setlocal spell! spelllang=fr,cjk<cr>")
 nmap("<F7>", "<CMD>set spelllang=en,cjk<cr>")
-nmap("<leader>s", "<ESC>1z=")
+nmap("<leader>s", "<ESC>1z=", "spell fix")
 
 -- toggle virtual edit
 key_group("<leader>T", "toggle settings")
@@ -81,7 +81,7 @@ nmap("<leader>Tv", function()
     vim.g.toggleVirtualEdit = true
     vim.cmd("setlocal virtualedit=all")
   end
-end)
+end, "toggle virtual edit")
 
 -- toggle centering
 nmap("<leader>Tc", function()
@@ -94,7 +94,7 @@ nmap("<leader>Tc", function()
     vim.opt.scrolloff = 999
     vim.opt.sidescrolloff = 999
   end
-end)
+end, "toggle centering")
 
 -- netrw
 -- nmap("<leader>e", "<CMD>vert split <BAR> Ex<CR>")
@@ -108,35 +108,35 @@ nmap("<leader>R", function()
     os.rename(path .. "/" .. filename, path .. "/" .. newname)
     vim.api.nvim_buf_delete(0, { force = true })
     vim.cmd("e " .. path .. "/" .. newname)
-end)
+end, "rename file")
 
 -- fold views
 key_group("<leader>v", "views")
-nmap("<leader>vm", "<CMD>mkview<CR>")
-nmap("<leader>vl", "<CMD>loadview<CR>")
+nmap("<leader>vm", "<CMD>mkview<CR>", "view make")
+nmap("<leader>vl", "<CMD>loadview<CR>", "view load")
 nmap("<leader>vd", function()
     local path = vim.fn.substitute(vim.fn.expand('%'), '/', '=+', 'g')
     local vd = vim.o.viewdir
     local file = vd .. '~=+' .. path .. '='
     print('delete: ' .. file)
     vim.cmd('call delete("' .. file .. '")')
-end)
-nmap("<leader>vM", "<CMD>set foldmethod=manual<CR>")
-nmap("<leader>vK", "<CMD>set foldmethod=marker<CR>")
+end, "view delete")
+nmap("<leader>vM", "<CMD>set foldmethod=manual<CR>", "view use manual")
+nmap("<leader>vK", "<CMD>set foldmethod=marker<CR>", "view use markers")
 
 -- terminal
 local term = require("dfmodules.terminal")
 tmap("<Esc>", "<C-\\><C-n>")
-nmap("<leader>tt", function() term.toggle_float_terminal() end)
-nmap("<leader>!", function() term.toggle_bottom_terminal() end)
+nmap("<leader>tt", function() term.toggle_float_terminal() end, "toggle float terminal")
+nmap("<leader>!", function() term.toggle_bottom_terminal() end, "bottom terminal")
 cmd_add("FTerminal", function(args) term.toggle_float_terminal(args.args) end, { nargs = "*" })
 cmd_add("BTerminal", function(args) term.toggle_bottom_terminal(args.args) end, { nargs = "*" })
 
 -- gdb
 local gdb = require("dfmodules.gdb")
 key_group("<leader>d", "gdb")
-nmap('<leader>dd', gdb.reset_build_dir, { noremap = true })
-nmap('<leader>db', gdb.add_breakpoint, { noremap = true })
-nmap('<leader>dc', gdb.add_conditional_breakpoint, { noremap = true })
-nmap('<leader>dp', gdb.print_breakpoints, { noremap = true })
-nmap('<leader>dC', gdb.clear_breakpoints, { noremap = true })
+nmap('<leader>dd', gdb.reset_build_dir, "reset")
+nmap('<leader>db', gdb.add_breakpoint, "add breakpoint")
+nmap('<leader>dc', gdb.add_conditional_breakpoint, "add conditional breakpoint")
+nmap('<leader>dp', gdb.print_breakpoints, "print breakpoints")
+nmap('<leader>dC', gdb.clear_breakpoints, "clear breakpoints")

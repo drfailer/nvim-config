@@ -32,6 +32,7 @@ local make_entry = require("telescope.make_entry")
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
+key_group("<leader>f", "telescope")
 nmap("<leader>ff", builtin.find_files, "find files")
 nmap("<leader>fg", builtin.live_grep, "grep")
 nmap("<leader>fb", builtin.buffers, "buffers")
