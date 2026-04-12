@@ -6,7 +6,7 @@
 local build_directory = ''
 
 -- set the build directory
-function set_build_dir()
+local set_build_dir = function()
   if build_directory == '' then
     build_directory = vim.fn.input('Build directory: ', '', 'file')
     if build_directory == '' then
@@ -16,20 +16,20 @@ function set_build_dir()
 end
 
 -- reset the build directory
-function reset_build_dir()
+local reset_build_dir = function()
   build_directory = ''
   set_build_dir()
 end
 
 -- set a break point
-function gdb_break()
+local add_breakpoint = function()
   set_build_dir()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   vim.cmd('!echo "break %: ' .. r .. '" >> ' .. build_directory .. '/.gdbinit')
 end
 
 -- set a conditional break point
-function gdb_cbreak()
+local add_conditional_breakpoint = function()
   set_build_dir()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   condition = vim.fn.input('if: ', '')
@@ -39,7 +39,7 @@ function gdb_cbreak()
 end
 
 -- set a breakpoint and print the variable (should be used in visual mode)
-function gdb_print_break()
+local print_breakpoints = function()
   vim.cmd('normal "vy')
   set_build_dir()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
@@ -51,16 +51,17 @@ function gdb_print_break()
   vim.cmd('!echo "end" >> ' .. initfile) -- end command
 end
 
--- gdb_clear init file
-function gdb_clear()
+-- clear_breakpoints init file
+local clear_breakpoints = function()
   set_build_dir()
   local r,c = unpack(vim.api.nvim_win_get_cursor(0))
   vim.cmd('!rm ' .. build_directory .. '/.gdbinit')
 end
 
--- mappings
-vim.keymap.set('n', '<leader>dd', reset_build_dir, { noremap = true })
-vim.keymap.set('n', '<leader>db', gdb_break, { noremap = true })
-vim.keymap.set('n', '<leader>dc', gdb_cbreak, { noremap = true })
-vim.keymap.set('v', '<leader>dp', gdb_print_break, { noremap = true })
-vim.keymap.set('n', '<leader>dC', gdb_clear, { noremap = true })
+return {
+	reset_build_dir = reset_build_dir,
+	add_breakpoint = add_breakpoint,
+	add_conditional_breakpoint = add_conditional_breakpoint,
+	print_breakpoints = print_breakpoints,
+	clear_breakpoints = clear_breakpoints,
+}

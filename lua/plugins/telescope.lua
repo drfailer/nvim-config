@@ -46,7 +46,7 @@ nmap("<leader>fj", builtin.jumplist, "jumplist")
 
 -- pick and insert a file (relative path)
 imap("<C-f><C-f>", function()
-    require("dfconfig.telescope").telescope_file("Insert File",
+    require("dfmodules.telescope").telescope_file("Insert File",
     { file_type = "f", cwd = "." },
     function(result)
         vim.api.nvim_put({ result }, "", false, true)

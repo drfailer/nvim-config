@@ -25,3 +25,9 @@ function cmd_add(cmd, effect, opts, desc)
     vim.api.nvim_create_user_command(cmd, effect, opts)
     table.insert(vim.g.cmds_list, { cmd, desc = desc })
 end
+
+autocmd_add = vim.api.nvim_create_autocmd
+
+function ab_add(from, to)
+    vim.cmd("ab " .. from .. " " .. to)
+end

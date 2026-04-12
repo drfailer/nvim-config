@@ -2,7 +2,7 @@
 --                               AUTO COMMANDS                                --
 --------------------------------------------------------------------------------
 
-local autocmd_add = vim.api.nvim_create_autocmd
+require("dfconfig.functions")
 
 -- Highlight the region on yank
 autocmd_add('TextYankPost', {
@@ -18,9 +18,6 @@ autocmd_add({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
--- detect filetypes
-autocmd_add({ "BufRead", "BufNewFile" }, { pattern = { "*.tex" }, command = [[set ft=tex]], })
-autocmd_add({ "BufRead", "BufNewFile" }, { pattern = { "*.pde" }, command = [[set ft=java]], })
 
 -- disable line numbers in terminal
 autocmd_add("TermOpen", {

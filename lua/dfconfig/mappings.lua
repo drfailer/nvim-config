@@ -125,9 +125,18 @@ nmap("<leader>vM", "<CMD>set foldmethod=manual<CR>")
 nmap("<leader>vK", "<CMD>set foldmethod=marker<CR>")
 
 -- terminal
-local term = require("dfconfig.terminal")
+local term = require("dfmodules.terminal")
 tmap("<Esc>", "<C-\\><C-n>")
 nmap("<leader>tt", function() term.toggle_float_terminal() end)
 nmap("<leader>!", function() term.toggle_bottom_terminal() end)
 cmd_add("FTerminal", function(args) term.toggle_float_terminal(args.args) end, { nargs = "*" })
 cmd_add("BTerminal", function(args) term.toggle_bottom_terminal(args.args) end, { nargs = "*" })
+
+-- gdb
+local gdb = require("dfmodules.gdb")
+key_group("<leader>d", "gdb")
+nmap('<leader>dd', gdb.reset_build_dir, { noremap = true })
+nmap('<leader>db', gdb.add_breakpoint, { noremap = true })
+nmap('<leader>dc', gdb.add_conditional_breakpoint, { noremap = true })
+nmap('<leader>dp', gdb.print_breakpoints, { noremap = true })
+nmap('<leader>dC', gdb.clear_breakpoints, { noremap = true })

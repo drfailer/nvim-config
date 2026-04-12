@@ -2,21 +2,23 @@
 --                                ABREVIATION                                 --
 --------------------------------------------------------------------------------
 
+require("dfconfig.functions")
+
 -- Programming
-vim.cmd("ab itn int")
-vim.cmd("ab typenaem typename")
+ab_add("itn", "int")
+ab_add("typenaem", "typename")
 
 -- English
-vim.cmd("ab fonciton fonction")
-vim.cmd("ab foncitons fonctions")
-vim.cmd("ab funciton function")
-vim.cmd("ab funcitons functions")
-vim.cmd("ab smth something")
+ab_add("fonciton", "fonction")
+ab_add("foncitons", "fonctions")
+ab_add("funciton", "function")
+ab_add("funcitons", "functions")
+ab_add("smth", "something")
 
 -- French
--- vim.cmd("ab mm même")
--- vim.cmd("ab etre être")
--- vim.cmd("ab controle contrôle")
--- vim.cmd("ab notem notamment")
--- vim.cmd("ab bib bibliothèque")
--- vim.cmd("ab founit fournit")
+-- ab_add("mm", "même")
+-- ab_add("etre", "être")
+-- ab_add("controle", "contrôle")
+-- ab_add("notem", "notamment")
+-- ab_add("bib", "bibliothèque")
+-- ab_add("founit", "fournit")
