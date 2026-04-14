@@ -1,4 +1,4 @@
-require("fdconfig.functions")
+require("dfconfig.functions")
 
 -- some settings
 vim.opt_local.shiftwidth = 2
