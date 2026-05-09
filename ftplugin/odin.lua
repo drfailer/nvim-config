@@ -7,3 +7,5 @@ vim.keymap.set('n', '<leader>FH', 'O<Escape>80i*<Escape>0r/$r/yyjpk<CMD>center 8
 
 -- search
 vim.keymap.set("n", "gd", ":vimgrep <C-r><C-w>\\s*: **/*.odin<CR>", { noremap = true, buffer = true })
+
+vim.cmd("compiler odin")
