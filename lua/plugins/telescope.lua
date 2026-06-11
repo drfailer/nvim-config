@@ -55,13 +55,11 @@ imap("<C-f><C-f>", function()
     end)
 end, "insert file")
 
--- search simbol under cursor
-nmap("<C-f><C-f>", function()
-  vim.cmd.normal("\"fyiw")
-  require('telescope.builtin').grep_string({ search = vim.fn.getreg("f"), case_sensitive = true })
-end, "find")
+-- alternative keybind
+nmap("<C-f>", builtin.live_grep, "grep")
 
-vmap("<C-f><C-f>", function()
+-- grep selection
+vmap("<C-f>", function()
   vim.cmd.normal("\"fy")
   require('telescope.builtin').grep_string({ search = vim.fn.getreg("f"), case_sensitive = true })
-end)
+end, "grep selection")
