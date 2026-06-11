@@ -25,5 +25,16 @@ return {
     }, {
         delimiters = "<>"
     })),
+
+    -- proc
+    s("proc", fmt([[
+    <> :: proc(<>)<> {
+        // TODO
+    }
+    ]], {
+        i(1), i(2), i(3)
+    }, {
+        delimiters = "<>"
+    })),
 }, {
 }
