@@ -10,10 +10,10 @@ ls.config.set_config({
   enable_autosnippets = true,
 })
 
-key_add({"i"}, "<M-j>", function() ls.expand() end, {silent = true})
-key_add({"i", "s"}, "<M-l>", function() ls.jump( 1) end, {silent = true})
-key_add({"i", "s"}, "<M-h>", function() ls.jump(-1) end, {silent = true})
-key_add({"i", "s"}, "<M-n>", function()
+key_add({"i"}, "<C-k>", function() ls.expand() end, {silent = true})
+key_add({"i", "s"}, "<C-l>", function() ls.jump( 1) end, {silent = true})
+key_add({"i", "s"}, "<C-,>", function() ls.jump(-1) end, {silent = true})
+key_add({"i", "s"}, "<C-.>", function()
   if ls.choice_active() then
     ls.change_choice(1)
   end

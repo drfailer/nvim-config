@@ -29,10 +29,30 @@ return {
     -- proc
     s("proc", fmt([[
     <> :: proc(<>)<> {
-        // TODO
+        <>
     }
     ]], {
-        i(1), i(2), i(3)
+        i(1), i(2), c(3, { t(""), t(" -> bool") }), i(4, "// TODO")
+    }, {
+        delimiters = "<>"
+    })),
+
+    -- stmts
+    s("if", fmt([[
+    if <> {
+        <>
+    }
+    ]], {
+        i(1), i(2, "// TODO")
+    }, {
+        delimiters = "<>"
+    })),
+    s("for", fmt([[
+    for <> {
+        <>
+    }
+    ]], {
+        i(1), i(2, "// TODO")
     }, {
         delimiters = "<>"
     })),
