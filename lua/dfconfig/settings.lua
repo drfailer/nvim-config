@@ -76,7 +76,7 @@ vim.o.formatoptions = vim.o.formatoptions .. 'tcrqnj'
 vim.g.toggleVirtualEdit = false
 
 -- completion
-o.completeopt = {'menu', 'menuone', 'noselect'}
+o.completeopt = {'menu', 'menuone', 'popup'}
 
 -- interface
 o.guicursor = ""
