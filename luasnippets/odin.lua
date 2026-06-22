@@ -37,6 +37,39 @@ return {
         delimiters = "<>"
     })),
 
+    -- struct
+    s("struct", fmt([[
+    <> :: struct {
+        <>
+    }
+    ]], {
+        i(1), i(2, "// TODO")
+    }, {
+        delimiters = "<>"
+    })),
+
+    -- struct
+    s("enum", fmt([[
+    <> :: enum {
+        <>
+    }
+    ]], {
+        i(1), i(2, "// TODO")
+    }, {
+        delimiters = "<>"
+    })),
+
+    -- struct
+    s("union", fmt([[
+    <> :: union {
+        <>
+    }
+    ]], {
+        i(1), i(2, "// TODO")
+    }, {
+        delimiters = "<>"
+    })),
+
     -- stmts
     s("if", fmt([[
     if <> {
