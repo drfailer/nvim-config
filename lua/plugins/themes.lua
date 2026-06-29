@@ -1,4 +1,5 @@
-vim.pack.add({"https://github.com/vague-theme/vague.nvim.git"})
+vim.pack.add({"https://github.com/vague-theme/vague.nvim.git",
+              "https://github.com/rebelot/kanagawa.nvim.git"})
 
 function hl(group, opts)
     vim.api.nvim_set_hl(0, group, opts)
@@ -45,4 +46,5 @@ function df_setTheme(currentTheme, custom_config)
     end
 end
 
-df_setTheme("vague", true)
+-- df_setTheme("vague", true)
+df_setTheme("kanagawa-dragon", false)
