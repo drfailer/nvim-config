@@ -47,4 +47,4 @@ function df_setTheme(currentTheme, custom_config)
 end
 
 -- df_setTheme("vague", true)
-df_setTheme("kanagawa-dragon", false)
+df_setTheme("kanagawa-dragon", true)
