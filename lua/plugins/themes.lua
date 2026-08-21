@@ -1,14 +1,18 @@
 vim.pack.add({"https://github.com/vague-theme/vague.nvim.git",
-              "https://github.com/rebelot/kanagawa.nvim.git"})
+              "https://github.com/ellisonleao/gruvbox.nvim"})
 
 function hl(group, opts)
     vim.api.nvim_set_hl(0, group, opts)
 end
 
+function df_setBG(color)
+    hl('Normal', { bg = color })
+    hl('NormalNC', { bg = color })
+    hl('NormalFloat', { bg = color })
+end
+
 function df_clearColors()
-    hl('Normal', { bg = None })
-    hl('NormalNC', { bg = None })
-    hl('NormalFloat', { bg = None })
+    df_setBG(None)
     hl('Float', { bg = None })
     hl('LineNr', { bg = None })
     hl('LineNrAbove', { bg = None })
@@ -22,7 +26,7 @@ function df_clearColors()
         hl(group, { bg = '#101010' })
     end
     for _, group in ipairs({'PmenuSel', 'PmenuKindSel', 'PmenuExtraSel'}) do
-        hl(group, { bg = '#1a1a1a' })
+        hl(group, { bg = '#404040' })
     end
     hl('PmenuMatch', { fg = '#e8b589' })
     hl('PmenuMatchSel', { fg = '#e8b589' })
@@ -38,6 +42,7 @@ function df_setTheme(currentTheme, custom_config)
         local lualine_gruvbox = require('lualine.themes.gruvbox')
         lualine_gruvbox.normal.c.bg = '#282828'
         lualine_gruvbox.inactive.c.bg = '#282828'
+        df_setBG('#181818')
         require('lualine').setup {
             options = { theme  = lualine_gruvbox },
         }
@@ -47,4 +52,5 @@ function df_setTheme(currentTheme, custom_config)
 end
 
 -- df_setTheme("vague", true)
-df_setTheme("kanagawa-dragon", true)
+require("gruvbox").setup()
+df_setTheme("gruvbox", true)
