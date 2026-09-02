@@ -31,8 +31,8 @@ return {
             local base_path = vim.fn.substitute(filename, cwd .. "/", "", "")
             local define_name = vim.fn.toupper(vim.fn.tr(base_path, "/", "_"))
             return {
-                string.format("#ifndef %s", define_name),
-                string.format("#define %s", define_name),
+                string.format("#ifndef %s_H", define_name),
+                string.format("#define %s_H", define_name),
                 "", "",
             }
         end),
