@@ -16,6 +16,10 @@
       "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim.git"
     },
+    "mini.align": {
+      "rev": "77d7446b9f2452193f13ced9fb73a8b3aa4a4f4d",
+      "src": "https://github.com/nvim-mini/mini.align.git"
+    },
     "mini.comment": {
       "rev": "8e5ff3ed3cc0e8f216617aae01020c00c20f7a87",
       "src": "https://github.com/nvim-mini/mini.comment.git"

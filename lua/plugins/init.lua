@@ -3,6 +3,7 @@
 --------------------------------------------------------------------------------
 
 require("plugins.comments")
+require("plugins.align")
 require("plugins.fugitive")
 require("plugins.oil")
 require("plugins.snippets")
