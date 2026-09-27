@@ -42,3 +42,18 @@ autocmd_add('filetype', {
   end
 })
 
+-- for some stupide reason, it is super hard to prevent nvim from loading the
+-- ada default configuration. Using a scheduled function is the only way I
+-- found out to override the default mappings and makeprog.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'ada',
+  callback = function(args)
+    vim.schedule(function()
+      if vim.api.nvim_buf_is_valid(args.buf) then
+        pcall(vim.keymap.del, 'i', '<leader>aj', { buffer = args.buf })
+        pcall(vim.keymap.del, 'i', '<leader>al', { buffer = args.buf })
+        vim.opt_local.makeprg = "make"
+      end
+    end)
+  end,
+})
