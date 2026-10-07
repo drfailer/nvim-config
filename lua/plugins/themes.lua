@@ -56,4 +56,5 @@ end
 -- df_setTheme("gruvbox", true)
 
 vim.cmd("colorscheme gold")
-require('lualine').setup()
+-- require('lualine').setup()
+require('dfconfig.statusline')
