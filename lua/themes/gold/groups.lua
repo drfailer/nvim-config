@@ -16,16 +16,14 @@ M.setup = function()
     CursorLine = { bg = colors.selection },
     ColorColumn = { bg = colors.selection },
     VertSplit = { fg = colors.black },
-    WinSeparator = { fg = colors.separator },
+    WinSeparator = { fg = colors.border },
     TelescopeSelection = { bg = colors.selection },
 
-    -- TODO
-    Pmenu = { fg = colors.white, bg = colors.menubg },
-    PmenuSel = { fg = colors.white, bg = colors.selection },
+    Pmenu = { fg = colors.menu_fg, bg = colors.menu_bg },
+    PmenuSel = { fg = colors.menu_sel, bg = colors.selection, bold = true },
     PmenuSbar = { bg = colors.bg },
     PmenuThumb = { bg = colors.selection },
 
-    -- TODO
     StatusLine = { fg = colors.white , bg = colors.statusline },
     StatusLineNC = { fg = colors.fg , bg = colors.statusline },
     StatusLineTerm = { fg = colors.white , bg = colors.statusline },
@@ -54,12 +52,12 @@ M.setup = function()
     Repeat = { fg = colors.statement },
     Identifier = { fg = colors.identifier },
     Type = { fg = colors.type },
-    Structure = { fg = colors.keyword },
-    StorageClass = { fg = colors.type },
+    Structure = { fg = colors.bright_orange },
+    StorageClass = { fg = colors.orange },
     TypeDef = { fg = colors.type },
     Exception = { fg = colors.statement },
     PreCondit = { fg = colors.preproc },
-    Label = { fg = colors.label },
+    Label = { fg = colors.statement },
 
     Include = { fg = colors.include },
     PreProc = { fg = colors.preproc },
@@ -80,7 +78,7 @@ M.setup = function()
     Search = { bg = colors.search },
     IncSearch = { bg = colors.search },
     CurSearch = { bg = colors.search },
-    MatchParen = { fg = colors.green },
+    MatchParen = { fg = colors.green, bg = colors.selection },
     NonText = { fg = colors.nontext },
 
     DiffAdd = { fg = colors.green },
@@ -102,8 +100,8 @@ M.setup = function()
     TabLineSel = { fg = colors.white },
     TabLineFill = { bg = colors.bg },
     Terminal = { fg = colors.white, bg = colors.black },
-    Visual = { bg = colors.visual },
-    VisualNOS = { fg = colors.visual },
+    Visual = { bg = colors.selection },
+    VisualNOS = { fg = colors.selection },
     WildMenu = { fg = colors.black, bg = colors.white },
 
     ErrorMsg = { fg = colors.bright_red },
@@ -151,6 +149,8 @@ M.setup = function()
     markdownListMarker = { fg = colors.blue },
     markdownOrderedListMarker = { fg = colors.red },
     markdownRule = { fg = colors.comment },
+
+    VimWikiweblink1 = { fg = colors.blue },
 
     --  Diff
     diffAdded = { fg = colors.orange },
