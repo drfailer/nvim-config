@@ -52,5 +52,8 @@ function df_setTheme(currentTheme, custom_config)
 end
 
 -- df_setTheme("vague", true)
-require("gruvbox").setup()
-df_setTheme("gruvbox", true)
+-- require("gruvbox").setup()
+-- df_setTheme("gruvbox", true)
+
+vim.cmd("colorscheme gold")
+require('lualine').setup()

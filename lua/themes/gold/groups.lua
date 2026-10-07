@@ -1,0 +1,258 @@
+local M = {}
+
+local colors = require("themes.gold.palette")
+
+M.setup = function()
+  return {
+    Normal = { fg = colors.fg, bg = colors.bg },
+    NormalFloat = { fg = colors.fg, bg = colors.bg },
+    FloatBorder = { fg = colors.border },
+    SignColumn = { bg = colors.bg },
+
+    Cursor = { fg = colors.cursor },
+    LineNr = { fg = colors.linenr },
+    CursorLineNr = { fg = colors.fg },
+    CursorColumn = { bg = colors.selection },
+    CursorLine = { bg = colors.selection },
+    ColorColumn = { bg = colors.selection },
+    VertSplit = { fg = colors.black },
+    WinSeparator = { fg = colors.separator },
+    TelescopeSelection = { bg = colors.selection },
+
+    -- TODO
+    Pmenu = { fg = colors.white, bg = colors.menubg },
+    PmenuSel = { fg = colors.white, bg = colors.selection },
+    PmenuSbar = { bg = colors.bg },
+    PmenuThumb = { bg = colors.selection },
+
+    -- TODO
+    StatusLine = { fg = colors.white , bg = colors.statusline },
+    StatusLineNC = { fg = colors.fg , bg = colors.statusline },
+    StatusLineTerm = { fg = colors.white , bg = colors.statusline },
+    StatusLineTermNC = { fg = colors.fg , bg = colors.statusline },
+
+    Conceal = { fg = colors.comment },
+
+    Comment = { fg = colors.comment },
+    SpecialComment = { fg = colors.comment, italic = true },
+
+    Constant = { fg = colors.constant },
+    String = { fg = colors.string },
+    Character = { fg = colors.character },
+    Number = { fg = colors.number },
+    Float = { fg = colors.number },
+    Boolean = { fg = colors.constant },
+
+    Operator = { fg = colors.operator },
+    Delimiter = { fg = colors.delimiter },
+
+    Keyword = { fg = colors.keyword },
+    Keywords = { fg = colors.keyword },
+    Function = { fg = colors.Function },
+    Statement = { fg = colors.statement },
+    Conditional = { fg = colors.statement },
+    Repeat = { fg = colors.statement },
+    Identifier = { fg = colors.identifier },
+    Type = { fg = colors.type },
+    Structure = { fg = colors.keyword },
+    StorageClass = { fg = colors.type },
+    TypeDef = { fg = colors.type },
+    Exception = { fg = colors.statement },
+    PreCondit = { fg = colors.preproc },
+    Label = { fg = colors.label },
+
+    Include = { fg = colors.include },
+    PreProc = { fg = colors.preproc },
+    Define = { fg = colors.define },
+    Macro = { fg = colors.macro },
+
+    Title = { fg = colors.cyan },
+    Special = { fg = colors.number },
+    Error = { fg = colors.bright_red },
+    Todo = { fg = colors.magenta, bold = true },
+    Underlined = { fg = colors.cyan, underline = true },
+
+    Directory = { fg = colors.green },
+
+    -- TODO
+    Folded = { fg = colors.comment },
+    FoldColumn = {},
+    Search = { bg = colors.search },
+    IncSearch = { bg = colors.search },
+    CurSearch = { bg = colors.search },
+    MatchParen = { fg = colors.green },
+    NonText = { fg = colors.nontext },
+
+    DiffAdd = { fg = colors.green },
+    DiffAdded = { fg = colors.green },
+    DiffChange = { fg = colors.brigh_orange },
+    DiffDelete = { fg = colors.red },
+    DiffText = { fg = colors.comment },
+
+    Question = { fg = colors.magenta },
+    QuickFixLine = { fg = colors.fg, bg = colors.selection },
+    SpecialKey = { fg = colors.nontext },
+
+    SpellBad = { fg = colors.bright_red, underline = true },
+    SpellCap = { fg = colors.yellow },
+    SpellLocal = { fg = colors.yellow },
+    SpellRare = { fg = colors.yellow },
+
+    TabLine = { fg = colors.comment },
+    TabLineSel = { fg = colors.white },
+    TabLineFill = { bg = colors.bg },
+    Terminal = { fg = colors.white, bg = colors.black },
+    Visual = { bg = colors.visual },
+    VisualNOS = { fg = colors.visual },
+    WildMenu = { fg = colors.black, bg = colors.white },
+
+    ErrorMsg = { fg = colors.bright_red },
+    WarningMsg = { fg = colors.brigh_yellow },
+
+    -- HTML
+    htmlArg = { fg = colors.orange },
+    htmlBold = { fg = colors.yellow, bold = true },
+    htmlEndTag = { fg = colors.cyan },
+    htmlH1 = { fg = colors.blue },
+    htmlH2 = { fg = colors.blue },
+    htmlH3 = { fg = colors.blue },
+    htmlH4 = { fg = colors.blue },
+    htmlH5 = { fg = colors.blue },
+    htmlH6 = { fg = colors.blue },
+    htmlItalic = { fg = colors.magenta, italic = true },
+    htmlLink = { fg = colors.magenta, underline = true },
+    htmlSpecialChar = { fg = colors.yellow },
+    htmlSpecialTagName = { fg = colors.cyan },
+    htmlTag = { fg = colors.cyan },
+    htmlTagN = { fg = colors.cyan },
+    htmlTagName = { fg = colors.cyan },
+    htmlTitle = { fg = colors.white },
+
+    -- Markdown
+    markdownBlockquote = { fg = colors.yellow, italic = true },
+    markdownBold = { fg = colors.orange, bold = true },
+    markdownCode = { fg = colors.orange },
+    markdownCodeBlock = { fg = colors.orange },
+    markdownCodeDelimiter = { fg = colors.red },
+    markdownH1 = { fg = colors.blue, bold = true },
+    markdownH2 = { fg = colors.blue, bold = true },
+    markdownH3 = { fg = colors.blue, bold = true },
+    markdownH4 = { fg = colors.blue, bold = true },
+    markdownH5 = { fg = colors.blue, bold = true },
+    markdownH6 = { fg = colors.blue, bold = true },
+    markdownHeadingDelimiter = { fg = colors.red },
+    markdownHeadingRule = { fg = colors.comment },
+    markdownId = { fg = colors.magenta },
+    markdownIdDeclaration = { fg = colors.cyan },
+    markdownIdDelimiter = { fg = colors.magenta },
+    markdownItalic = { fg = colors.yellow, italic = true },
+    markdownLinkDelimiter = { fg = colors.magenta },
+    markdownLinkText = { fg = colors.blue },
+    markdownListMarker = { fg = colors.blue },
+    markdownOrderedListMarker = { fg = colors.red },
+    markdownRule = { fg = colors.comment },
+
+    --  Diff
+    diffAdded = { fg = colors.orange },
+    diffRemoved = { fg = colors.red },
+    diffFileId = { fg = colors.yellow, bold = true, reverse = true },
+    diffFile = { fg = colors.nontext },
+    diffNewFile = { fg = colors.orange },
+    diffOldFile = { fg = colors.red },
+
+    debugPc = { bg = colors.menu },
+    debugBreakpoint = { fg = colors.red, reverse = true },
+
+    -- TreeSitter
+    ["@error"] = { fg = colors.diag_error },
+    ["@punctuation.delimiter"] = { fg = colors.fg },
+    ["@punctuation.bracket"] = { fg = colors.fg },
+    ["@punctuation.special"] = { fg = colors.cyan },
+
+    ["@constant"] = { fg = colors.constant },
+    ["@constant.builtin"] = { fg = colors.constant },
+    ["@symbol"] = { fg = colors.magenta },
+
+    ["@constant.macro"] = { fg = colors.macro },
+    ["@string.regex"] = { fg = colors.red },
+    ["@string"] = { fg = colors.string },
+    ["@string.escape"] = { fg = colors.number },
+    ["@character"] = { fg = colors.number },
+    ["@number"] = { fg = colors.number },
+    ["@float"] = { fg = colors.number },
+    ["@boolean"] = { fg = colors.boolean },
+    ["@annotation"] = { fg = colors.yellow },
+    ["@attribute"] = { fg = colors.bright_yellow },
+    ["@namespace"] = { fg = colors.identifer },
+
+    ["@function"] = { fg = colors.Function },
+    ["@function.builtin"] = { fg = colors.Function },
+    ["@function.macro"] = { fg = colors.macro },
+    ["@parameter"] = { fg = colors.fg },
+    ["@method"] = { fg = colors.Function },
+    ["@field"] = { fg = colors.identifier },
+    ["@property"] = { fg = colors.fg },
+    ["@constructor"] = { fg = colors.identifier },
+
+    ["@conditional"] = { fg = colors.statement },
+    ["@repeat"] = { fg = colors.statement },
+    ["@label"] = { fg = colors.label },
+
+    ["@keyword"] = { fg = colors.keyword },
+    ["@keyword.function"] = { fg = colors.keyword },
+    ["@keyword.operator"] = { fg = colors.keyword },
+    ["@operator"] = { fg = colors.operator },
+    ["@exception"] = { fg = colors.statement },
+    ["@type"] = { fg = colors.type },
+    ["@type.builtin"] = { fg = colors.type },
+    ["@type.qualifier"] = { fg = colors.type },
+    ["@structure"] = { fg = colors.type },
+    ["@include"] = { fg = colors.include },
+
+    ["@variable"] = { fg = colors.fg  },
+    ["@variable.builtin"] = { fg = colors.identifier },
+
+    ["@text"] = { fg = colors.fg },
+    ["@text.strong"] = { fg = colors.fg, bold = true },
+    ["@text.emphasis"] = { fg = colors.fg, italic = true },
+    ["@text.underline"] = { fg = colors.fg },
+    ["@text.title"] = { fg = colors.blue, bold = true },
+    ["@text.literal"] = { fg = colors.number },
+    ["@text.uri"] = { fg = colors.cyan, italic = true },
+    ["@text.reference"] = { fg = colors.number , bold = true },
+
+    ["@tag"] = { fg = colors.cyan },
+    ["@tag.attribute"] = { fg = colors.number },
+    ["@tag.delimiter"] = { fg = colors.blue },
+
+    -- Semantic
+    ["@class"] = { fg = colors.keyword },
+    ["@struct"] = { fg = colors.keyword },
+    ["@enum"] = { fg = colors.keyword },
+    ["@enumMember"] = { fg = colors.brigh_green },
+    ["@event"] = { fg = colors.keyword },
+    ["@interface"] = { fg = colors.keyword },
+    ["@modifier"] = { fg = colors.keyword },
+    ["@regexp"] = { fg = colors.yellow },
+    ["@typeParameter"] = { fg = colors.keyword },
+    ["@decorator"] = { fg = colors.macro },
+
+    -- LSP Semantic (0.9+)
+    -- ["@lsp.type.class"] = { fg = colors.cyan },
+    -- ["@lsp.type.enum"] = { fg = colors.cyan },
+    -- ["@lsp.type.decorator"] = { fg = colors.number},
+    -- ["@lsp.type.enumMember"] = { fg = colors.magenta },
+    -- ["@lsp.type.function"] = { fg = colors.number},
+    -- ["@lsp.type.interface"] = { fg = colors.bright_yellow },
+    -- ["@lsp.type.macro"] = { fg = colors.cyan },
+    -- ["@lsp.type.method"] = { fg = colors.number},
+    -- ["@lsp.type.namespace"] = { fg = colors.number},
+    -- ["@lsp.type.parameter"] = { fg = colors.number },
+    -- ["@lsp.type.property"] = { fg = colors.bright_magenta },
+    -- ["@lsp.type.struct"] = { fg = colors.cyan },
+    -- ["@lsp.type.type"] = { fg = colors.yellow },
+    -- ["@lsp.type.variable"] = { fg = colors.fg },
+  }
+end
+
+return M
