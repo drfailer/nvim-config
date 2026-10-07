@@ -58,8 +58,8 @@ return {
   -- UI
   border     = "#131313",
   cursor     = "#ffcfaa",
-  selection  = "#1e1e1e",
-  search     = "#3e3e3e",
+  cursorline = "#161616",
+  selection  = "#2e2e2e",
   statusline = "#131313",
   fold       = "#403a36",
   split      = "#867462",
