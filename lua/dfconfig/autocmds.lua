@@ -45,7 +45,7 @@ autocmd_add('filetype', {
 -- for some stupide reason, it is super hard to prevent nvim from loading the
 -- ada default configuration. Using a scheduled function is the only way I
 -- found out to override the default mappings and makeprog.
-vim.api.nvim_create_autocmd('FileType', {
+autocmd_add('FileType', {
   pattern = 'ada',
   callback = function(args)
     vim.schedule(function()
@@ -55,5 +55,16 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.opt_local.makeprg = "make"
       end
     end)
+  end,
+})
+
+autocmd_add("FileType", {
+  callback = function(args)
+    -- Safely attempt to start tree-sitter highlighting for the buffer
+    pcall(vim.treesitter.start, args.buf)
+
+    -- enable folding
+    vim.wo[0][0].foldmethod = "expr"
+    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
   end,
 })

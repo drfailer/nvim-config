@@ -85,6 +85,7 @@ o.mouse = "a"
 
 -- folds
 vim.opt.foldmethod = 'marker'
+vim.opt.foldlevel = 99
 
 -- netrw
 vim.g.netrw_banner = 0
