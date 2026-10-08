@@ -35,19 +35,18 @@ return {
   -- gray blue from grubber darker: #303540
 
   -- Syntax
-  Function   = "#2895c7",
+  Function   = "#db2828", -- #2895c7, #db2828
   keyword    = "#f0c674",
   statement  = "#f0c674",
   type       = "#edb211",
   identifier = "#ebc06d",
 
   include    = "#ffa900",
-  define     = "#2895c7",
   preproc    = "#dc7575",
   macro      = "#eb7134",
 
   operator   = "#dc7575",
-  delimiter  = "#b99468", -- #e0741b
+  delimiter  = "#e0741b", -- #e0741b
 
   string     = "#778855",
   character  = "#778855",

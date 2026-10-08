@@ -61,7 +61,7 @@ M.setup = function()
 
     Include = { fg = colors.include },
     PreProc = { fg = colors.preproc },
-    Define = { fg = colors.define },
+    Define = { fg = colors.macro },
     Macro = { fg = colors.macro },
 
     Title = { fg = colors.cyan },
@@ -165,8 +165,8 @@ M.setup = function()
 
     -- TreeSitter
     ["@error"] = { fg = colors.diag_error },
-    ["@punctuation.delimiter"] = { fg = colors.fg },
-    ["@punctuation.bracket"] = { fg = colors.fg },
+    ["@punctuation.delimiter"] = { fg = colors.delimiter},
+    ["@punctuation.bracket"] = { fg = colors.delimiter },
     ["@punctuation.special"] = { fg = colors.cyan },
 
     ["@constant"] = { fg = colors.constant },
