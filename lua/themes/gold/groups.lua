@@ -186,6 +186,9 @@ M.setup = function()
     ["@namespace"] = { fg = colors.identifer },
 
     ["@function"] = { fg = colors.Function },
+    ["@function.call"] = { fg = colors.Function },
+    ["@function.method"] = { fg = colors.Function },
+    ["@function.method.call"] = { fg = colors.Function },
     ["@function.builtin"] = { fg = colors.Function },
     ["@function.macro"] = { fg = colors.macro },
     ["@parameter"] = { fg = colors.fg },
@@ -193,6 +196,7 @@ M.setup = function()
     ["@field"] = { fg = colors.identifier },
     ["@property"] = { fg = colors.fg },
     ["@constructor"] = { fg = colors.identifier },
+    ["@module"] = { fg = colors.fg },
 
     ["@conditional"] = { fg = colors.statement },
     ["@repeat"] = { fg = colors.statement },

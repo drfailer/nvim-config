@@ -35,7 +35,7 @@ return {
   -- gray blue from grubber darker: #303540
 
   -- Syntax
-  Function   = "#db2828", -- #2895c7, #db2828
+  Function   = "#de1f1f", -- #2895c7, #db2828
   keyword    = "#f0c674",
   statement  = "#f0c674",
   type       = "#edb211",
