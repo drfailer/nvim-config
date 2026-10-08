@@ -29,9 +29,9 @@ local function apply_term_colors(colors)
 end
 
 local function apply(opts)
-  local colors = require("themes.gold.palette")
+  local colors = require("themes.sun.palette")
   apply_term_colors(colors)
-  local groups = require("themes.gold.groups").setup()
+  local groups = require("themes.sun.groups").setup()
 
   -- apply transparents
   if opts.transparent then
@@ -57,7 +57,7 @@ end
 
 M.load = function()
   if vim.fn.has("nvim-0.7") ~= 1 then
-    vim.notify("gold.nvim: you must use neovim 0.7 or higher")
+    vim.notify("sun.nvim: you must use neovim 0.7 or higher")
     return
   end
 
@@ -72,7 +72,7 @@ M.load = function()
 
   vim.o.background = "dark"
   vim.o.termguicolors = true
-  vim.g.colors_name = "gold"
+  vim.g.colors_name = "sun"
 
   apply(M.opts)
 end

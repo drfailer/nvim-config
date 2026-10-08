@@ -1,6 +1,6 @@
 local M = {}
 
-local colors = require("themes.gold.palette")
+local colors = require("themes.sun.palette")
 
 M.setup = function()
   return {
